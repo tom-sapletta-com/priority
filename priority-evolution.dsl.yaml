@@ -1,0 +1,712 @@
+apiVersion: wellmanifest.io/v1alpha1
+kind: EvolutionaryIntentPolicy
+metadata:
+  id: engineering-standardization
+  version: 0.2.0
+  lifecycle: candidate
+  home:
+    repository: subactor/platform
+    role: HOME
+  description: Organizacyjna instancja polityki dla ekosystemu subactor/semcod/autogrammar, kompilowana według abstrakcyjnego
+    schematu i semantyki HOME w wellmanifest/policy-dsl. Nie przenosi reguł produktowych do standardu wellmanifest.
+spec:
+  scope:
+    selectors:
+    - subactor/*
+    - semcod/*
+    - autogrammar/*
+    taskKinds:
+    - code-change
+    - refactor
+    - release
+    - standard-change
+  sourcePolicy:
+    unknownOutcome: REVIEW_REQUIRED
+    classes:
+    - id: runtime_receipt
+      rank: 100
+      description: Dowód z deterministycznego wykonania lub środowiska.
+    - id: test_receipt
+      rank: 90
+      description: Wynik testu związany z dokładną rewizją.
+    - id: git_ast
+      rank: 80
+      description: Stan Git, AST, zależności i pliki w bieżącej rewizji.
+    - id: configuration
+      rank: 70
+      description: Przypięta konfiguracja lub manifest.
+    - id: documentation
+      rank: 40
+      description: Deklaracja dokumentacyjna, nie dowód zachowania.
+    - id: agent_claim
+      rank: 10
+      description: Twierdzenie modelu; nigdy nie daje finalnego PASS.
+  priorityClasses:
+  - id: constitutional
+    rank: 0
+    preemptible: false
+    failClosed: true
+    mutableBy:
+    - governance-owner
+    description: Własność HOME, granice uprawnień, prawda i integralność dowodów.
+  - id: safety
+    rank: 10
+    preemptible: false
+    failClosed: true
+    mutableBy:
+    - governance-owner
+    - security-owner
+    description: Bezpieczeństwo, utrata danych, produkcja i odwracalność.
+  - id: correctness
+    rank: 20
+    preemptible: false
+    failClosed: true
+    mutableBy:
+    - standard-owner
+    description: Poprawność zachowania, testy negatywne i zgodność rewizji.
+  - id: standardization
+    rank: 30
+    preemptible: true
+    failClosed: false
+    mutableBy:
+    - standard-owner
+    description: Spójność API, manifestów, narzędzi i cyklu życia.
+  - id: delivery
+    rank: 40
+    preemptible: true
+    failClosed: false
+    mutableBy:
+    - product-owner
+    description: Funkcje, terminy i wartość użytkowa.
+  - id: optimization
+    rank: 50
+    preemptible: true
+    failClosed: false
+    mutableBy:
+    - maintainer
+    description: Koszt, wydajność i wygoda pracy.
+  globalInvariants:
+  - id: INV-ONE-HOME
+    statement: Każdy concern ma dokładnie jednego właściciela HOME.
+    when:
+      metric: governance.duplicate_home_count
+      op: gt
+      value: 0
+    outcome: BLOCK
+    remediationUri: uri://diagit/fleet/find-duplicate-home
+  - id: INV-FRESH-EVIDENCE
+    statement: Stary lub obcy revision receipt nie potwierdza bieżącego PASS.
+    when:
+      metric: evidence.stale_or_mismatched_receipts
+      op: gt
+      value: 0
+    outcome: BLOCK
+    remediationUri: uri://twin/receipts/refresh
+  - id: INV-NO-SELF-PROMOTION
+    statement: Agent wdrażający zmianę nie może sam promować standardu ani walidować własnego patcha.
+    when:
+      metric: governance.separation_of_duties_violations
+      op: gt
+      value: 0
+    outcome: BLOCK
+    remediationUri: uri://validator/assign-independent-principal
+  - id: INV-NO-CLAIM-AS-PASS
+    statement: Nazwa funkcji, pliku lub twierdzenie LLM nie stanowi dowodu działania.
+    when:
+      metric: evidence.shape_only_pass_count
+      op: gt
+      value: 0
+    outcome: BLOCK
+    remediationUri: uri://pyqual/tests/require-behavioral-negative-test
+  metrics:
+  - id: governance.duplicate_home_count
+    unit: count
+    direction: decrease
+    target: 0
+    hardLimit: 0
+    maxAgeSeconds: 300
+    requiredSourceClasses:
+    - git_ast
+    - runtime_receipt
+  - id: evidence.stale_or_mismatched_receipts
+    unit: count
+    direction: decrease
+    target: 0
+    hardLimit: 0
+    maxAgeSeconds: 300
+    requiredSourceClasses:
+    - runtime_receipt
+    - test_receipt
+  - id: governance.separation_of_duties_violations
+    unit: count
+    direction: decrease
+    target: 0
+    hardLimit: 0
+    maxAgeSeconds: 300
+    requiredSourceClasses:
+    - runtime_receipt
+    - git_ast
+  - id: evidence.shape_only_pass_count
+    unit: count
+    direction: decrease
+    target: 0
+    hardLimit: 0
+    maxAgeSeconds: 300
+    requiredSourceClasses:
+    - test_receipt
+    - git_ast
+  - id: standards.compliance_coverage
+    unit: ratio
+    direction: increase
+    target: 0.98
+    maxAgeSeconds: 900
+    requiredSourceClasses:
+    - test_receipt
+    - git_ast
+  - id: standards.drift_open_count
+    unit: count
+    direction: decrease
+    target: 0
+    maxAgeSeconds: 300
+    requiredSourceClasses:
+    - git_ast
+    - runtime_receipt
+  - id: standards.governance_truth_false_block_rate
+    unit: ratio
+    direction: decrease
+    target: 0.01
+    maxAgeSeconds: 86400
+    requiredSourceClasses:
+    - runtime_receipt
+  - id: standards.governance_truth_false_block_sample_size
+    unit: count
+    direction: increase
+    target: 30
+    maxAgeSeconds: 86400
+    requiredSourceClasses:
+    - runtime_receipt
+  - id: standards.validation_behavior_false_block_rate
+    unit: ratio
+    direction: decrease
+    target: 0.01
+    maxAgeSeconds: 86400
+    requiredSourceClasses:
+    - runtime_receipt
+  - id: standards.validation_behavior_false_block_sample_size
+    unit: count
+    direction: increase
+    target: 30
+    maxAgeSeconds: 86400
+    requiredSourceClasses:
+    - runtime_receipt
+  - id: standards.manifest_conformance_false_block_rate
+    unit: ratio
+    direction: decrease
+    target: 0.01
+    maxAgeSeconds: 86400
+    requiredSourceClasses:
+    - runtime_receipt
+  - id: standards.manifest_conformance_false_block_sample_size
+    unit: count
+    direction: increase
+    target: 30
+    maxAgeSeconds: 86400
+    requiredSourceClasses:
+    - runtime_receipt
+  - id: standards.conflict_density
+    unit: ratio
+    direction: decrease
+    target: 0.02
+    maxAgeSeconds: 900
+    requiredSourceClasses:
+    - runtime_receipt
+    - git_ast
+  - id: repair.mean_time_to_repair_minutes
+    unit: minutes
+    direction: decrease
+    target: 60
+    maxAgeSeconds: 3600
+    requiredSourceClasses:
+    - runtime_receipt
+  - id: repair.rollback_rate
+    unit: ratio
+    direction: decrease
+    target: 0.05
+    maxAgeSeconds: 86400
+    requiredSourceClasses:
+    - runtime_receipt
+    - git_ast
+  - id: agent.out_of_scope_action_rate
+    unit: ratio
+    direction: decrease
+    target: 0
+    maxAgeSeconds: 3600
+    requiredSourceClasses:
+    - runtime_receipt
+  - id: agent.rule_citation_coverage
+    unit: ratio
+    direction: increase
+    target: 1.0
+    maxAgeSeconds: 3600
+    requiredSourceClasses:
+    - runtime_receipt
+  budgets:
+    concurrentRepairs: 3
+    standardChangeProposalsPerDay: 2
+    maxFilesPerRepair: 12
+    maxChangedLinesPerRepair: 500
+    maxAgentTurnsPerRepair: 12
+  complementarity:
+    hardRules:
+      requireDependencies: true
+      rejectExplicitExclusions: true
+      rejectOppositeMetricEffects: true
+      rejectBudgetOverflow: true
+      rejectSecondHome: true
+    weights:
+      reinforces: 2.0
+      enables: 1.5
+      dependencySatisfied: 1.0
+      explicitConflict: -5.0
+      oppositeMetricEffect: -3.0
+      budgetOverflow: -4.0
+    minimumScoreForAutomaticDispatch: 0.75
+  intents:
+  - id: STD-GOVERNANCE-TRUTH
+    statement: Utrzymuj prawdę o stanie systemu, jednym HOME i rewizyjnie związanych dowodach.
+    ownerRef: wellmanifest/ssot
+    lifecycle: active
+    priority:
+      class: constitutional
+      importance: 1000
+      dispatchBase: 750
+      dispatchFloorWhenViolated: 900
+      dispatchCeiling: 1000
+      nonDemotableBy:
+      - deadline
+      - feature_urgency
+      - implementation_cost
+      - agent_preference
+    violationWhen:
+      any:
+      - metric: governance.duplicate_home_count
+        op: gt
+        value: 0
+      - metric: evidence.stale_or_mismatched_receipts
+        op: gt
+        value: 0
+      - metric: evidence.shape_only_pass_count
+        op: gt
+        value: 0
+    evidence:
+      maxAgeSeconds: 300
+      minimumSourceRank: 80
+      onMissing: BLOCK
+    relations:
+      reinforces:
+      - STD-VALIDATION-BEHAVIOR
+      enables:
+      - STD-MANIFEST-CONFORMANCE
+      - DELIVERY-EVOLUTION
+      requires: []
+      excludes: []
+    expectedEffects:
+      governance.duplicate_home_count: decrease
+      evidence.stale_or_mismatched_receipts: decrease
+      evidence.shape_only_pass_count: decrease
+    adaptation:
+      cooldownSeconds: 300
+      rules:
+      - id: governance-incident-boost
+        when:
+          any:
+          - metric: governance.duplicate_home_count
+            op: gt
+            value: 0
+          - metric: evidence.stale_or_mismatched_receipts
+            op: gt
+            value: 0
+        dispatchDelta: 250
+        reason: Niezgodność prawdy lub własności jest blokująca.
+      - id: resolved-idle
+        when:
+          all:
+          - metric: governance.duplicate_home_count
+            op: eq
+            value: 0
+          - metric: evidence.stale_or_mismatched_receipts
+            op: eq
+            value: 0
+          - metric: evidence.shape_only_pass_count
+            op: eq
+            value: 0
+        dispatchDelta: -650
+        reason: Brak bieżącego naruszenia; ważność normatywna pozostaje bez zmian.
+    repairPolicy:
+      implementation:
+        mode: propose_then_patch
+        plannerUri: uri://todo2code/plan/bounded-remediation
+        executorUri: uri://repair-agent/execute/hash-bound
+        validatorUri: uri://validator-agent/validate/independent
+        maxAttempts: 2
+      standard:
+        mode: propose_only
+        trigger:
+          all:
+          - metric: standards.governance_truth_false_block_rate
+            op: gt
+            value: 0.03
+          - metric: standards.governance_truth_false_block_sample_size
+            op: gte
+            value: 30
+        proposalUri: uri://wellmanifest/standard-change/propose
+        promotion:
+        - candidate
+        - shadow
+        - canary
+        - active
+        requiresHumanRoles:
+        - standard-owner
+        - independent-validator
+  - id: STD-VALIDATION-BEHAVIOR
+    statement: Każdy standard ma test zachowania, negatywną regresję i receipt związany z dokładną rewizją.
+    ownerRef: semcod/pyqual
+    lifecycle: active
+    priority:
+      class: correctness
+      importance: 950
+      dispatchBase: 650
+      dispatchFloorWhenViolated: 820
+      dispatchCeiling: 980
+      nonDemotableBy:
+      - deadline
+      - feature_urgency
+    violationWhen:
+      any:
+      - metric: standards.compliance_coverage
+        op: lt
+        value: 0.98
+      - metric: evidence.shape_only_pass_count
+        op: gt
+        value: 0
+    evidence:
+      maxAgeSeconds: 900
+      minimumSourceRank: 80
+      onMissing: REVIEW_REQUIRED
+    relations:
+      reinforces:
+      - STD-GOVERNANCE-TRUTH
+      - STD-MANIFEST-CONFORMANCE
+      enables:
+      - DELIVERY-EVOLUTION
+      requires:
+      - STD-GOVERNANCE-TRUTH
+      excludes: []
+    expectedEffects:
+      standards.compliance_coverage: increase
+      evidence.shape_only_pass_count: decrease
+      repair.rollback_rate: decrease
+    adaptation:
+      cooldownSeconds: 300
+      rules:
+      - id: coverage-gap
+        when:
+          metric: standards.compliance_coverage
+          op: lt
+          value: 0.9
+        dispatchDelta: 220
+        reason: Niska pokrywalność standardów wymaga natychmiastowej bramki.
+      - id: healthy-coverage
+        when:
+          all:
+          - metric: standards.compliance_coverage
+            op: gte
+            value: 0.98
+          - metric: evidence.shape_only_pass_count
+            op: eq
+            value: 0
+        dispatchDelta: -450
+        reason: Brak aktywnego naruszenia.
+    repairPolicy:
+      implementation:
+        mode: propose_then_patch
+        plannerUri: uri://todo2code/plan/behavioral-tests
+        executorUri: uri://repair-agent/execute/hash-bound
+        validatorUri: uri://pyqual/gate/exact-head
+        maxAttempts: 3
+      standard:
+        mode: propose_only
+        trigger:
+          all:
+          - metric: standards.validation_behavior_false_block_rate
+            op: gt
+            value: 0.03
+          - metric: standards.validation_behavior_false_block_sample_size
+            op: gte
+            value: 30
+        proposalUri: uri://wellmanifest/standard-change/propose
+        promotion:
+        - candidate
+        - shadow
+        - canary
+        - active
+        requiresHumanRoles:
+        - standard-owner
+        - independent-validator
+  - id: STD-MANIFEST-CONFORMANCE
+    statement: Manifesty projektów adoptują wersjonowane standardy bez lokalnego duplikowania ich semantyki.
+    ownerRef: wellmanifest/new-project
+    lifecycle: active
+    priority:
+      class: standardization
+      importance: 850
+      dispatchBase: 500
+      dispatchFloorWhenViolated: 650
+      dispatchCeiling: 900
+      nonDemotableBy:
+      - agent_preference
+    violationWhen:
+      any:
+      - metric: standards.drift_open_count
+        op: gt
+        value: 0
+      - metric: standards.conflict_density
+        op: gt
+        value: 0.02
+    evidence:
+      maxAgeSeconds: 900
+      minimumSourceRank: 70
+      onMissing: REVIEW_REQUIRED
+    relations:
+      reinforces:
+      - STD-VALIDATION-BEHAVIOR
+      enables:
+      - DELIVERY-EVOLUTION
+      requires:
+      - STD-GOVERNANCE-TRUTH
+      - STD-VALIDATION-BEHAVIOR
+      excludes: []
+    expectedEffects:
+      standards.drift_open_count: decrease
+      standards.conflict_density: decrease
+      standards.compliance_coverage: increase
+    adaptation:
+      cooldownSeconds: 300
+      rules:
+      - id: drift-boost
+        when:
+          metric: standards.drift_open_count
+          op: gt
+          value: 5
+        dispatchDelta: 180
+        reason: Drift jest rozlany po wielu projektach.
+      - id: no-drift
+        when:
+          all:
+          - metric: standards.drift_open_count
+            op: eq
+            value: 0
+          - metric: standards.conflict_density
+            op: lte
+            value: 0.02
+        dispatchDelta: -350
+        reason: Standard jest zgodny; pozostaje aktywny, lecz nie zajmuje kolejki.
+    repairPolicy:
+      implementation:
+        mode: propose_then_patch
+        plannerUri: uri://diagit/map/select-affected-projects
+        executorUri: uri://repair-agent/execute/manifest-conformance
+        validatorUri: uri://pyqual/gate/manifest-conformance
+        maxAttempts: 2
+      standard:
+        mode: propose_only
+        trigger:
+          any:
+          - all:
+            - metric: standards.manifest_conformance_false_block_rate
+              op: gt
+              value: 0.03
+            - metric: standards.manifest_conformance_false_block_sample_size
+              op: gte
+              value: 30
+          - metric: standards.conflict_density
+            op: gt
+            value: 0.1
+        proposalUri: uri://wellmanifest/standard-change/propose
+        promotion:
+        - candidate
+        - shadow
+        - canary
+        - active
+        requiresHumanRoles:
+        - standard-owner
+        - independent-validator
+  - id: DELIVERY-EVOLUTION
+    statement: Dostarczaj zmiany ewolucyjnie, w małych odwracalnych krokach, po spełnieniu wyższych klas priorytetu.
+    ownerRef: project/product-owner
+    lifecycle: active
+    priority:
+      class: delivery
+      importance: 700
+      dispatchBase: 600
+      dispatchFloorWhenViolated: 0
+      dispatchCeiling: 900
+      nonDemotableBy: []
+    violationWhen:
+      fact: work.delivery_needed
+      op: eq
+      value: true
+    evidence:
+      maxAgeSeconds: 3600
+      minimumSourceRank: 40
+      onMissing: REVIEW_REQUIRED
+    relations:
+      reinforces: []
+      enables: []
+      requires:
+      - STD-GOVERNANCE-TRUTH
+      - STD-VALIDATION-BEHAVIOR
+      - STD-MANIFEST-CONFORMANCE
+      excludes: []
+    expectedEffects:
+      delivery.user_value: increase
+      repair.rollback_rate: hold
+    adaptation:
+      cooldownSeconds: 300
+      rules:
+      - id: blocked-by-higher-class
+        when:
+          any:
+          - metric: governance.duplicate_home_count
+            op: gt
+            value: 0
+          - metric: evidence.stale_or_mismatched_receipts
+            op: gt
+            value: 0
+          - metric: evidence.shape_only_pass_count
+            op: gt
+            value: 0
+        dispatchDelta: -600
+        reason: Dostawa nie może wyprzeć integralności ani poprawności.
+      - id: ready-for-delivery
+        when:
+          all:
+          - metric: governance.duplicate_home_count
+            op: eq
+            value: 0
+          - metric: evidence.stale_or_mismatched_receipts
+            op: eq
+            value: 0
+          - metric: standards.compliance_coverage
+            op: gte
+            value: 0.98
+          - fact: work.delivery_needed
+            op: eq
+            value: true
+        dispatchDelta: 200
+        reason: Wyższe bramki są zielone; można zwiększyć tempo dostawy.
+    repairPolicy:
+      implementation:
+        mode: propose_then_patch
+        plannerUri: uri://todo2code/plan/bounded-feature
+        executorUri: uri://repair-agent/execute/hash-bound
+        validatorUri: uri://validator-agent/validate/independent
+        maxAttempts: 2
+      standard:
+        mode: disabled
+  triggers:
+  - id: files-fast-loop
+    type: fileWatch
+    debounceSeconds: 2
+    selectors:
+    - '**/project.manifest.*'
+    - '**/goal.yaml'
+    - '**/pyqual.yaml'
+    - '**/.wellmanifest/**'
+    - '**/AGENTS.md'
+    - '**/CLAUDE.md'
+    - '**/GEMINI.md'
+    exclude:
+    - '**/.git/**'
+    - '**/node_modules/**'
+    - '**/.venv/**'
+    emit:
+    - uri://diagit/fleet/incremental-scan
+    - uri://pyqual/policy/evaluate
+  - id: five-minute-control-loop
+    type: timer
+    everySeconds: 300
+    jitterSeconds: 30
+    emit:
+    - uri://diagit/fleet/scan
+    - uri://twin/metrics/refresh
+    - uri://pyqual/policy/evaluate
+    - uri://subactor/controller/reconcile
+  - id: local-git-loop
+    type: git
+    events:
+    - post-commit
+    - pre-push
+    emit:
+    - uri://todo2code/intent/refresh
+    - uri://pyqual/policy/evaluate
+  - id: authoritative-git-gate
+    type: git
+    events:
+    - pre-receive
+    emit:
+    - uri://pyqual/gate/exact-head
+    - uri://validator-agent/repository/validate
+  - id: runtime-problem-loop
+    type: event
+    events:
+    - runtime.error
+    - test.failed
+    - drift.detected
+    - receipt.expired
+    - policy.conflict
+    emit:
+    - uri://subactor/problem-reaction/classify
+    - uri://subactor/remediation/propose
+  changeControl:
+    intentRevisioning:
+      appendOnlyReceipts: true
+      hashBound: true
+      invalidateDerivedArtifactsOnChange: true
+      staleRevisionOutcome: BLOCK
+    standardRepair:
+      autoPatchStandard: false
+      autoActivateStandard: false
+      lifecycle:
+      - candidate
+      - shadow
+      - canary
+      - active
+      - deprecated
+      - superseded
+      minimumShadowRuns: 30
+      minimumCanaryRuns: 10
+      maximumFalseBlockRate: 0.01
+      requireIndependentValidator: true
+      requireHumanPromotion: true
+      rollbackOnMetricRegression: true
+    oscillationGuard:
+      maximumPriorityChangesPerHour: 6
+      freezeSecondsAfterLimit: 3600
+      outcome: REVIEW_REQUIRED
+  routing:
+    intentExtractor: uri://todo2code/intent/extract
+    fleetObserver: uri://diagit/fleet/scan
+    evidenceObserver: uri://twin/observe
+    qualityGate: uri://pyqual/policy/evaluate
+    implementationRepair: uri://repair-agent/execute
+    independentValidator: uri://validator-agent/validate
+    gitControlPlane: uri://onedev-agent/policy/enforce
+  outputs:
+    receiptPath: .wellmanifest/receipts/priority-decision.json
+    planDeltaPath: .wellmanifest/receipts/intent-plan-delta.json
+    contextPath: .wellmanifest/generated/agent-policy.md
+    facades:
+    - AGENTS.md
+    - CLAUDE.md
+    - GEMINI.md

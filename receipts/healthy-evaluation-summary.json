@@ -1,0 +1,22 @@
+{
+  "finalOutcome": "PASS",
+  "receiptDigest": "sha256:38da9f66ec00d9741d974d77ad5275adf1ddf61b0ddf7805bd389badb5d09e64",
+  "complementarity": {
+    "score": 1.0,
+    "threshold": 0.75,
+    "hardConflict": false,
+    "parallelDispatchAllowed": true,
+    "automaticSequentialDispatchAllowed": true,
+    "automaticDispatchAllowed": true,
+    "sequentialOrder": [],
+    "budgetAssessment": {
+      "status": "PASS",
+      "concurrentRepairs": 0,
+      "standardChangeProposals": 0,
+      "estimates": {},
+      "standardChangeProposalsToday": 0
+    },
+    "findings": []
+  },
+  "out": "receipts/healthy-decision.json"
+}

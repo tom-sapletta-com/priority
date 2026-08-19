@@ -1,0 +1,19 @@
+apiVersion: wellmanifest.io/v1
+kind: StandardAdoption
+metadata:
+  project: subactor/example
+spec:
+  adopts:
+    - standardRef: wellmanifest/policy-dsl/priority-evolution@0.2.0
+      role: ADOPT
+      digest: REPLACE_WITH_RELEASE_DIGEST
+  organizationPolicy:
+    homeRef: subactor/platform/config/governance/engineering-priorities.v1.yaml
+    digest: REPLACE_WITH_ORGANIZATION_POLICY_DIGEST
+  localScope:
+    include: [src/**, tests/**, project.manifest.yml, goal.yaml, pyqual.yaml]
+    exclude: [vendor/**, node_modules/**]
+  enforcement:
+    local: advisory
+    preReceive: blocking
+    standardChanges: propose-only

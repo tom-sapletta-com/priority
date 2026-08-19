@@ -1,0 +1,396 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wellmanifest.io/schemas/evolutionary-intent-policy.v1alpha1.json",
+  "title": "Evolutionary Intent Policy",
+  "type": "object",
+  "required": ["apiVersion", "kind", "metadata", "spec"],
+  "additionalProperties": false,
+  "properties": {
+    "apiVersion": {"const": "wellmanifest.io/v1alpha1"},
+    "kind": {"const": "EvolutionaryIntentPolicy"},
+    "metadata": {
+      "type": "object",
+      "required": ["id", "version", "lifecycle", "home"],
+      "properties": {
+        "id": {"type": "string", "minLength": 3},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:[-+][A-Za-z0-9.-]+)?$"},
+        "lifecycle": {"enum": ["candidate", "shadow", "canary", "active", "deprecated", "superseded"]},
+        "description": {"type": "string"},
+        "home": {
+          "type": "object",
+          "required": ["repository", "role"],
+          "properties": {
+            "repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+            "role": {"const": "HOME"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "spec": {
+      "type": "object",
+      "required": ["scope", "sourcePolicy", "priorityClasses", "globalInvariants", "metrics", "budgets", "complementarity", "intents", "triggers", "changeControl", "routing", "outputs"],
+      "properties": {
+        "scope": {"$ref": "#/$defs/scope"},
+        "sourcePolicy": {"$ref": "#/$defs/sourcePolicy"},
+        "priorityClasses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/priorityClass"}
+        },
+        "globalInvariants": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/invariant"}
+        },
+        "metrics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/metric"}
+        },
+        "budgets": {
+          "type": "object",
+          "required": ["concurrentRepairs", "standardChangeProposalsPerDay", "maxFilesPerRepair", "maxChangedLinesPerRepair", "maxAgentTurnsPerRepair"],
+          "properties": {
+            "concurrentRepairs": {"type": "integer", "minimum": 1},
+            "standardChangeProposalsPerDay": {"type": "integer", "minimum": 0},
+            "maxFilesPerRepair": {"type": "integer", "minimum": 1},
+            "maxChangedLinesPerRepair": {"type": "integer", "minimum": 1},
+            "maxAgentTurnsPerRepair": {"type": "integer", "minimum": 1}
+          },
+          "additionalProperties": false
+        },
+        "complementarity": {"$ref": "#/$defs/complementarity"},
+        "intents": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/intent"}
+        },
+        "triggers": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/trigger"}
+        },
+        "changeControl": {"$ref": "#/$defs/changeControl"},
+        "routing": {
+          "type": "object",
+          "additionalProperties": {"type": "string", "pattern": "^uri://"}
+        },
+        "outputs": {
+          "type": "object",
+          "required": ["receiptPath", "planDeltaPath", "contextPath", "facades"],
+          "properties": {
+            "receiptPath": {"type": "string"},
+            "planDeltaPath": {"type": "string"},
+            "contextPath": {"type": "string"},
+            "facades": {
+              "type": "array",
+              "items": {"enum": ["AGENTS.md", "CLAUDE.md", "GEMINI.md"]},
+              "uniqueItems": true
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "scope": {
+      "type": "object",
+      "required": ["selectors", "taskKinds"],
+      "properties": {
+        "selectors": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "taskKinds": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "sourcePolicy": {
+      "type": "object",
+      "required": ["unknownOutcome", "classes"],
+      "properties": {
+        "unknownOutcome": {"enum": ["BLOCK", "REVIEW_REQUIRED", "NOT_MEASURED"]},
+        "classes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["id", "rank"],
+            "properties": {
+              "id": {"type": "string"},
+              "rank": {"type": "number"},
+              "description": {"type": "string"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "priorityClass": {
+      "type": "object",
+      "required": ["id", "rank", "preemptible", "failClosed", "mutableBy"],
+      "properties": {
+        "id": {"type": "string"},
+        "rank": {"type": "integer", "minimum": 0},
+        "preemptible": {"type": "boolean"},
+        "failClosed": {"type": "boolean"},
+        "mutableBy": {"type": "array", "items": {"type": "string"}},
+        "description": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "condition": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["metric", "op", "value"],
+          "properties": {
+            "metric": {"type": "string"},
+            "op": {"enum": ["eq", "ne", "gt", "gte", "lt", "lte", "in", "not_in", "matches_any"]},
+            "value": {}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["fact", "op", "value"],
+          "properties": {
+            "fact": {"type": "string"},
+            "op": {"enum": ["eq", "ne", "gt", "gte", "lt", "lte", "in", "not_in", "matches_any"]},
+            "value": {}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["all"],
+          "properties": {"all": {"type": "array", "items": {"$ref": "#/$defs/condition"}, "minItems": 1}},
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["any"],
+          "properties": {"any": {"type": "array", "items": {"$ref": "#/$defs/condition"}, "minItems": 1}},
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["not"],
+          "properties": {"not": {"$ref": "#/$defs/condition"}},
+          "additionalProperties": false
+        }
+      ]
+    },
+    "invariant": {
+      "type": "object",
+      "required": ["id", "statement", "when", "outcome", "remediationUri"],
+      "properties": {
+        "id": {"type": "string"},
+        "statement": {"type": "string"},
+        "when": {"$ref": "#/$defs/condition"},
+        "outcome": {"enum": ["BLOCK", "REVIEW_REQUIRED", "REPAIR_IMPLEMENTATION"]},
+        "remediationUri": {"type": "string", "pattern": "^uri://"}
+      },
+      "additionalProperties": false
+    },
+    "metric": {
+      "type": "object",
+      "required": ["id", "unit", "direction", "target", "maxAgeSeconds", "requiredSourceClasses"],
+      "properties": {
+        "id": {"type": "string"},
+        "unit": {"type": "string"},
+        "direction": {"enum": ["increase", "decrease", "hold"]},
+        "target": {"type": ["number", "integer", "boolean", "string"]},
+        "hardLimit": {"type": ["number", "integer", "boolean", "string"]},
+        "maxAgeSeconds": {"type": "integer", "minimum": 1},
+        "requiredSourceClasses": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "complementarity": {
+      "type": "object",
+      "required": ["hardRules", "weights", "minimumScoreForAutomaticDispatch"],
+      "properties": {
+        "hardRules": {"type": "object", "additionalProperties": {"type": "boolean"}},
+        "weights": {"type": "object", "additionalProperties": {"type": "number"}},
+        "minimumScoreForAutomaticDispatch": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": false
+    },
+    "evidenceRequirement": {
+      "type": "object",
+      "required": ["maxAgeSeconds", "minimumSourceRank", "onMissing"],
+      "properties": {
+        "maxAgeSeconds": {"type": "integer", "minimum": 1},
+        "minimumSourceRank": {"type": "number"},
+        "onMissing": {"enum": ["BLOCK", "REVIEW_REQUIRED", "NOT_MEASURED"]}
+      },
+      "additionalProperties": false
+    },
+    "priority": {
+      "type": "object",
+      "required": ["class", "importance", "dispatchBase", "dispatchFloorWhenViolated", "dispatchCeiling", "nonDemotableBy"],
+      "properties": {
+        "class": {"type": "string"},
+        "importance": {"type": "number", "minimum": 0, "maximum": 1000},
+        "dispatchBase": {"type": "number", "minimum": 0, "maximum": 1000},
+        "dispatchFloorWhenViolated": {"type": "number", "minimum": 0, "maximum": 1000},
+        "dispatchCeiling": {"type": "number", "minimum": 0, "maximum": 1000},
+        "nonDemotableBy": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "relations": {
+      "type": "object",
+      "required": ["reinforces", "enables", "requires", "excludes"],
+      "properties": {
+        "reinforces": {"type": "array", "items": {"type": "string"}},
+        "enables": {"type": "array", "items": {"type": "string"}},
+        "requires": {"type": "array", "items": {"type": "string"}},
+        "excludes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "adaptation": {
+      "type": "object",
+      "required": ["cooldownSeconds", "rules"],
+      "properties": {
+        "cooldownSeconds": {"type": "integer", "minimum": 0},
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "when", "dispatchDelta", "reason"],
+            "properties": {
+              "id": {"type": "string"},
+              "when": {"$ref": "#/$defs/condition"},
+              "dispatchDelta": {"type": "number", "minimum": -1000, "maximum": 1000},
+              "reason": {"type": "string"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "repairPolicy": {
+      "type": "object",
+      "required": ["implementation", "standard"],
+      "properties": {
+        "implementation": {
+          "type": "object",
+          "required": ["mode", "plannerUri", "executorUri", "validatorUri", "maxAttempts"],
+          "properties": {
+            "mode": {"enum": ["propose_only", "propose_then_patch"]},
+            "plannerUri": {"type": "string", "pattern": "^uri://"},
+            "executorUri": {"type": "string", "pattern": "^uri://"},
+            "validatorUri": {"type": "string", "pattern": "^uri://"},
+            "maxAttempts": {"type": "integer", "minimum": 1}
+          },
+          "additionalProperties": false
+        },
+        "standard": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["mode"],
+              "properties": {"mode": {"const": "disabled"}},
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "required": ["mode", "trigger", "proposalUri", "promotion", "requiresHumanRoles"],
+              "properties": {
+                "mode": {"const": "propose_only"},
+                "trigger": {"$ref": "#/$defs/condition"},
+                "proposalUri": {"type": "string", "pattern": "^uri://"},
+                "promotion": {"type": "array", "items": {"enum": ["candidate", "shadow", "canary", "active", "deprecated", "superseded"]}, "minItems": 2},
+                "requiresHumanRoles": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+              },
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "intent": {
+      "type": "object",
+      "required": ["id", "statement", "ownerRef", "lifecycle", "priority", "violationWhen", "evidence", "relations", "expectedEffects", "adaptation", "repairPolicy"],
+      "properties": {
+        "id": {"type": "string"},
+        "statement": {"type": "string"},
+        "ownerRef": {"type": "string"},
+        "lifecycle": {"enum": ["candidate", "shadow", "canary", "active", "deprecated", "superseded"]},
+        "priority": {"$ref": "#/$defs/priority"},
+        "violationWhen": {"$ref": "#/$defs/condition"},
+        "evidence": {"$ref": "#/$defs/evidenceRequirement"},
+        "relations": {"$ref": "#/$defs/relations"},
+        "expectedEffects": {"type": "object", "additionalProperties": {"enum": ["increase", "decrease", "hold"]}},
+        "adaptation": {"$ref": "#/$defs/adaptation"},
+        "repairPolicy": {"$ref": "#/$defs/repairPolicy"}
+      },
+      "additionalProperties": false
+    },
+    "trigger": {
+      "type": "object",
+      "required": ["id", "type", "emit"],
+      "properties": {
+        "id": {"type": "string"},
+        "type": {"enum": ["fileWatch", "timer", "git", "event"]},
+        "debounceSeconds": {"type": "integer", "minimum": 0},
+        "everySeconds": {"type": "integer", "minimum": 1},
+        "jitterSeconds": {"type": "integer", "minimum": 0},
+        "selectors": {"type": "array", "items": {"type": "string"}},
+        "exclude": {"type": "array", "items": {"type": "string"}},
+        "events": {"type": "array", "items": {"type": "string"}},
+        "emit": {"type": "array", "items": {"type": "string", "pattern": "^uri://"}, "minItems": 1}
+      },
+      "additionalProperties": false
+    },
+    "changeControl": {
+      "type": "object",
+      "required": ["intentRevisioning", "standardRepair", "oscillationGuard"],
+      "properties": {
+        "intentRevisioning": {
+          "type": "object",
+          "required": ["appendOnlyReceipts", "hashBound", "invalidateDerivedArtifactsOnChange", "staleRevisionOutcome"],
+          "properties": {
+            "appendOnlyReceipts": {"type": "boolean"},
+            "hashBound": {"type": "boolean"},
+            "invalidateDerivedArtifactsOnChange": {"type": "boolean"},
+            "staleRevisionOutcome": {"enum": ["BLOCK", "REVIEW_REQUIRED"]}
+          },
+          "additionalProperties": false
+        },
+        "standardRepair": {
+          "type": "object",
+          "required": ["autoPatchStandard", "autoActivateStandard", "lifecycle", "minimumShadowRuns", "minimumCanaryRuns", "maximumFalseBlockRate", "requireIndependentValidator", "requireHumanPromotion", "rollbackOnMetricRegression"],
+          "properties": {
+            "autoPatchStandard": {"type": "boolean"},
+            "autoActivateStandard": {"type": "boolean"},
+            "lifecycle": {"type": "array", "items": {"enum": ["candidate", "shadow", "canary", "active", "deprecated", "superseded"]}},
+            "minimumShadowRuns": {"type": "integer", "minimum": 1},
+            "minimumCanaryRuns": {"type": "integer", "minimum": 1},
+            "maximumFalseBlockRate": {"type": "number", "minimum": 0, "maximum": 1},
+            "requireIndependentValidator": {"type": "boolean"},
+            "requireHumanPromotion": {"type": "boolean"},
+            "rollbackOnMetricRegression": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        "oscillationGuard": {
+          "type": "object",
+          "required": ["maximumPriorityChangesPerHour", "freezeSecondsAfterLimit", "outcome"],
+          "properties": {
+            "maximumPriorityChangesPerHour": {"type": "integer", "minimum": 1},
+            "freezeSecondsAfterLimit": {"type": "integer", "minimum": 1},
+            "outcome": {"enum": ["REVIEW_REQUIRED", "BLOCK"]}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

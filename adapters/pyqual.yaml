@@ -1,0 +1,42 @@
+schema: semcod.pyqual/v1
+profile: evolutionary-standardization
+
+gates:
+  - id: priority-policy-schema
+    phase: preflight
+    command:
+      argv:
+        - python3
+        - .wellmanifest/tools/standardctl.py
+        - validate
+        - --policy
+        - .wellmanifest/priority-evolution.dsl.yaml
+        - --schema
+        - .wellmanifest/schemas/priority-evolution.schema.json
+    failClosed: true
+
+  - id: priority-policy-evaluate
+    phase: pre-commit
+    command:
+      argv:
+        - python3
+        - .wellmanifest/tools/standardctl.py
+        - evaluate
+        - --policy
+        - .wellmanifest/priority-evolution.dsl.yaml
+        - --state
+        - .wellmanifest/state/current.json
+        - --out
+        - .wellmanifest/receipts/priority-decision.json
+    acceptedExitCodes: [0]
+    failClosed: true
+    machineResultPath: .wellmanifest/receipts/priority-decision.json
+
+  - id: exact-head-independent-validation
+    phase: pre-receive
+    uri: uri://validator-agent/repository/validate
+    requires:
+      - exactRevision
+      - independentPrincipal
+      - negativeBehaviorTest
+      - receiptDigest

@@ -1,0 +1,558 @@
+{
+  "schema": "wellmanifest.priority-decision/v1alpha1",
+  "generatedAt": "2026-08-19T10:00:00Z",
+  "policyId": "engineering-standardization",
+  "policyVersion": "0.2.0",
+  "policyLifecycle": "candidate",
+  "policyDigest": "sha256:bd24f3a7144e811a0b702e8ed5a7e69bed268128550c36e7d38e10202465bb11",
+  "stateRevision": "sha256:example-head-20260819",
+  "stateDigest": "sha256:4d9aad53164609d3df6f500cbcacc613b9a90d21b06330af1bba3994448ef7f2",
+  "finalOutcome": "BLOCK",
+  "executionGate": {
+    "dispatchAllowed": false,
+    "parallelDispatchAllowed": false,
+    "reason": "gate-closed:block,policy-lifecycle:candidate"
+  },
+  "invariants": [
+    {
+      "id": "INV-ONE-HOME",
+      "status": "PASS",
+      "outcome": "PASS"
+    },
+    {
+      "id": "INV-FRESH-EVIDENCE",
+      "status": "VIOLATED",
+      "outcome": "BLOCK",
+      "reason": "Stary lub obcy revision receipt nie potwierdza bieżącego PASS.",
+      "remediationUri": "uri://twin/receipts/refresh"
+    },
+    {
+      "id": "INV-NO-SELF-PROMOTION",
+      "status": "PASS",
+      "outcome": "PASS"
+    },
+    {
+      "id": "INV-NO-CLAIM-AS-PASS",
+      "status": "VIOLATED",
+      "outcome": "BLOCK",
+      "reason": "Nazwa funkcji, pliku lub twierdzenie LLM nie stanowi dowodu działania.",
+      "remediationUri": "uri://pyqual/tests/require-behavioral-negative-test"
+    }
+  ],
+  "oscillationGuard": {
+    "status": "PASS",
+    "outcome": "PASS",
+    "priorityChangesLastHour": 3,
+    "limit": 6,
+    "freezeSeconds": 0
+  },
+  "metricFreshness": {
+    "governance.duplicate_home_count": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 30.0,
+      "sourceClass": "git_ast",
+      "sourceRank": 80,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0
+    },
+    "evidence.stale_or_mismatched_receipts": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 15.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 1
+    },
+    "governance.separation_of_duties_violations": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 20.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0
+    },
+    "evidence.shape_only_pass_count": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 10.0,
+      "sourceClass": "test_receipt",
+      "sourceRank": 90,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 2
+    },
+    "standards.compliance_coverage": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 90.0,
+      "sourceClass": "test_receipt",
+      "sourceRank": 90,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.91
+    },
+    "standards.drift_open_count": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 40.0,
+      "sourceClass": "git_ast",
+      "sourceRank": 80,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 7
+    },
+    "standards.governance_truth_false_block_rate": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 1800.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.0
+    },
+    "standards.governance_truth_false_block_sample_size": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 1800.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 42
+    },
+    "standards.validation_behavior_false_block_rate": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 1800.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.04
+    },
+    "standards.validation_behavior_false_block_sample_size": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 1800.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 42
+    },
+    "standards.manifest_conformance_false_block_rate": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 1800.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.04
+    },
+    "standards.manifest_conformance_false_block_sample_size": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 1800.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 42
+    },
+    "standards.conflict_density": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 120.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.03
+    },
+    "repair.mean_time_to_repair_minutes": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 900.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 72
+    },
+    "repair.rollback_rate": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 1800.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.06
+    },
+    "agent.out_of_scope_action_rate": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 300.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.01
+    },
+    "agent.rule_citation_coverage": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 300.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.83
+    }
+  },
+  "decisions": [
+    {
+      "intentId": "STD-GOVERNANCE-TRUTH",
+      "priorityClass": "constitutional",
+      "classRank": 0,
+      "importance": 1000.0,
+      "dispatchUrgency": 1000.0,
+      "violated": true,
+      "evidenceStatus": "FRESH",
+      "outcome": "REPAIR_IMPLEMENTATION",
+      "reasons": [
+        "governance-incident-boost: Niezgodność prawdy lub własności jest blokująca."
+      ],
+      "actions": [
+        {
+          "type": "PLAN",
+          "uri": "uri://todo2code/plan/bounded-remediation"
+        },
+        {
+          "type": "EXECUTE",
+          "uri": "uri://repair-agent/execute/hash-bound",
+          "maxAttempts": 2
+        },
+        {
+          "type": "VALIDATE",
+          "uri": "uri://validator-agent/validate/independent"
+        }
+      ],
+      "expectedEffects": {
+        "governance.duplicate_home_count": "decrease",
+        "evidence.stale_or_mismatched_receipts": "decrease",
+        "evidence.shape_only_pass_count": "decrease"
+      },
+      "relations": {
+        "reinforces": [
+          "STD-VALIDATION-BEHAVIOR"
+        ],
+        "enables": [
+          "STD-MANIFEST-CONFORMANCE",
+          "DELIVERY-EVOLUTION"
+        ],
+        "requires": [],
+        "excludes": []
+      }
+    },
+    {
+      "intentId": "STD-VALIDATION-BEHAVIOR",
+      "priorityClass": "correctness",
+      "classRank": 20,
+      "importance": 950.0,
+      "dispatchUrgency": 820.0,
+      "violated": true,
+      "evidenceStatus": "FRESH",
+      "outcome": "PROPOSE_STANDARD_CHANGE",
+      "reasons": [
+        "Metryki wskazują możliwy błąd lub nadmierną restrykcyjność standardu."
+      ],
+      "actions": [
+        {
+          "type": "PROPOSE_STANDARD_CHANGE",
+          "uri": "uri://wellmanifest/standard-change/propose",
+          "lifecycle": [
+            "candidate",
+            "shadow",
+            "canary",
+            "active"
+          ],
+          "requiresHumanRoles": [
+            "standard-owner",
+            "independent-validator"
+          ]
+        }
+      ],
+      "expectedEffects": {
+        "standards.compliance_coverage": "increase",
+        "evidence.shape_only_pass_count": "decrease",
+        "repair.rollback_rate": "decrease"
+      },
+      "relations": {
+        "reinforces": [
+          "STD-GOVERNANCE-TRUTH",
+          "STD-MANIFEST-CONFORMANCE"
+        ],
+        "enables": [
+          "DELIVERY-EVOLUTION"
+        ],
+        "requires": [
+          "STD-GOVERNANCE-TRUTH"
+        ],
+        "excludes": []
+      }
+    },
+    {
+      "intentId": "STD-MANIFEST-CONFORMANCE",
+      "priorityClass": "standardization",
+      "classRank": 30,
+      "importance": 850.0,
+      "dispatchUrgency": 680.0,
+      "violated": true,
+      "evidenceStatus": "FRESH",
+      "outcome": "PROPOSE_STANDARD_CHANGE",
+      "reasons": [
+        "drift-boost: Drift jest rozlany po wielu projektach.",
+        "Metryki wskazują możliwy błąd lub nadmierną restrykcyjność standardu."
+      ],
+      "actions": [
+        {
+          "type": "PROPOSE_STANDARD_CHANGE",
+          "uri": "uri://wellmanifest/standard-change/propose",
+          "lifecycle": [
+            "candidate",
+            "shadow",
+            "canary",
+            "active"
+          ],
+          "requiresHumanRoles": [
+            "standard-owner",
+            "independent-validator"
+          ]
+        }
+      ],
+      "expectedEffects": {
+        "standards.drift_open_count": "decrease",
+        "standards.conflict_density": "decrease",
+        "standards.compliance_coverage": "increase"
+      },
+      "relations": {
+        "reinforces": [
+          "STD-VALIDATION-BEHAVIOR"
+        ],
+        "enables": [
+          "DELIVERY-EVOLUTION"
+        ],
+        "requires": [
+          "STD-GOVERNANCE-TRUTH",
+          "STD-VALIDATION-BEHAVIOR"
+        ],
+        "excludes": []
+      }
+    },
+    {
+      "intentId": "DELIVERY-EVOLUTION",
+      "priorityClass": "delivery",
+      "classRank": 40,
+      "importance": 700.0,
+      "dispatchUrgency": 0.0,
+      "violated": true,
+      "evidenceStatus": "FRESH",
+      "outcome": "REPAIR_IMPLEMENTATION",
+      "reasons": [
+        "blocked-by-higher-class: Dostawa nie może wyprzeć integralności ani poprawności."
+      ],
+      "actions": [
+        {
+          "type": "PLAN",
+          "uri": "uri://todo2code/plan/bounded-feature"
+        },
+        {
+          "type": "EXECUTE",
+          "uri": "uri://repair-agent/execute/hash-bound",
+          "maxAttempts": 2
+        },
+        {
+          "type": "VALIDATE",
+          "uri": "uri://validator-agent/validate/independent"
+        }
+      ],
+      "expectedEffects": {
+        "delivery.user_value": "increase",
+        "repair.rollback_rate": "hold"
+      },
+      "relations": {
+        "reinforces": [],
+        "enables": [],
+        "requires": [
+          "STD-GOVERNANCE-TRUTH",
+          "STD-VALIDATION-BEHAVIOR",
+          "STD-MANIFEST-CONFORMANCE"
+        ],
+        "excludes": []
+      }
+    }
+  ],
+  "complementarity": {
+    "score": 0.8125,
+    "threshold": 0.75,
+    "hardConflict": false,
+    "parallelDispatchAllowed": false,
+    "automaticSequentialDispatchAllowed": true,
+    "automaticDispatchAllowed": true,
+    "sequentialOrder": [
+      "STD-GOVERNANCE-TRUTH",
+      "STD-VALIDATION-BEHAVIOR",
+      "STD-MANIFEST-CONFORMANCE",
+      "DELIVERY-EVOLUTION"
+    ],
+    "budgetAssessment": {
+      "status": "PASS",
+      "concurrentRepairs": 2,
+      "standardChangeProposals": 2,
+      "estimates": {
+        "STD-GOVERNANCE-TRUTH": {
+          "files": 3,
+          "changedLines": 90,
+          "agentTurns": 5
+        },
+        "DELIVERY-EVOLUTION": {
+          "files": 6,
+          "changedLines": 220,
+          "agentTurns": 8
+        }
+      },
+      "standardChangeProposalsToday": 0
+    },
+    "findings": [
+      {
+        "type": "SEQUENCING_REQUIRED",
+        "before": "STD-GOVERNANCE-TRUTH",
+        "after": "STD-VALIDATION-BEHAVIOR",
+        "reason": "The required intent also has pending remediation."
+      },
+      {
+        "type": "SEQUENCING_REQUIRED",
+        "before": "STD-GOVERNANCE-TRUTH",
+        "after": "STD-MANIFEST-CONFORMANCE",
+        "reason": "The required intent also has pending remediation."
+      },
+      {
+        "type": "SEQUENCING_REQUIRED",
+        "before": "STD-VALIDATION-BEHAVIOR",
+        "after": "STD-MANIFEST-CONFORMANCE",
+        "reason": "The required intent also has pending remediation."
+      },
+      {
+        "type": "SEQUENCING_REQUIRED",
+        "before": "STD-GOVERNANCE-TRUTH",
+        "after": "DELIVERY-EVOLUTION",
+        "reason": "The required intent also has pending remediation."
+      },
+      {
+        "type": "SEQUENCING_REQUIRED",
+        "before": "STD-VALIDATION-BEHAVIOR",
+        "after": "DELIVERY-EVOLUTION",
+        "reason": "The required intent also has pending remediation."
+      },
+      {
+        "type": "SEQUENCING_REQUIRED",
+        "before": "STD-MANIFEST-CONFORMANCE",
+        "after": "DELIVERY-EVOLUTION",
+        "reason": "The required intent also has pending remediation."
+      }
+    ]
+  },
+  "planDelta": {
+    "mode": "propose-only",
+    "actions": [
+      {
+        "intentId": "STD-GOVERNANCE-TRUTH",
+        "priorityClass": "constitutional",
+        "dispatchUrgency": 1000.0,
+        "type": "PLAN",
+        "uri": "uri://todo2code/plan/bounded-remediation"
+      },
+      {
+        "intentId": "STD-GOVERNANCE-TRUTH",
+        "priorityClass": "constitutional",
+        "dispatchUrgency": 1000.0,
+        "type": "EXECUTE",
+        "uri": "uri://repair-agent/execute/hash-bound",
+        "maxAttempts": 2
+      },
+      {
+        "intentId": "STD-GOVERNANCE-TRUTH",
+        "priorityClass": "constitutional",
+        "dispatchUrgency": 1000.0,
+        "type": "VALIDATE",
+        "uri": "uri://validator-agent/validate/independent"
+      },
+      {
+        "intentId": "STD-VALIDATION-BEHAVIOR",
+        "priorityClass": "correctness",
+        "dispatchUrgency": 820.0,
+        "type": "PROPOSE_STANDARD_CHANGE",
+        "uri": "uri://wellmanifest/standard-change/propose",
+        "lifecycle": [
+          "candidate",
+          "shadow",
+          "canary",
+          "active"
+        ],
+        "requiresHumanRoles": [
+          "standard-owner",
+          "independent-validator"
+        ]
+      },
+      {
+        "intentId": "STD-MANIFEST-CONFORMANCE",
+        "priorityClass": "standardization",
+        "dispatchUrgency": 680.0,
+        "type": "PROPOSE_STANDARD_CHANGE",
+        "uri": "uri://wellmanifest/standard-change/propose",
+        "lifecycle": [
+          "candidate",
+          "shadow",
+          "canary",
+          "active"
+        ],
+        "requiresHumanRoles": [
+          "standard-owner",
+          "independent-validator"
+        ]
+      },
+      {
+        "intentId": "DELIVERY-EVOLUTION",
+        "priorityClass": "delivery",
+        "dispatchUrgency": 0.0,
+        "type": "PLAN",
+        "uri": "uri://todo2code/plan/bounded-feature"
+      },
+      {
+        "intentId": "DELIVERY-EVOLUTION",
+        "priorityClass": "delivery",
+        "dispatchUrgency": 0.0,
+        "type": "EXECUTE",
+        "uri": "uri://repair-agent/execute/hash-bound",
+        "maxAttempts": 2
+      },
+      {
+        "intentId": "DELIVERY-EVOLUTION",
+        "priorityClass": "delivery",
+        "dispatchUrgency": 0.0,
+        "type": "VALIDATE",
+        "uri": "uri://validator-agent/validate/independent"
+      }
+    ]
+  },
+  "receiptDigest": "sha256:3b54f400735af8d45ad0dee1aa46de0c2977885ffc3cc9a49c75042de323981d"
+}

@@ -1,0 +1,13 @@
+[Unit]
+Description=Evaluate evolutionary priority policy
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/workspace
+ExecStart=/usr/bin/python3 %h/workspace/.wellmanifest/tools/standardctl.py evaluate --policy %h/workspace/.wellmanifest/priority-evolution.dsl.yaml --state %h/workspace/.wellmanifest/state/current.json --out %h/workspace/.wellmanifest/receipts/priority-decision.json
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/workspace/.wellmanifest/receipts

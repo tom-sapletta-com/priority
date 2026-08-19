@@ -1,0 +1,18 @@
+[Unit]
+Description=Watch policy-relevant files and evaluate priority policy
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/workspace
+ExecStart=/usr/bin/python3 %h/workspace/.wellmanifest/tools/standardctl.py watch --policy %h/workspace/.wellmanifest/priority-evolution.dsl.yaml --state %h/workspace/.wellmanifest/state/current.json --out %h/workspace/.wellmanifest/receipts/priority-decision.json --root %h/workspace --poll-seconds 2 --full-scan-seconds 300
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/workspace/.wellmanifest/receipts
+
+[Install]
+WantedBy=default.target

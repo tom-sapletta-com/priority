@@ -1,0 +1,164 @@
+{
+  "schema": "wellmanifest.priority-state/v1",
+  "revision": "sha256:example-head-20260819",
+  "observedAt": "2026-08-19T10:00:00Z",
+  "facts": {
+    "work": {
+      "delivery_needed": false
+    },
+    "repository": {
+      "id": "subactor/example",
+      "changed_paths": [
+        "project.manifest.yml",
+        "src/service.py"
+      ]
+    },
+    "control": {
+      "priorityChangesLastHour": 3,
+      "standardChangeProposalsToday": 0
+    },
+    "planEstimates": {
+      "STD-GOVERNANCE-TRUTH": {
+        "files": 3,
+        "changedLines": 90,
+        "agentTurns": 5
+      },
+      "STD-VALIDATION-BEHAVIOR": {
+        "files": 4,
+        "changedLines": 160,
+        "agentTurns": 7
+      },
+      "STD-MANIFEST-CONFORMANCE": {
+        "files": 8,
+        "changedLines": 240,
+        "agentTurns": 8
+      },
+      "DELIVERY-EVOLUTION": {
+        "files": 6,
+        "changedLines": 220,
+        "agentTurns": 8
+      }
+    }
+  },
+  "metrics": {
+    "governance.duplicate_home_count": {
+      "value": 0,
+      "observedAt": "2026-08-19T09:59:30Z",
+      "sourceClass": "git_ast",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "evidence.stale_or_mismatched_receipts": {
+      "value": 0,
+      "observedAt": "2026-08-19T09:59:45Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "governance.separation_of_duties_violations": {
+      "value": 0,
+      "observedAt": "2026-08-19T09:59:40Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "evidence.shape_only_pass_count": {
+      "value": 0,
+      "observedAt": "2026-08-19T09:59:50Z",
+      "sourceClass": "test_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "standards.compliance_coverage": {
+      "value": 1.0,
+      "observedAt": "2026-08-19T09:58:30Z",
+      "sourceClass": "test_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "standards.drift_open_count": {
+      "value": 0,
+      "observedAt": "2026-08-19T09:59:20Z",
+      "sourceClass": "git_ast",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "standards.conflict_density": {
+      "value": 0.0,
+      "observedAt": "2026-08-19T09:58:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "repair.mean_time_to_repair_minutes": {
+      "value": 72,
+      "observedAt": "2026-08-19T09:45:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "repair.rollback_rate": {
+      "value": 0.06,
+      "observedAt": "2026-08-19T09:30:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "agent.out_of_scope_action_rate": {
+      "value": 0.0,
+      "observedAt": "2026-08-19T09:55:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "agent.rule_citation_coverage": {
+      "value": 1.0,
+      "observedAt": "2026-08-19T09:55:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "standards.governance_truth_false_block_rate": {
+      "value": 0.0,
+      "observedAt": "2026-08-19T09:30:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "standards.governance_truth_false_block_sample_size": {
+      "value": 42,
+      "observedAt": "2026-08-19T09:30:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "standards.validation_behavior_false_block_rate": {
+      "value": 0.0,
+      "observedAt": "2026-08-19T09:30:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "standards.validation_behavior_false_block_sample_size": {
+      "value": 42,
+      "observedAt": "2026-08-19T09:30:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "standards.manifest_conformance_false_block_rate": {
+      "value": 0.0,
+      "observedAt": "2026-08-19T09:30:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    },
+    "standards.manifest_conformance_false_block_sample_size": {
+      "value": 42,
+      "observedAt": "2026-08-19T09:30:00Z",
+      "sourceClass": "runtime_receipt",
+      "scope": "ecosystem",
+      "revision": "sha256:example-head-20260819"
+    }
+  }
+}
