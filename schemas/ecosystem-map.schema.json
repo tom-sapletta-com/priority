@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://subactor.io/schemas/ecosystem-map.schema.json",
+  "title": "Subactor Ecosystem Map",
+  "type": "object",
+  "required": ["schema", "generatedAt", "registryId", "registryVersion", "status", "metrics", "homeOwners", "projects", "findings", "ecosystemMapDigest"],
+  "properties": {
+    "schema": {"const": "subactor.ecosystem-map/v1"},
+    "generatedAt": {"type": "string", "format": "date-time"},
+    "registryId": {"type": "string"},
+    "registryVersion": {"type": "string"},
+    "registryLifecycle": {"type": "string"},
+    "registryHome": {"type": "object"},
+    "registryDigest": {"type": "string", "pattern": "^sha256:"},
+    "status": {"enum": ["PASS", "REVIEW_REQUIRED", "BLOCK"]},
+    "sources": {"type": "object"},
+    "metrics": {
+      "type": "object",
+      "required": ["projectCount", "verifiedProjectCount", "executionEligibleProjectCount", "duplicateHomeCount", "manifestCoverage"],
+      "properties": {
+        "projectCount": {"type": "integer", "minimum": 0},
+        "verifiedProjectCount": {"type": "integer", "minimum": 0},
+        "documentedOnlyProjectCount": {"type": "integer", "minimum": 0},
+        "executionEligibleProjectCount": {"type": "integer", "minimum": 0},
+        "duplicateHomeCount": {"type": "integer", "minimum": 0},
+        "manifestCoverage": {"type": ["number", "null"], "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": true
+    },
+    "homeOwners": {"type": "object", "additionalProperties": {"type": "array", "items": {"type": "string"}}},
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "organization", "repository", "lifecycle", "required", "roles", "homeFor", "capabilities", "interfaces", "evidence"],
+        "properties": {
+          "id": {"type": "string"},
+          "organization": {"type": "string"},
+          "repository": {"type": "string"},
+          "lifecycle": {"type": "string"},
+          "required": {"type": "boolean"},
+          "roles": {"type": "array", "items": {"type": "string"}},
+          "homeFor": {"type": "array", "items": {"type": "string"}},
+          "adopts": {"type": "array", "items": {"type": "string"}},
+          "capabilities": {"type": "array", "items": {"type": "object"}},
+          "interfaces": {"type": "object"},
+          "evidence": {
+            "type": "object",
+            "required": ["status", "sourceClass", "sourceRank", "coverage", "executionEligible", "manifest"],
+            "properties": {
+              "status": {"enum": ["VERIFIED", "PARTIAL", "DOCUMENTED", "MISSING_MAP", "MISSING", "UNTRUSTED"]},
+              "sourceClass": {"type": "string"},
+              "sourceRank": {"type": "integer"},
+              "coverage": {"type": "number", "minimum": 0, "maximum": 1},
+              "executionEligible": {"type": "boolean"},
+              "manifest": {"type": "object"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "findings": {"type": "array", "items": {"type": "object"}},
+    "ecosystemMapDigest": {"type": "string", "pattern": "^sha256:"}
+  },
+  "additionalProperties": false
+}

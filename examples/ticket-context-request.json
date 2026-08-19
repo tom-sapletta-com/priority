@@ -1,0 +1,75 @@
+{
+  "schema": "subactor.ticket-context-request/v1",
+  "ticketId": "ticket-001",
+  "intent": {
+    "summary": "Kontynuuj rozwój Evolutionary Priority DSL na podstawie map projektów; użyj istniejącego todo2code do planowania, diagit do mapy i routingu, pyqual do bramki, zachowaj subactor/offer jako jedyne HOME wartości oferty i wellmanifest jako niezależny standard.",
+    "taskKind": "code-change",
+    "objectives": [
+      "Zbuduj deterministyczną mapę projektów użyteczną przy tworzeniu ticketu.",
+      "Odrzuć pusty wynik planera jako T2C_PLAN_GAP.",
+      "Wygeneruj politykę agentów i receipty związane z dokładnymi digestami."
+    ],
+    "constraints": [
+      "Nie twórz równoległego super-agenta ani drugiego HOME.",
+      "Dokumentacja bez mapy kodu może być kontekstem, ale nie autoryzuje wykonania.",
+      "Implementer i validator muszą być rozdzieleni."
+    ],
+    "concerns": [
+      "engineering-standardization-policy-instance",
+      "evolutionary-intent-policy-language",
+      "organization-project-registry",
+      "commercial-offer-values",
+      "commercial-offer-standard"
+    ],
+    "tags": [
+      "priority",
+      "standardization",
+      "policy",
+      "intent",
+      "plan",
+      "planning",
+      "todo2code",
+      "fleet",
+      "map",
+      "context",
+      "ticket",
+      "quality",
+      "gate",
+      "offer",
+      "digest",
+      "manifest",
+      "repair",
+      "independent validator"
+    ]
+  },
+  "requiredRoles": [
+    "policy-instance-owner",
+    "policy-language-standard-owner",
+    "organization-registry",
+    "planner",
+    "fleet-observer",
+    "quality-gate",
+    "server-git-gateway",
+    "implementation-executor",
+    "independent-validator",
+    "commercial-offer-home",
+    "offer-standard-owner"
+  ],
+  "preferredProjects": [
+    "subactor/platform",
+    "autogrammar/todo2code",
+    "subactor/diagit",
+    "semcod/pyqual",
+    "subactor/offer",
+    "wellmanifest/offer"
+  ],
+  "excludedProjects": [],
+  "acceptanceCriteria": [
+    "Mapa ekosystemu wskazuje projekt, rolę, HOME, capability, URI i klasę dowodu.",
+    "Router wybiera minimalny kontekst i fail-closed raportuje role bez wykonawczo zweryfikowanego kontraktu.",
+    "Zero planów przy otwartych kryteriach daje BLOCK z kodem T2C_PLAN_GAP.",
+    "Każdy zaakceptowany plan ma dokładne ścieżki, kryterium negatywne i granicę walidacji.",
+    "subactor/offer pozostaje jedynym HOME wartości cenowych; wellmanifest/offer nie zawiera kwot."
+  ],
+  "maxProjects": 12
+}

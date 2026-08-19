@@ -1,0 +1,50 @@
+{
+  "status": "succeeded",
+  "recordCount": 2,
+  "planIds": [
+    "CCP-ECOSYSTEM-INDEX",
+    "CCP-PLAN-GATE"
+  ],
+  "plans": [
+    {
+      "id": "CCP-ECOSYSTEM-INDEX",
+      "paths": [
+        "adapters/toon_index.py",
+        "adapters/ecosystemctl.py",
+        "registry/ecosystem-tools.yaml",
+        "schemas/ecosystem-tool-registry.schema.json"
+      ],
+      "acceptance": {
+        "positive": [
+          "Indeks weryfikuje wymagane moduły i symbole z przypiętych map TOON oraz emituje digest."
+        ],
+        "negative": [
+          "Projekt oparty wyłącznie na dokumentacji nie otrzymuje executionEligible=true."
+        ]
+      },
+      "validation": [
+        "python -m unittest discover -s tests -v",
+        "uri://validator-agent/validate/independent"
+      ],
+      "rollback": "Revert adapter, registry and schema in one change."
+    },
+    {
+      "id": "CCP-PLAN-GATE",
+      "paths": [
+        "adapters/ecosystemctl.py",
+        "schemas/planner-result-envelope.schema.json",
+        "tests/test_ecosystemctl.py"
+      ],
+      "acceptanceCriteria": [
+        "Niepusty plan zawiera ścieżki, kryteria i walidację."
+      ],
+      "negativeTests": [
+        "Pusty wynik przy otwartych kryteriach jest odrzucany z T2C_PLAN_GAP."
+      ],
+      "validationCommands": [
+        "python -m unittest tests.test_ecosystemctl -v"
+      ],
+      "rollback": "Revert planner-result gate and its tests."
+    }
+  ]
+}

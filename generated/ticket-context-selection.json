@@ -1,0 +1,430 @@
+{
+  "schema": "subactor.ticket-context-selection/v1",
+  "generatedAt": "2026-08-19T10:00:00Z",
+  "ticketId": "ticket-001",
+  "requestDigest": "sha256:abcb28414f82643fcaefe9c4ea93a0ab9c9f53366f5dbef6dfaa6b2d84e091ee",
+  "ecosystemMapDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055",
+  "status": "REVIEW_REQUIRED",
+  "tokens": [
+    "agent",
+    "agenta",
+    "agentow",
+    "autoryzuje",
+    "bramki",
+    "byc",
+    "change",
+    "code",
+    "code-change",
+    "commercial",
+    "commercial-offer-standard",
+    "commercial-offer-value",
+    "commercial-offer-values",
+    "context",
+    "deterministyczna",
+    "diagit",
+    "digest",
+    "digestami",
+    "dokladnymi",
+    "dokumentacja",
+    "drugiego",
+    "dsl",
+    "engineering",
+    "engineering-standardization-policy-instance",
+    "evolutionary",
+    "evolutionary-intent-policy-language",
+    "fleet",
+    "gap",
+    "gate",
+    "home",
+    "implementer",
+    "independent",
+    "instance",
+    "intent",
+    "istniejacego",
+    "jedyne",
+    "kodu",
+    "kontekstem",
+    "kontynuuj",
+    "language",
+    "manifest",
+    "map",
+    "mape",
+    "mapy",
+    "moze",
+    "musza",
+    "niezalezny",
+    "odrzuc",
+    "oferty",
+    "offer",
+    "organization",
+    "organization-project-registry",
+    "plan",
+    "planera",
+    "planning",
+    "planowania",
+    "podstawie",
+    "policy",
+    "polityke",
+    "priority",
+    "project",
+    "projektow",
+    "pusty",
+    "pyqual",
+    "quality",
+    "receipty",
+    "registry",
+    "repair",
+    "routingu",
+    "rownoleglego",
+    "rozdzieleni",
+    "rozwoj",
+    "standard",
+    "standardization",
+    "subactor",
+    "super",
+    "super-agenta",
+    "t2c",
+    "ticket",
+    "ticketu",
+    "todo2code",
+    "tworz",
+    "tworzeniu",
+    "uzyj",
+    "uzyteczna",
+    "validator",
+    "value",
+    "values",
+    "wartosci",
+    "wellmanifest",
+    "wygeneruj",
+    "wykonania",
+    "wynik",
+    "zachowaj",
+    "zbuduj",
+    "zwiazane"
+  ],
+  "roleAssignment": {
+    "policy-instance-owner": "subactor/platform",
+    "policy-language-standard-owner": "wellmanifest/policy-dsl",
+    "organization-registry": "subactor/registry",
+    "planner": "autogrammar/todo2code",
+    "fleet-observer": "subactor/diagit",
+    "quality-gate": "semcod/pyqual",
+    "server-git-gateway": "subactor/onedev-agent",
+    "implementation-executor": "subactor/repair-agent",
+    "independent-validator": "subactor/validator-agent",
+    "commercial-offer-home": "subactor/offer",
+    "offer-standard-owner": "wellmanifest/offer"
+  },
+  "selectedProjects": [
+    {
+      "id": "subactor/platform",
+      "score": 268.0,
+      "reasons": [
+        "required roles: policy-instance-owner",
+        "HOME for: engineering-standardization-policy-instance",
+        "organizational-policy-instance: evolutionary, policy, priority, standardization",
+        "ticket-allocation: project, ticket",
+        "preferred by ticket"
+      ],
+      "roles": [
+        "policy-instance-owner",
+        "ticket-host",
+        "orchestration-control"
+      ],
+      "homeFor": [
+        "engineering-standardization-policy-instance"
+      ],
+      "interfaces": {
+        "reconcile": "uri://subactor/controller/reconcile",
+        "ticketCreate": "uri://subactor/platform/ticket/create"
+      },
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": true,
+      "manifestStatus": "DRIFT"
+    },
+    {
+      "id": "subactor/offer",
+      "score": 256.0,
+      "reasons": [
+        "required roles: commercial-offer-home",
+        "HOME for: commercial-offer-values",
+        "offer-catalog-ssot: offer, plan",
+        "facade-digest-pinning: digest",
+        "preferred by ticket"
+      ],
+      "roles": [
+        "commercial-offer-home",
+        "business-truth-home"
+      ],
+      "homeFor": [
+        "commercial-offer-values"
+      ],
+      "interfaces": {
+        "validate": "uri://subactor/offer/validate",
+        "pinCheck": "uri://subactor/offer/pin-check"
+      },
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": true,
+      "manifestStatus": "DRIFT"
+    },
+    {
+      "id": "wellmanifest/offer",
+      "score": 230.0,
+      "reasons": [
+        "required roles: offer-standard-owner",
+        "HOME for: commercial-offer-standard",
+        "offer-standard: offer, standard",
+        "preferred by ticket"
+      ],
+      "roles": [
+        "offer-standard-owner",
+        "abstract-standard-owner"
+      ],
+      "homeFor": [
+        "commercial-offer-standard"
+      ],
+      "interfaces": {
+        "validateAdoption": "uri://wellmanifest/offer/adoption/validate"
+      },
+      "evidenceStatus": "DOCUMENTED",
+      "sourceRank": 40,
+      "executionEligible": false,
+      "manifestStatus": "NOT_MEASURED"
+    },
+    {
+      "id": "subactor/registry",
+      "score": 227.0,
+      "reasons": [
+        "required roles: organization-registry",
+        "HOME for: organization-project-registry",
+        "registry-snapshot: map, project, registry",
+        "assignment-validation: home"
+      ],
+      "roles": [
+        "organization-registry",
+        "context-source"
+      ],
+      "homeFor": [
+        "organization-project-registry"
+      ],
+      "interfaces": {
+        "snapshot": "uri://subactor/registry/snapshot"
+      },
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": true,
+      "manifestStatus": "DRIFT"
+    },
+    {
+      "id": "subactor/diagit",
+      "score": 218.0,
+      "reasons": [
+        "required roles: fleet-observer",
+        "fleet-audit: fleet, map",
+        "project-context-routing: context, project, ticket",
+        "repair-plan-from-findings: plan, repair",
+        "preferred by ticket"
+      ],
+      "roles": [
+        "fleet-observer",
+        "context-router",
+        "repair-plan-source"
+      ],
+      "homeFor": [],
+      "interfaces": {
+        "scan": "uri://diagit/fleet/scan",
+        "incrementalScan": "uri://diagit/fleet/incremental-scan",
+        "selectProjects": "uri://diagit/map/select-affected-projects",
+        "repairPlan": "uri://diagit/repair-plan/from-findings"
+      },
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": true,
+      "manifestStatus": "DRIFT"
+    },
+    {
+      "id": "wellmanifest/policy-dsl",
+      "score": 210.0,
+      "reasons": [
+        "required roles: policy-language-standard-owner",
+        "HOME for: evolutionary-intent-policy-language",
+        "priority-policy-language: dsl, intent, policy, priority, standard"
+      ],
+      "roles": [
+        "abstract-standard-owner",
+        "standard-owner",
+        "policy-language-standard-owner"
+      ],
+      "homeFor": [
+        "evolutionary-intent-policy-language"
+      ],
+      "interfaces": {
+        "standardChangeProposal": "uri://wellmanifest/standard-change/propose"
+      },
+      "evidenceStatus": "DOCUMENTED",
+      "sourceRank": 40,
+      "executionEligible": false,
+      "manifestStatus": "NOT_MEASURED"
+    },
+    {
+      "id": "autogrammar/todo2code",
+      "score": 188.0,
+      "reasons": [
+        "required roles: planner",
+        "intent-evidence-graph: intent",
+        "bounded-code-change-planning: change, code, plan, planning",
+        "preferred by ticket"
+      ],
+      "roles": [
+        "planner",
+        "intent-extractor"
+      ],
+      "homeFor": [],
+      "interfaces": {
+        "extractIntent": "uri://todo2code/intent/extract",
+        "planCodeChange": "uri://todo2code/code-change/plan",
+        "watch": "uri://todo2code/watch"
+      },
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": true,
+      "manifestStatus": "DRIFT"
+    },
+    {
+      "id": "semcod/pyqual",
+      "score": 175.0,
+      "reasons": [
+        "required roles: quality-gate",
+        "declarative-quality-gates: gate, manifest, quality",
+        "repair-loop: repair",
+        "preferred by ticket"
+      ],
+      "roles": [
+        "quality-gate"
+      ],
+      "homeFor": [],
+      "interfaces": {
+        "evaluate": "uri://pyqual/policy/evaluate",
+        "exactHeadGate": "uri://pyqual/gate/exact-head",
+        "manifestGate": "uri://pyqual/gate/manifest-conformance"
+      },
+      "evidenceStatus": "DOCUMENTED",
+      "sourceRank": 40,
+      "executionEligible": false,
+      "manifestStatus": "NOT_MEASURED"
+    },
+    {
+      "id": "subactor/validator-agent",
+      "score": 148.0,
+      "reasons": [
+        "required roles: independent-validator",
+        "independent-patch-validation: independent, policy, validator"
+      ],
+      "roles": [
+        "independent-validator"
+      ],
+      "homeFor": [],
+      "interfaces": {
+        "validate": "uri://validator-agent/validate/independent"
+      },
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": true,
+      "manifestStatus": "DRIFT"
+    },
+    {
+      "id": "subactor/onedev-agent",
+      "score": 142.0,
+      "reasons": [
+        "required roles: server-git-gateway",
+        "authoritative-git-gate: gate",
+        "ticket-scope-enforcement: ticket",
+        "project-trait-selection: project"
+      ],
+      "roles": [
+        "server-git-gateway",
+        "ticket-scope-enforcer",
+        "pr-verification"
+      ],
+      "homeFor": [],
+      "interfaces": {
+        "enforce": "uri://onedev-agent/policy/enforce",
+        "verifyPullRequest": "uri://onedev-agent/pr/verify"
+      },
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": true,
+      "manifestStatus": "DRIFT"
+    },
+    {
+      "id": "subactor/repair-agent",
+      "score": 124.0,
+      "reasons": [
+        "required roles: implementation-executor",
+        "hash-bound-repair: repair"
+      ],
+      "roles": [
+        "implementation-executor"
+      ],
+      "homeFor": [],
+      "interfaces": {
+        "execute": "uri://repair-agent/execute/hash-bound"
+      },
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": true,
+      "manifestStatus": "DRIFT"
+    },
+    {
+      "id": "wellmanifest/new-project",
+      "score": 46.0,
+      "reasons": [
+        "bounded-ticket: intent, ticket",
+        "manifest-adoption: manifest, pyqual, standard"
+      ],
+      "roles": [
+        "ticket-factory",
+        "manifest-standard-owner"
+      ],
+      "homeFor": [
+        "project-ticket-lifecycle-standard",
+        "project-manifest-standard"
+      ],
+      "interfaces": {
+        "ticketCreate": "uri://wellmanifest/new-project/ticket/create"
+      },
+      "evidenceStatus": "DOCUMENTED",
+      "sourceRank": 40,
+      "executionEligible": false,
+      "manifestStatus": "NOT_MEASURED"
+    }
+  ],
+  "excludedProjects": [],
+  "findings": [
+    {
+      "code": "ROUTER_REQUIRED_ROLE_NOT_EXECUTION_VERIFIED",
+      "severity": "warning",
+      "role": "policy-language-standard-owner",
+      "projectId": "wellmanifest/policy-dsl",
+      "evidenceStatus": "DOCUMENTED"
+    },
+    {
+      "code": "ROUTER_REQUIRED_ROLE_NOT_EXECUTION_VERIFIED",
+      "severity": "warning",
+      "role": "quality-gate",
+      "projectId": "semcod/pyqual",
+      "evidenceStatus": "DOCUMENTED"
+    },
+    {
+      "code": "ROUTER_REQUIRED_ROLE_NOT_EXECUTION_VERIFIED",
+      "severity": "warning",
+      "role": "offer-standard-owner",
+      "projectId": "wellmanifest/offer",
+      "evidenceStatus": "DOCUMENTED"
+    }
+  ],
+  "contextDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b"
+}

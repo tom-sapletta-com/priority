@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wellmanifest.io/schemas/planner-result-envelope.schema.json",
+  "title": "Normalized Planner Result Envelope",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["status"],
+  "properties": {
+    "status": {"enum": ["succeeded", "failed", "partial", "not-run"]},
+    "recordCount": {"type": "integer", "minimum": 0},
+    "plans": {"type": "array", "items": {"type": "object"}},
+    "records": {"type": "array", "items": {"type": "object"}},
+    "planIds": {"type": "array", "items": {"type": "string"}},
+    "diagnostics": {"type": "array", "items": {"type": "object"}}
+  }
+}

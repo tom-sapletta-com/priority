@@ -1,0 +1,23 @@
+{
+  "schema": "wellmanifest.agent/report/v1",
+  "workspaceRoot": "/home/tom/github/autogrammar/priority",
+  "gitToplevel": "/home/tom/github/autogrammar/priority",
+  "pwd": "/home/tom/github/autogrammar/priority",
+  "home": "wellmanifest",
+  "shape": "domain_pack",
+  "adopt": ["wellmanifest/policy-dsl"],
+  "ticketId": "ticket-002",
+  "filesTouched": [
+    "README.md",
+    "adapters/ecosystemctl.py",
+    "generated/ticket-context-selection.json",
+    "generated/verification-report.json",
+    "project/ticket-002/README.md",
+    "project/ticket-002/agent-report.json",
+    "scripts/rebuild-generated.sh",
+    "scripts/test_report.py",
+    "scripts/verify.sh",
+    "tests/test_ecosystemctl.py"
+  ],
+  "outcome": "completed"
+}

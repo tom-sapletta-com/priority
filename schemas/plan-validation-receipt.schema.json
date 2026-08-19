@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://subactor.io/schemas/plan-validation-receipt.schema.json",
+  "title": "todo2code Plan Validation Receipt",
+  "type": "object",
+  "required": ["schema", "generatedAt", "ticketId", "requestDigest", "plannerResultDigest", "finalOutcome", "recordCount", "plans", "findings", "receiptDigest"],
+  "properties": {
+    "schema": {"const": "todo2code.plan-validation-receipt/v1"},
+    "generatedAt": {"type": "string", "format": "date-time"},
+    "ticketId": {"type": ["string", "null"]},
+    "requestDigest": {"type": "string", "pattern": "^sha256:"},
+    "plannerResultDigest": {"type": "string", "pattern": "^sha256:"},
+    "finalOutcome": {"enum": ["PASS", "BLOCK"]},
+    "recordCount": {"type": "integer", "minimum": 0},
+    "plans": {"type": "array", "items": {"type": "object"}},
+    "findings": {"type": "array", "items": {"type": "object"}},
+    "receiptDigest": {"type": "string", "pattern": "^sha256:"}
+  },
+  "additionalProperties": false
+}

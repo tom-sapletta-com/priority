@@ -1,0 +1,16 @@
+[Unit]
+Description=Evolutionary Priority DSL reconciliation
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/evolutionary-priority-dsl
+EnvironmentFile=-/etc/evolutionary-priority-dsl.env
+Environment=OUT_ROOT=/var/lib/evolutionary-priority-dsl
+StateDirectory=evolutionary-priority-dsl
+ExecStart=/opt/evolutionary-priority-dsl/scripts/reconcile.sh
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/evolutionary-priority-dsl

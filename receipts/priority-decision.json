@@ -2,11 +2,11 @@
   "schema": "wellmanifest.priority-decision/v1alpha1",
   "generatedAt": "2026-08-19T10:00:00Z",
   "policyId": "engineering-standardization",
-  "policyVersion": "0.2.0",
+  "policyVersion": "0.3.0",
   "policyLifecycle": "candidate",
-  "policyDigest": "sha256:bd24f3a7144e811a0b702e8ed5a7e69bed268128550c36e7d38e10202465bb11",
-  "stateRevision": "sha256:example-head-20260819",
-  "stateDigest": "sha256:4d9aad53164609d3df6f500cbcacc613b9a90d21b06330af1bba3994448ef7f2",
+  "policyDigest": "sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f",
+  "stateRevision": "sha256:example-head-20260819-v030",
+  "stateDigest": "sha256:8f5b02f0c2209744949bdc5f2a25cc66824b469ae8ffa318d148ceb0356e784e",
   "finalOutcome": "BLOCK",
   "executionGate": {
     "dispatchAllowed": false,
@@ -21,10 +21,8 @@
     },
     {
       "id": "INV-FRESH-EVIDENCE",
-      "status": "VIOLATED",
-      "outcome": "BLOCK",
-      "reason": "Stary lub obcy revision receipt nie potwierdza bieżącego PASS.",
-      "remediationUri": "uri://twin/receipts/refresh"
+      "status": "PASS",
+      "outcome": "PASS"
     },
     {
       "id": "INV-NO-SELF-PROMOTION",
@@ -33,10 +31,32 @@
     },
     {
       "id": "INV-NO-CLAIM-AS-PASS",
+      "status": "PASS",
+      "outcome": "PASS"
+    },
+    {
+      "id": "INV-GROUNDED-TOOL-SELECTION",
+      "status": "PASS",
+      "outcome": "PASS"
+    },
+    {
+      "id": "INV-NONEMPTY-GROUNDED-PLAN",
       "status": "VIOLATED",
       "outcome": "BLOCK",
-      "reason": "Nazwa funkcji, pliku lub twierdzenie LLM nie stanowi dowodu działania.",
-      "remediationUri": "uri://pyqual/tests/require-behavioral-negative-test"
+      "reason": "Pusty wynik todo2code przy otwartych kryteriach jest luką planowania T2C_PLAN_GAP, a nie zgodą na brak zmian.",
+      "remediationUri": "uri://todo2code/code-change/refine-intent"
+    },
+    {
+      "id": "INV-OFFER-ONE-VALUE-HOME",
+      "status": "PASS",
+      "outcome": "PASS"
+    },
+    {
+      "id": "INV-OFFER-DIGEST-PIN",
+      "status": "VIOLATED",
+      "outcome": "BLOCK",
+      "reason": "Fasada oferty nie może zostać opublikowana z digestem niezgodnym z przypiętym katalogiem subactor/offer.",
+      "remediationUri": "uri://subactor/offer/pin-check"
     }
   ],
   "oscillationGuard": {
@@ -51,8 +71,8 @@
       "status": "FRESH",
       "fresh": true,
       "ageSeconds": 30.0,
-      "sourceClass": "git_ast",
-      "sourceRank": 80,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
       "value": 0
@@ -60,17 +80,17 @@
     "evidence.stale_or_mismatched_receipts": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 15.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 1
+      "value": 0
     },
     "governance.separation_of_duties_violations": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 20.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
@@ -80,37 +100,37 @@
     "evidence.shape_only_pass_count": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 10.0,
+      "ageSeconds": 30.0,
       "sourceClass": "test_receipt",
       "sourceRank": 90,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 2
+      "value": 0
     },
     "standards.compliance_coverage": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 90.0,
+      "ageSeconds": 30.0,
       "sourceClass": "test_receipt",
       "sourceRank": 90,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0.91
+      "value": 1.0
     },
     "standards.drift_open_count": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 40.0,
-      "sourceClass": "git_ast",
-      "sourceRank": 80,
+      "ageSeconds": 30.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 7
+      "value": 0
     },
     "standards.governance_truth_false_block_rate": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 1800.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
@@ -120,102 +140,192 @@
     "standards.governance_truth_false_block_sample_size": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 1800.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 42
+      "value": 40
     },
     "standards.validation_behavior_false_block_rate": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 1800.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0.04
+      "value": 0.0
     },
     "standards.validation_behavior_false_block_sample_size": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 1800.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 42
+      "value": 40
     },
     "standards.manifest_conformance_false_block_rate": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 1800.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0.04
+      "value": 0.0
     },
     "standards.manifest_conformance_false_block_sample_size": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 1800.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 42
+      "value": 40
     },
     "standards.conflict_density": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 120.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0.03
+      "value": 0.0
     },
     "repair.mean_time_to_repair_minutes": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 900.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 72
+      "value": 25
     },
     "repair.rollback_rate": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 1800.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0.06
+      "value": 0.0
     },
     "agent.out_of_scope_action_rate": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 300.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0.01
+      "value": 0.0
     },
     "agent.rule_citation_coverage": {
       "status": "FRESH",
       "fresh": true,
-      "ageSeconds": 300.0,
+      "ageSeconds": 30.0,
       "sourceClass": "runtime_receipt",
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0.83
+      "value": 1.0
+    },
+    "planning.unverified_tool_selection_count": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 30.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0
+    },
+    "planning.todo2code_plan_gap_count": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 30.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 1
+    },
+    "routing.required_capability_gap_count": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 30.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 4
+    },
+    "routing.context_selection_coverage": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 30.0,
+      "sourceClass": "runtime_receipt",
+      "sourceRank": 100,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.7333
+    },
+    "registry.unverified_required_project_count": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 30.0,
+      "sourceClass": "git_ast",
+      "sourceRank": 80,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 4
+    },
+    "registry.manifest_coverage": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 30.0,
+      "sourceClass": "git_ast",
+      "sourceRank": 80,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.3667
+    },
+    "offer.facade_digest_mismatch_count": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 30.0,
+      "sourceClass": "test_receipt",
+      "sourceRank": 90,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 1
+    },
+    "offer.duplicate_price_source_count": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 30.0,
+      "sourceClass": "git_ast",
+      "sourceRank": 80,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0
+    },
+    "offer.catalog_binding_coverage": {
+      "status": "FRESH",
+      "fresh": true,
+      "ageSeconds": 30.0,
+      "sourceClass": "test_receipt",
+      "sourceRank": 90,
+      "sourceAllowed": true,
+      "revisionMatches": true,
+      "value": 0.5
     }
   },
   "decisions": [
@@ -224,12 +334,94 @@
       "priorityClass": "constitutional",
       "classRank": 0,
       "importance": 1000.0,
-      "dispatchUrgency": 1000.0,
+      "dispatchUrgency": 100.0,
+      "violated": false,
+      "evidenceStatus": "FRESH",
+      "outcome": "PASS",
+      "reasons": [
+        "resolved-idle: Brak bieżącego naruszenia; ważność normatywna pozostaje bez zmian.",
+        "Brak aktywnego naruszenia przy świeżych dowodach."
+      ],
+      "actions": [],
+      "expectedEffects": {
+        "governance.duplicate_home_count": "decrease",
+        "evidence.stale_or_mismatched_receipts": "decrease",
+        "evidence.shape_only_pass_count": "decrease"
+      },
+      "relations": {
+        "reinforces": [
+          "STD-VALIDATION-BEHAVIOR",
+          "STD-TOOL-GROUNDED-PLANNING",
+          "STD-OFFER-SSOT-INTEGRITY"
+        ],
+        "enables": [
+          "STD-MANIFEST-CONFORMANCE",
+          "DELIVERY-EVOLUTION",
+          "STD-ECOSYSTEM-CONTEXT-ROUTING"
+        ],
+        "requires": [],
+        "excludes": []
+      }
+    },
+    {
+      "intentId": "STD-TOOL-GROUNDED-PLANNING",
+      "priorityClass": "correctness",
+      "classRank": 20,
+      "importance": 975.0,
+      "dispatchUrgency": 960.0,
       "violated": true,
       "evidenceStatus": "FRESH",
       "outcome": "REPAIR_IMPLEMENTATION",
       "reasons": [
-        "governance-incident-boost: Niezgodność prawdy lub własności jest blokująca."
+        "plan-gap-boost: Otwarta intencja nie ma ugruntowanego planu zmian."
+      ],
+      "actions": [
+        {
+          "type": "PLAN",
+          "uri": "uri://todo2code/code-change/plan"
+        },
+        {
+          "type": "EXECUTE",
+          "uri": "uri://repair-agent/execute/hash-bound",
+          "maxAttempts": 2
+        },
+        {
+          "type": "VALIDATE",
+          "uri": "uri://validator-agent/validate/independent"
+        }
+      ],
+      "expectedEffects": {
+        "planning.unverified_tool_selection_count": "decrease",
+        "planning.todo2code_plan_gap_count": "decrease",
+        "agent.rule_citation_coverage": "increase"
+      },
+      "relations": {
+        "reinforces": [
+          "STD-GOVERNANCE-TRUTH",
+          "STD-VALIDATION-BEHAVIOR"
+        ],
+        "enables": [
+          "STD-ECOSYSTEM-CONTEXT-ROUTING",
+          "DELIVERY-EVOLUTION"
+        ],
+        "requires": [
+          "STD-GOVERNANCE-TRUTH",
+          "STD-VALIDATION-BEHAVIOR"
+        ],
+        "excludes": []
+      }
+    },
+    {
+      "intentId": "STD-OFFER-SSOT-INTEGRITY",
+      "priorityClass": "correctness",
+      "classRank": 20,
+      "importance": 970.0,
+      "dispatchUrgency": 940.0,
+      "violated": true,
+      "evidenceStatus": "FRESH",
+      "outcome": "REPAIR_IMPLEMENTATION",
+      "reasons": [
+        "offer-pin-incident: Publikowana fasada oferty nie odpowiada jedynemu źródłu wartości."
       ],
       "actions": [
         {
@@ -243,23 +435,25 @@
         },
         {
           "type": "VALIDATE",
-          "uri": "uri://validator-agent/validate/independent"
+          "uri": "uri://subactor/offer/pin-check"
         }
       ],
       "expectedEffects": {
-        "governance.duplicate_home_count": "decrease",
-        "evidence.stale_or_mismatched_receipts": "decrease",
-        "evidence.shape_only_pass_count": "decrease"
+        "offer.facade_digest_mismatch_count": "decrease",
+        "offer.duplicate_price_source_count": "decrease",
+        "offer.catalog_binding_coverage": "increase"
       },
       "relations": {
         "reinforces": [
+          "STD-GOVERNANCE-TRUTH",
           "STD-VALIDATION-BEHAVIOR"
         ],
-        "enables": [
-          "STD-MANIFEST-CONFORMANCE",
-          "DELIVERY-EVOLUTION"
+        "enables": [],
+        "requires": [
+          "STD-GOVERNANCE-TRUTH",
+          "STD-VALIDATION-BEHAVIOR",
+          "STD-TOOL-GROUNDED-PLANNING"
         ],
-        "requires": [],
         "excludes": []
       }
     },
@@ -268,29 +462,15 @@
       "priorityClass": "correctness",
       "classRank": 20,
       "importance": 950.0,
-      "dispatchUrgency": 820.0,
-      "violated": true,
+      "dispatchUrgency": 200.0,
+      "violated": false,
       "evidenceStatus": "FRESH",
-      "outcome": "PROPOSE_STANDARD_CHANGE",
+      "outcome": "PASS",
       "reasons": [
-        "Metryki wskazują możliwy błąd lub nadmierną restrykcyjność standardu."
+        "healthy-coverage: Brak aktywnego naruszenia.",
+        "Brak aktywnego naruszenia przy świeżych dowodach."
       ],
-      "actions": [
-        {
-          "type": "PROPOSE_STANDARD_CHANGE",
-          "uri": "uri://wellmanifest/standard-change/propose",
-          "lifecycle": [
-            "candidate",
-            "shadow",
-            "canary",
-            "active"
-          ],
-          "requiresHumanRoles": [
-            "standard-owner",
-            "independent-validator"
-          ]
-        }
-      ],
+      "actions": [],
       "expectedEffects": {
         "standards.compliance_coverage": "increase",
         "evidence.shape_only_pass_count": "decrease",
@@ -299,7 +479,9 @@
       "relations": {
         "reinforces": [
           "STD-GOVERNANCE-TRUTH",
-          "STD-MANIFEST-CONFORMANCE"
+          "STD-MANIFEST-CONFORMANCE",
+          "STD-TOOL-GROUNDED-PLANNING",
+          "STD-OFFER-SSOT-INTEGRITY"
         ],
         "enables": [
           "DELIVERY-EVOLUTION"
@@ -311,34 +493,67 @@
       }
     },
     {
+      "intentId": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+      "priorityClass": "standardization",
+      "classRank": 30,
+      "importance": 900.0,
+      "dispatchUrgency": 780.0,
+      "violated": true,
+      "evidenceStatus": "FRESH",
+      "outcome": "REPAIR_IMPLEMENTATION",
+      "reasons": [
+        "required-role-gap: Ticket nie ma zweryfikowanego projektu dla wymaganej roli lub concernu HOME."
+      ],
+      "actions": [
+        {
+          "type": "PLAN",
+          "uri": "uri://diagit/repair-plan/from-findings"
+        },
+        {
+          "type": "EXECUTE",
+          "uri": "uri://repair-agent/execute/hash-bound",
+          "maxAttempts": 2
+        },
+        {
+          "type": "VALIDATE",
+          "uri": "uri://pyqual/gate/manifest-conformance"
+        }
+      ],
+      "expectedEffects": {
+        "routing.required_capability_gap_count": "decrease",
+        "routing.context_selection_coverage": "increase",
+        "registry.manifest_coverage": "increase"
+      },
+      "relations": {
+        "reinforces": [
+          "STD-MANIFEST-CONFORMANCE",
+          "STD-TOOL-GROUNDED-PLANNING"
+        ],
+        "enables": [
+          "DELIVERY-EVOLUTION"
+        ],
+        "requires": [
+          "STD-GOVERNANCE-TRUTH",
+          "STD-VALIDATION-BEHAVIOR",
+          "STD-TOOL-GROUNDED-PLANNING"
+        ],
+        "excludes": []
+      }
+    },
+    {
       "intentId": "STD-MANIFEST-CONFORMANCE",
       "priorityClass": "standardization",
       "classRank": 30,
       "importance": 850.0,
-      "dispatchUrgency": 680.0,
-      "violated": true,
+      "dispatchUrgency": 150.0,
+      "violated": false,
       "evidenceStatus": "FRESH",
-      "outcome": "PROPOSE_STANDARD_CHANGE",
+      "outcome": "PASS",
       "reasons": [
-        "drift-boost: Drift jest rozlany po wielu projektach.",
-        "Metryki wskazują możliwy błąd lub nadmierną restrykcyjność standardu."
+        "no-drift: Standard jest zgodny; pozostaje aktywny, lecz nie zajmuje kolejki.",
+        "Brak aktywnego naruszenia przy świeżych dowodach."
       ],
-      "actions": [
-        {
-          "type": "PROPOSE_STANDARD_CHANGE",
-          "uri": "uri://wellmanifest/standard-change/propose",
-          "lifecycle": [
-            "candidate",
-            "shadow",
-            "canary",
-            "active"
-          ],
-          "requiresHumanRoles": [
-            "standard-owner",
-            "independent-validator"
-          ]
-        }
-      ],
+      "actions": [],
       "expectedEffects": {
         "standards.drift_open_count": "decrease",
         "standards.conflict_density": "decrease",
@@ -349,7 +564,8 @@
           "STD-VALIDATION-BEHAVIOR"
         ],
         "enables": [
-          "DELIVERY-EVOLUTION"
+          "DELIVERY-EVOLUTION",
+          "STD-ECOSYSTEM-CONTEXT-ROUTING"
         ],
         "requires": [
           "STD-GOVERNANCE-TRUTH",
@@ -363,28 +579,14 @@
       "priorityClass": "delivery",
       "classRank": 40,
       "importance": 700.0,
-      "dispatchUrgency": 0.0,
-      "violated": true,
+      "dispatchUrgency": 600.0,
+      "violated": false,
       "evidenceStatus": "FRESH",
-      "outcome": "REPAIR_IMPLEMENTATION",
+      "outcome": "PASS",
       "reasons": [
-        "blocked-by-higher-class: Dostawa nie może wyprzeć integralności ani poprawności."
+        "Brak aktywnego naruszenia przy świeżych dowodach."
       ],
-      "actions": [
-        {
-          "type": "PLAN",
-          "uri": "uri://todo2code/plan/bounded-feature"
-        },
-        {
-          "type": "EXECUTE",
-          "uri": "uri://repair-agent/execute/hash-bound",
-          "maxAttempts": 2
-        },
-        {
-          "type": "VALIDATE",
-          "uri": "uri://validator-agent/validate/independent"
-        }
-      ],
+      "actions": [],
       "expectedEffects": {
         "delivery.user_value": "increase",
         "repair.rollback_rate": "hold"
@@ -395,38 +597,44 @@
         "requires": [
           "STD-GOVERNANCE-TRUTH",
           "STD-VALIDATION-BEHAVIOR",
-          "STD-MANIFEST-CONFORMANCE"
+          "STD-MANIFEST-CONFORMANCE",
+          "STD-TOOL-GROUNDED-PLANNING",
+          "STD-ECOSYSTEM-CONTEXT-ROUTING"
         ],
         "excludes": []
       }
     }
   ],
   "complementarity": {
-    "score": 0.8125,
+    "score": 1.0,
     "threshold": 0.75,
     "hardConflict": false,
     "parallelDispatchAllowed": false,
     "automaticSequentialDispatchAllowed": true,
     "automaticDispatchAllowed": true,
     "sequentialOrder": [
-      "STD-GOVERNANCE-TRUTH",
-      "STD-VALIDATION-BEHAVIOR",
-      "STD-MANIFEST-CONFORMANCE",
-      "DELIVERY-EVOLUTION"
+      "STD-TOOL-GROUNDED-PLANNING",
+      "STD-OFFER-SSOT-INTEGRITY",
+      "STD-ECOSYSTEM-CONTEXT-ROUTING"
     ],
     "budgetAssessment": {
       "status": "PASS",
-      "concurrentRepairs": 2,
-      "standardChangeProposals": 2,
+      "concurrentRepairs": 3,
+      "standardChangeProposals": 0,
       "estimates": {
-        "STD-GOVERNANCE-TRUTH": {
-          "files": 3,
-          "changedLines": 90,
+        "STD-TOOL-GROUNDED-PLANNING": {
+          "files": 4,
+          "changedLines": 180,
+          "agentTurns": 6
+        },
+        "STD-OFFER-SSOT-INTEGRITY": {
+          "files": 4,
+          "changedLines": 150,
           "agentTurns": 5
         },
-        "DELIVERY-EVOLUTION": {
+        "STD-ECOSYSTEM-CONTEXT-ROUTING": {
           "files": 6,
-          "changedLines": 220,
+          "changedLines": 240,
           "agentTurns": 8
         }
       },
@@ -435,38 +643,14 @@
     "findings": [
       {
         "type": "SEQUENCING_REQUIRED",
-        "before": "STD-GOVERNANCE-TRUTH",
-        "after": "STD-VALIDATION-BEHAVIOR",
+        "before": "STD-TOOL-GROUNDED-PLANNING",
+        "after": "STD-OFFER-SSOT-INTEGRITY",
         "reason": "The required intent also has pending remediation."
       },
       {
         "type": "SEQUENCING_REQUIRED",
-        "before": "STD-GOVERNANCE-TRUTH",
-        "after": "STD-MANIFEST-CONFORMANCE",
-        "reason": "The required intent also has pending remediation."
-      },
-      {
-        "type": "SEQUENCING_REQUIRED",
-        "before": "STD-VALIDATION-BEHAVIOR",
-        "after": "STD-MANIFEST-CONFORMANCE",
-        "reason": "The required intent also has pending remediation."
-      },
-      {
-        "type": "SEQUENCING_REQUIRED",
-        "before": "STD-GOVERNANCE-TRUTH",
-        "after": "DELIVERY-EVOLUTION",
-        "reason": "The required intent also has pending remediation."
-      },
-      {
-        "type": "SEQUENCING_REQUIRED",
-        "before": "STD-VALIDATION-BEHAVIOR",
-        "after": "DELIVERY-EVOLUTION",
-        "reason": "The required intent also has pending remediation."
-      },
-      {
-        "type": "SEQUENCING_REQUIRED",
-        "before": "STD-MANIFEST-CONFORMANCE",
-        "after": "DELIVERY-EVOLUTION",
+        "before": "STD-TOOL-GROUNDED-PLANNING",
+        "after": "STD-ECOSYSTEM-CONTEXT-ROUTING",
         "reason": "The required intent also has pending remediation."
       }
     ]
@@ -475,84 +659,72 @@
     "mode": "propose-only",
     "actions": [
       {
-        "intentId": "STD-GOVERNANCE-TRUTH",
-        "priorityClass": "constitutional",
-        "dispatchUrgency": 1000.0,
+        "intentId": "STD-TOOL-GROUNDED-PLANNING",
+        "priorityClass": "correctness",
+        "dispatchUrgency": 960.0,
+        "type": "PLAN",
+        "uri": "uri://todo2code/code-change/plan"
+      },
+      {
+        "intentId": "STD-TOOL-GROUNDED-PLANNING",
+        "priorityClass": "correctness",
+        "dispatchUrgency": 960.0,
+        "type": "EXECUTE",
+        "uri": "uri://repair-agent/execute/hash-bound",
+        "maxAttempts": 2
+      },
+      {
+        "intentId": "STD-TOOL-GROUNDED-PLANNING",
+        "priorityClass": "correctness",
+        "dispatchUrgency": 960.0,
+        "type": "VALIDATE",
+        "uri": "uri://validator-agent/validate/independent"
+      },
+      {
+        "intentId": "STD-OFFER-SSOT-INTEGRITY",
+        "priorityClass": "correctness",
+        "dispatchUrgency": 940.0,
         "type": "PLAN",
         "uri": "uri://todo2code/plan/bounded-remediation"
       },
       {
-        "intentId": "STD-GOVERNANCE-TRUTH",
-        "priorityClass": "constitutional",
-        "dispatchUrgency": 1000.0,
-        "type": "EXECUTE",
-        "uri": "uri://repair-agent/execute/hash-bound",
-        "maxAttempts": 2
-      },
-      {
-        "intentId": "STD-GOVERNANCE-TRUTH",
-        "priorityClass": "constitutional",
-        "dispatchUrgency": 1000.0,
-        "type": "VALIDATE",
-        "uri": "uri://validator-agent/validate/independent"
-      },
-      {
-        "intentId": "STD-VALIDATION-BEHAVIOR",
+        "intentId": "STD-OFFER-SSOT-INTEGRITY",
         "priorityClass": "correctness",
-        "dispatchUrgency": 820.0,
-        "type": "PROPOSE_STANDARD_CHANGE",
-        "uri": "uri://wellmanifest/standard-change/propose",
-        "lifecycle": [
-          "candidate",
-          "shadow",
-          "canary",
-          "active"
-        ],
-        "requiresHumanRoles": [
-          "standard-owner",
-          "independent-validator"
-        ]
-      },
-      {
-        "intentId": "STD-MANIFEST-CONFORMANCE",
-        "priorityClass": "standardization",
-        "dispatchUrgency": 680.0,
-        "type": "PROPOSE_STANDARD_CHANGE",
-        "uri": "uri://wellmanifest/standard-change/propose",
-        "lifecycle": [
-          "candidate",
-          "shadow",
-          "canary",
-          "active"
-        ],
-        "requiresHumanRoles": [
-          "standard-owner",
-          "independent-validator"
-        ]
-      },
-      {
-        "intentId": "DELIVERY-EVOLUTION",
-        "priorityClass": "delivery",
-        "dispatchUrgency": 0.0,
-        "type": "PLAN",
-        "uri": "uri://todo2code/plan/bounded-feature"
-      },
-      {
-        "intentId": "DELIVERY-EVOLUTION",
-        "priorityClass": "delivery",
-        "dispatchUrgency": 0.0,
+        "dispatchUrgency": 940.0,
         "type": "EXECUTE",
         "uri": "uri://repair-agent/execute/hash-bound",
         "maxAttempts": 2
       },
       {
-        "intentId": "DELIVERY-EVOLUTION",
-        "priorityClass": "delivery",
-        "dispatchUrgency": 0.0,
+        "intentId": "STD-OFFER-SSOT-INTEGRITY",
+        "priorityClass": "correctness",
+        "dispatchUrgency": 940.0,
         "type": "VALIDATE",
-        "uri": "uri://validator-agent/validate/independent"
+        "uri": "uri://subactor/offer/pin-check"
+      },
+      {
+        "intentId": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+        "priorityClass": "standardization",
+        "dispatchUrgency": 780.0,
+        "type": "PLAN",
+        "uri": "uri://diagit/repair-plan/from-findings"
+      },
+      {
+        "intentId": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+        "priorityClass": "standardization",
+        "dispatchUrgency": 780.0,
+        "type": "EXECUTE",
+        "uri": "uri://repair-agent/execute/hash-bound",
+        "maxAttempts": 2
+      },
+      {
+        "intentId": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+        "priorityClass": "standardization",
+        "dispatchUrgency": 780.0,
+        "type": "VALIDATE",
+        "uri": "uri://pyqual/gate/manifest-conformance"
       }
     ]
   },
-  "receiptDigest": "sha256:3b54f400735af8d45ad0dee1aa46de0c2977885ffc3cc9a49c75042de323981d"
+  "receiptDigest": "sha256:1bd94bdf8df7bb489c413f2b5e149cb11eab411c8aa57ea73d805da9143bb558"
 }

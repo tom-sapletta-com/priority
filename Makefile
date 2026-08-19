@@ -1,29 +1,20 @@
-PYTHON ?= python3
-POLICY ?= priority-evolution.dsl.yaml
-SCHEMA ?= schemas/priority-evolution.schema.json
-STATE ?= examples/state.json
-HEALTHY ?= examples/state-healthy.json
-NOW ?= 2026-08-19T10:00:00Z
-
-.PHONY: deps test validate evaluate evaluate-healthy compile demo
-
-deps:
-	$(PYTHON) -m pip install -r requirements.txt
-
-test:
-	$(PYTHON) -m unittest discover -s tests -v
+.PHONY: validate rebuild test verify reproducibility clean
 
 validate:
-	$(PYTHON) adapters/standardctl.py validate --policy $(POLICY) --schema $(SCHEMA)
+	python3 adapters/standardctl.py validate --policy priority-evolution.dsl.yaml --schema schemas/priority-evolution.schema.json
+	python3 adapters/ecosystemctl.py validate-registry --registry registry/ecosystem-tools.yaml --schema schemas/ecosystem-tool-registry.schema.json
 
-evaluate:
-	$(PYTHON) adapters/standardctl.py evaluate --policy $(POLICY) --state $(STATE) --now $(NOW) --out receipts/priority-decision.json
+rebuild:
+	./scripts/rebuild-generated.sh
 
-evaluate-healthy:
-	$(PYTHON) adapters/standardctl.py evaluate --policy $(POLICY) --state $(HEALTHY) --now $(NOW) --out receipts/healthy-decision.json
+test:
+	python3 -m unittest discover -s tests -v
 
-compile: evaluate
-	$(PYTHON) adapters/standardctl.py compile-context --policy $(POLICY) --receipt receipts/priority-decision.json --out-dir generated-context
+verify:
+	./scripts/verify.sh
 
-demo: test validate evaluate evaluate-healthy compile
-	@echo "demo complete"
+reproducibility:
+	./scripts/check-reproducibility.sh
+
+clean:
+	rm -rf __pycache__ adapters/__pycache__ tests/__pycache__

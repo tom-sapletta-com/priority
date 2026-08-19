@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wellmanifest.io/schemas/priority-state.schema.json",
+  "title": "Evolutionary Priority State",
+  "type": "object",
+  "required": ["schema", "revision", "metrics", "facts"],
+  "properties": {
+    "schema": {"const": "wellmanifest.priority-state/v1alpha1"},
+    "revision": {"type": "string", "minLength": 1},
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["value", "observedAt", "sourceClass", "revision"],
+        "properties": {
+          "value": {},
+          "observedAt": {"type": "string", "format": "date-time"},
+          "sourceClass": {
+            "enum": ["runtime_receipt", "test_receipt", "git_ast", "configuration", "documentation", "agent_claim"]
+          },
+          "revision": {"type": "string"},
+          "evidenceDigest": {"type": "string", "pattern": "^sha256:"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "facts": {"type": "object"},
+    "projection": {
+      "type": "object",
+      "properties": {
+        "schema": {"const": "subactor.priority-state-projection/v1"},
+        "generatedAt": {"type": "string", "format": "date-time"},
+        "policyId": {"type": "string"},
+        "policyVersion": {"type": "string"},
+        "missingMetrics": {"type": "array", "items": {"type": "string"}},
+        "unknownMetrics": {"type": "array", "items": {"type": "string"}},
+        "provenance": {"type": "array", "items": {"type": "object"}},
+        "projectionDigest": {"type": "string", "pattern": "^sha256:"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

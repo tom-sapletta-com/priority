@@ -1,0 +1,639 @@
+apiVersion: subactor.io/v1alpha1
+kind: EcosystemToolRegistry
+metadata:
+  id: subactor-engineering-ecosystem
+  version: 0.3.0
+  lifecycle: candidate
+  home:
+    repository: subactor/registry
+    role: HOME
+  description: Organizacyjny rejestr projektów i ich ról. Nie jest standardem wellmanifest; standardy są osobnymi, abstrakcyjnymi
+    HOME, a ten katalog tylko wskazuje ich adopcję i rzeczywiste narzędzia wykonawcze.
+spec:
+  sourceRanks:
+    runtime_receipt: 100
+    test_receipt: 90
+    git_ast: 80
+    configuration: 70
+    documentation: 40
+    agent_claim: 10
+  manifestFiles:
+    identity:
+    - dsl-manifest.json
+    - project.manifest.yml
+    - project.manifest.yaml
+    - project.manifest.json
+    goal:
+    - goal.yaml
+    quality:
+    - pyqual.yaml
+  projects:
+  - id: subactor/registry
+    organization: subactor
+    repository: registry
+    modulePrefix: registry/
+    lifecycle: active
+    required: true
+    roles:
+    - organization-registry
+    - context-source
+    homeFor:
+    - organization-project-registry
+    capabilities:
+    - id: registry-snapshot
+      weight: 9
+      keywords:
+      - registry
+      - repo
+      - repository
+      - project
+      - catalogue
+      - snapshot
+      - map
+    - id: assignment-validation
+      weight: 8
+      keywords:
+      - assignment
+      - ownership
+      - home
+      - adopt
+      - entitlement
+    interfaces:
+      snapshot: uri://subactor/registry/snapshot
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - registry/src/registry.mjs
+      - registry/docs/contracts/registry-item.schema.v1.json
+      - registry/project/new-ticket.sh
+      requiredSymbols:
+      - path: registry/src/registry.mjs
+        symbols:
+        - validateItem
+        - validateAssignment
+        - createRegistrySnapshot
+  - id: subactor/platform
+    organization: subactor
+    repository: platform
+    modulePrefix: platform/
+    lifecycle: active
+    required: true
+    roles:
+    - policy-instance-owner
+    - ticket-host
+    - orchestration-control
+    homeFor:
+    - engineering-standardization-policy-instance
+    adopts:
+    - wellmanifest/policy-dsl
+    - wellmanifest/new-project
+    capabilities:
+    - id: organizational-policy-instance
+      weight: 10
+      keywords:
+      - priority
+      - priorities
+      - policy
+      - governance
+      - standardization
+      - evolutionary
+    - id: ticket-allocation
+      weight: 8
+      keywords:
+      - ticket
+      - project
+      - new-project
+      - worktree
+      - branch
+    interfaces:
+      reconcile: uri://subactor/controller/reconcile
+      ticketCreate: uri://subactor/platform/ticket/create
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - platform/goal.yaml
+      - platform/project/new-ticket.sh
+      - platform/project/TICKETS.md
+  - id: wellmanifest/policy-dsl
+    organization: wellmanifest
+    repository: policy-dsl
+    lifecycle: candidate
+    required: true
+    roles:
+    - abstract-standard-owner
+    - standard-owner
+    - policy-language-standard-owner
+    homeFor:
+    - evolutionary-intent-policy-language
+    capabilities:
+    - id: priority-policy-language
+      weight: 10
+      keywords:
+      - dsl
+      - policy
+      - priority
+      - intent
+      - lifecycle
+      - promotion
+      - standard
+    interfaces:
+      standardChangeProposal: uri://wellmanifest/standard-change/propose
+    evidence:
+      sourceClass: documentation
+      documents:
+      - sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#5
+      note: Exact repository map was not attached; execution requires a pinned contract.
+  - id: wellmanifest/new-project
+    organization: wellmanifest
+    repository: new-project
+    lifecycle: active
+    required: true
+    roles:
+    - ticket-factory
+    - manifest-standard-owner
+    homeFor:
+    - project-ticket-lifecycle-standard
+    - project-manifest-standard
+    capabilities:
+    - id: bounded-ticket
+      weight: 10
+      keywords:
+      - ticket
+      - new-project
+      - intent
+      - acceptance
+      - scope
+      - worktree
+    - id: manifest-adoption
+      weight: 8
+      keywords:
+      - manifest
+      - adopt
+      - goal
+      - pyqual
+      - standard
+    interfaces:
+      ticketCreate: uri://wellmanifest/new-project/ticket/create
+    evidence:
+      sourceClass: documentation
+      documents:
+      - sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#4
+      - sources/reports/readiness-remediation-plan-2026-08-19.md#ticket-allocation-strategy
+      note: Exact repository map was not attached; use as normative context, not executable proof.
+  - id: autogrammar/todo2code
+    organization: autogrammar
+    repository: todo2code
+    modulePrefix: todo2code/
+    lifecycle: active
+    required: true
+    roles:
+    - planner
+    - intent-extractor
+    capabilities:
+    - id: intent-evidence-graph
+      weight: 10
+      keywords:
+      - intent
+      - evidence
+      - graph
+      - task
+      - todo
+      - git
+      - ast
+      - documentation
+    - id: bounded-code-change-planning
+      weight: 12
+      keywords:
+      - plan
+      - planning
+      - code
+      - change
+      - remediation
+      - acceptance
+      - patch
+    - id: workspace-preflight
+      weight: 8
+      keywords:
+      - preflight
+      - workspace
+      - governance
+      - branch
+      - dirty
+      - baseline
+    interfaces:
+      extractIntent: uri://todo2code/intent/extract
+      planCodeChange: uri://todo2code/code-change/plan
+      watch: uri://todo2code/watch
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - todo2code/dsl-manifest.json
+      - todo2code/goal.yaml
+      - todo2code/schemas/code-change-plan-set.schema.json
+      - todo2code/src/pipeline/pipeline-run.ts
+      - todo2code/src/synthesis/code-change-plan-propose.ts
+      - todo2code/src/services/workspace-preflight.ts
+      requiredSymbols:
+      - path: todo2code/src/pipeline/pipeline-run.ts
+        symbols:
+        - PipelineRun
+      - path: todo2code/src/synthesis/code-change-plan-propose.ts
+        symbols:
+        - proposeCodeChangePlans
+        - buildPlanFromDiagnostic
+      - path: todo2code/src/services/workspace-preflight.ts
+        symbols:
+        - WorkspacePreflightError
+  - id: subactor/diagit
+    organization: subactor
+    repository: diagit
+    modulePrefix: diagit/
+    lifecycle: active
+    required: true
+    roles:
+    - fleet-observer
+    - context-router
+    - repair-plan-source
+    capabilities:
+    - id: fleet-audit
+      weight: 12
+      keywords:
+      - fleet
+      - audit
+      - repository
+      - map
+      - drift
+      - findings
+      - state
+    - id: project-context-routing
+      weight: 12
+      keywords:
+      - context
+      - route
+      - select
+      - project
+      - repository
+      - llm
+      - ticket
+    - id: repair-plan-from-findings
+      weight: 8
+      keywords:
+      - repair
+      - remediation
+      - finding
+      - plan
+      - governance
+    interfaces:
+      scan: uri://diagit/fleet/scan
+      incrementalScan: uri://diagit/fleet/incremental-scan
+      selectProjects: uri://diagit/map/select-affected-projects
+      repairPlan: uri://diagit/repair-plan/from-findings
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - diagit/dsl-manifest.json
+      - diagit/goal.yaml
+      - diagit/proto/diagit/v1/audit.proto
+      - diagit/src/diagit/application/control_service.py
+      - diagit/src/diagit/infrastructure/git_probe.py
+      - diagit/src/diagit/infrastructure/projection.py
+      requiredSymbols:
+      - path: diagit/src/diagit/application/control_service.py
+        symbols:
+        - ControlService
+        - generate_governance_plan
+        - generate_repair_plan
+        - generate_repair_plans_from_findings
+      - path: diagit/src/diagit/infrastructure/git_probe.py
+        symbols:
+        - discover_repositories
+        - inspect_repository
+      - path: diagit/src/diagit/infrastructure/projection.py
+        symbols:
+        - Projection
+  - id: semcod/pyqual
+    organization: semcod
+    repository: pyqual
+    lifecycle: active
+    required: true
+    roles:
+    - quality-gate
+    capabilities:
+    - id: declarative-quality-gates
+      weight: 12
+      keywords:
+      - quality
+      - gate
+      - validate
+      - validation
+      - test
+      - negative
+      - commit
+      - manifest
+    - id: repair-loop
+      weight: 7
+      keywords:
+      - repair
+      - retry
+      - finding
+      - stderr
+      - codevalidator
+    interfaces:
+      evaluate: uri://pyqual/policy/evaluate
+      exactHeadGate: uri://pyqual/gate/exact-head
+      manifestGate: uri://pyqual/gate/manifest-conformance
+    evidence:
+      sourceClass: documentation
+      documents:
+      - sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#3.1
+      note: The source report identifies the role; exact CLI/config schema must be pinned from the repository before enforcement.
+  - id: semcod/giton
+    organization: semcod
+    repository: giton
+    lifecycle: active
+    required: false
+    roles:
+    - local-git-emitter
+    capabilities:
+    - id: local-git-hooks
+      weight: 9
+      keywords:
+      - git
+      - hook
+      - pre-commit
+      - post-commit
+      - pre-push
+      - fixup
+    interfaces:
+      emit: uri://giton/event/emit
+    evidence:
+      sourceClass: documentation
+      documents:
+      - sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#3.5
+      note: Exact repository map was not attached.
+  - id: subactor/onedev-agent
+    organization: subactor
+    repository: onedev-agent
+    modulePrefix: onedev-agent/
+    lifecycle: active
+    required: true
+    roles:
+    - server-git-gateway
+    - ticket-scope-enforcer
+    - pr-verification
+    capabilities:
+    - id: authoritative-git-gate
+      weight: 12
+      keywords:
+      - git
+      - pre-receive
+      - server
+      - push
+      - gate
+      - onedev
+    - id: ticket-scope-enforcement
+      weight: 10
+      keywords:
+      - ticket
+      - scope
+      - allowed-paths
+      - branch
+      - changed-files
+    - id: project-trait-selection
+      weight: 8
+      keywords:
+      - project
+      - trait
+      - select
+      - repository
+      - profile
+    interfaces:
+      enforce: uri://onedev-agent/policy/enforce
+      verifyPullRequest: uri://onedev-agent/pr/verify
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - onedev-agent/config/processes/dsl-manifest.json
+      - onedev-agent/config/processes/registry.json
+      - onedev-agent/src/onedev_agent/project_tickets.py
+      - onedev-agent/src/onedev_agent/project_traits.py
+      - onedev-agent/src/onedev_agent/pr_verification.py
+      requiredSymbols:
+      - path: onedev-agent/src/onedev_agent/project_tickets.py
+        symbols:
+        - active_repository_tickets
+        - validate_ticket_scope
+      - path: onedev-agent/src/onedev_agent/project_traits.py
+        symbols:
+        - profile_project
+        - select_projects
+      - path: onedev-agent/src/onedev_agent/pr_verification.py
+        symbols:
+        - PullRequestExecutor
+  - id: subactor/repair-agent
+    organization: subactor
+    repository: repair-agent
+    modulePrefix: repair-agent/
+    lifecycle: active
+    required: true
+    roles:
+    - implementation-executor
+    capabilities:
+    - id: hash-bound-repair
+      weight: 12
+      keywords:
+      - repair
+      - execute
+      - patch
+      - reproduction
+      - validation
+      - hash
+      - branch
+    interfaces:
+      execute: uri://repair-agent/execute/hash-bound
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - repair-agent/README.md
+      - repair-agent/src/repair_agent/agent.py
+      - repair-agent/src/repair_agent/direct_pr.py
+      - repair-agent/src/repair_agent/lifecycle.py
+      requiredSymbols:
+      - path: repair-agent/src/repair_agent/agent.py
+        symbols:
+        - RepairAgent
+  - id: subactor/validator-agent
+    organization: subactor
+    repository: validator-agent
+    modulePrefix: validator-agent/
+    lifecycle: active
+    required: true
+    roles:
+    - independent-validator
+    capabilities:
+    - id: independent-patch-validation
+      weight: 12
+      keywords:
+      - independent
+      - validator
+      - validate
+      - pull-request
+      - checks
+      - policy
+      - patch
+    interfaces:
+      validate: uri://validator-agent/validate/independent
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - validator-agent/goal.yaml
+      - validator-agent/src/validator_agent/direct_validation.py
+      - validator-agent/src/validator_agent/preflight.py
+      - validator-agent/src/validator_agent/registry.py
+      requiredSymbols:
+      - path: validator-agent/src/validator_agent/direct_validation.py
+        symbols:
+        - DirectPullRequestValidator
+        - resolve_required_checks
+  - id: subactor/offer
+    organization: subactor
+    repository: offer
+    modulePrefix: offer/
+    lifecycle: active
+    required: true
+    roles:
+    - commercial-offer-home
+    - business-truth-home
+    homeFor:
+    - commercial-offer-values
+    adopts:
+    - wellmanifest/offer
+    capabilities:
+    - id: offer-catalog-ssot
+      weight: 12
+      keywords:
+      - offer
+      - price
+      - pricing
+      - plan
+      - catalog
+      - agent-operation
+      - binding
+    - id: facade-digest-pinning
+      weight: 10
+      keywords:
+      - digest
+      - sha256
+      - pin
+      - facade
+      - landing
+      - plans-json
+    interfaces:
+      validate: uri://subactor/offer/validate
+      pinCheck: uri://subactor/offer/pin-check
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - offer/dsl-manifest.json
+      - offer/registry.json
+      - offer/catalogs/subactor-cloud/v2/offer.json
+      - offer/bindings/www-sub-actor.json
+      - offer/schemas/offer-catalog.schema.json
+      - offer/schemas/site-binding.schema.json
+  - id: wellmanifest/offer
+    organization: wellmanifest
+    repository: offer
+    lifecycle: candidate
+    required: true
+    roles:
+    - offer-standard-owner
+    - abstract-standard-owner
+    homeFor:
+    - commercial-offer-standard
+    capabilities:
+    - id: offer-standard
+      weight: 10
+      keywords:
+      - offer
+      - standard
+      - fail-closed
+      - versioning
+      - adopt
+      - ssot
+    interfaces:
+      validateAdoption: uri://wellmanifest/offer/adoption/validate
+    evidence:
+      sourceClass: documentation
+      documents:
+      - sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#2.1
+      note: Must remain independent from Subactor product values; no prices belong here.
+  - id: subactor/brand
+    organization: subactor
+    repository: brand
+    modulePrefix: brand/
+    lifecycle: active
+    required: false
+    roles:
+    - vocabulary-owner
+    homeFor:
+    - subactor-product-vocabulary
+    capabilities:
+    - id: product-vocabulary
+      weight: 7
+      keywords:
+      - brand
+      - vocabulary
+      - naming
+      - agent-operation
+      - plan-name
+    interfaces:
+      validateVocabulary: uri://subactor/brand/validate
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - brand/dsl-manifest.json
+      - brand/profiles/subactor/vocabulary.json
+      - brand/schemas/vocabulary.schema.json
+  - id: subactor/intent-contract-dsl-runtime
+    organization: subactor
+    repository: intent-contract-dsl-runtime
+    modulePrefix: intent-contract-dsl-runtime/
+    lifecycle: candidate
+    required: false
+    roles:
+    - intent-runtime
+    - digital-twin-control-target
+    capabilities:
+    - id: intent-contract-runtime
+      weight: 10
+      keywords:
+      - intent
+      - contract
+      - runtime
+      - verifier
+      - policy
+      - execution
+    - id: readiness-remediation-target
+      weight: 8
+      keywords:
+      - readiness
+      - remediation
+      - authentication
+      - persistence
+      - sandbox
+      - telemetry
+    interfaces:
+      verify: uri://intent-contract-dsl-runtime/verify
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - intent-contract-dsl-runtime/project.manifest.yml
+      - intent-contract-dsl-runtime/goal.yaml
+      - intent-contract-dsl-runtime/packages/dsl-runtime/src/index.ts
+      - intent-contract-dsl-runtime/docs/readiness-remediation-implementation-plan-2026-08-19.md
+      requiredSymbols:
+      - path: intent-contract-dsl-runtime/packages/dsl-runtime/src/index.ts
+        symbols:
+        - Runtime
+        - PolicyEngine
+        - TelemetryEngine

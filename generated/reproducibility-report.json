@@ -1,0 +1,26 @@
+{
+  "schema": "subactor.reproducibility-report/v1",
+  "generatedAt": "2026-08-19T10:00:00Z",
+  "status": "PASS",
+  "files": {
+    "generated/ecosystem-map.json": "sha256:bdcb3f9e93797f016c02e7d0c68a6bbc215533825e51a265f73d51483b8cdc1c",
+    "generated/llms.txt": "sha256:721643789ffefdf704c7e6122803959693456d00495d3b1866cbce88bff6de16",
+    "generated/subactor-map-diff.json": "sha256:76ffe15753411767eaf8936f2220322d47d9c29c315c7f9491c42739bfef8068",
+    "generated/ticket-context-selection.json": "sha256:fe92106710924706b10a57080e581b827044cdceb900f640a16ac5b45773a453",
+    "tickets/ticket-001/context-selection.json": "sha256:fe92106710924706b10a57080e581b827044cdceb900f640a16ac5b45773a453",
+    "tickets/ticket-001/todo2code-request.json": "sha256:14ccfeb3fd6a0d7d62d976ef1b5bd81a8298e05e4b32d93687d79ba69d8ae103",
+    "tickets/ticket-001/CONTEXT.md": "sha256:080cbd8e5d2b0ad21a962d546ca5bfd0f2e85229480639b937bc2dd12642da24",
+    "tickets/ticket-001/receipt.json": "sha256:3fd1b732a827a34bbed81393e31b17032319644afeef39806e275468e3fb40e7",
+    "receipts/todo2code-plan-gap.json": "sha256:ef33cb097d93080e9e59a1ea01eb13e27ae2252a697de98cc3cb1baefb203c4d",
+    "receipts/todo2code-plan-valid.json": "sha256:1fcc91aa0c9caeb8496ddaa0e3e0ac20c143b1af0e4ef868f09a92093fe08476",
+    "generated/state-from-index.json": "sha256:f85f49647c6437b95b0b508d9c081d5c29ed00f6f210f611367a6d7815b1a7a0",
+    "receipts/index-grounded-decision.json": "sha256:5af0d261c24196828fbe514453f7e850d7fd4763486c8f773f2794b8e0ffcbf2",
+    "receipts/healthy-decision.json": "sha256:83855d0cc08f1a25877df6b681a941c2817c1c2ff6c7951d87d9817956bf6305",
+    "receipts/priority-decision.json": "sha256:c71ed70bf7c714c1c56794f3814494391be50b53bd9e3d0270793218050118a3",
+    ".wellmanifest/generated/agent-policy.md": "sha256:f9538ceef21ae23c721aaaa4b84d027ca0309811db0bf259dc8de7f4663e6ab4",
+    "AGENTS.md": "sha256:c5e3ef80f549700885afa378cf00064964f60e01047acdc1e464e8cfe5d6d6b5",
+    "CLAUDE.md": "sha256:0c6626aafdace65b76e294ce9de8ed4cff18f06892413597940e0e0d1ce5f7e0",
+    "GEMINI.md": "sha256:1e25715252d963532e7b27e234f5723e5988a04e18cb738ec9a3ca456d8ee707"
+  },
+  "reportDigest": "sha256:f356108a3c9b5d932af6af2ab75c60594cded208466f30b8af01b53f17a41b02"
+}

@@ -1,0 +1,15 @@
+[Unit]
+Description=Evolutionary Priority DSL file watcher
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/evolutionary-priority-dsl
+EnvironmentFile=-/etc/evolutionary-priority-dsl.env
+ExecStart=/usr/bin/python3 adapters/standardctl.py watch --policy priority-evolution.dsl.yaml --state .wellmanifest/state/current.json --out .wellmanifest/receipts/watch-decision.json --root /srv/repos --poll-seconds 2 --full-scan-seconds 300
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/opt/evolutionary-priority-dsl/.wellmanifest

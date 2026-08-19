@@ -6,12 +6,12 @@
   "policyLifecycle": "candidate",
   "policyDigest": "sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f",
   "stateRevision": "sha256:example-head-20260819-v030",
-  "stateDigest": "sha256:fdfd4b5a10cceaf0b1176ade352cefb3d1053ff4e244d13ecd32136622d28fa6",
-  "finalOutcome": "PASS",
+  "stateDigest": "sha256:ea70bb00fa967f43cc79584b0ff2e9cdb38f5fdb39f12c03be77756fd4c93e45",
+  "finalOutcome": "BLOCK",
   "executionGate": {
     "dispatchAllowed": false,
     "parallelDispatchAllowed": false,
-    "reason": "gate-closed:pass,policy-lifecycle:candidate"
+    "reason": "gate-closed:block,policy-lifecycle:candidate"
   },
   "invariants": [
     {
@@ -36,13 +36,17 @@
     },
     {
       "id": "INV-GROUNDED-TOOL-SELECTION",
-      "status": "PASS",
-      "outcome": "PASS"
+      "status": "VIOLATED",
+      "outcome": "BLOCK",
+      "reason": "Projekt może zostać wybrany do wykonania tylko na podstawie przypiętej mapy kodu, konfiguracji lub świeżego receiptu; sama dokumentacja jest kontekstem, nie uprawnieniem wykonawczym.",
+      "remediationUri": "uri://diagit/map/refresh-and-route"
     },
     {
       "id": "INV-NONEMPTY-GROUNDED-PLAN",
-      "status": "PASS",
-      "outcome": "PASS"
+      "status": "VIOLATED",
+      "outcome": "BLOCK",
+      "reason": "Pusty wynik todo2code przy otwartych kryteriach jest luką planowania T2C_PLAN_GAP, a nie zgodą na brak zmian.",
+      "remediationUri": "uri://todo2code/code-change/refine-intent"
     },
     {
       "id": "INV-OFFER-ONE-VALUE-HOME",
@@ -51,8 +55,10 @@
     },
     {
       "id": "INV-OFFER-DIGEST-PIN",
-      "status": "PASS",
-      "outcome": "PASS"
+      "status": "UNKNOWN",
+      "outcome": "BLOCK",
+      "reason": "Invariant cannot be proven because evidence is stale: ['offer.facade_digest_mismatch_count']",
+      "remediationUri": "uri://twin/receipts/refresh"
     }
   ],
   "oscillationGuard": {
@@ -67,8 +73,8 @@
       "status": "FRESH",
       "fresh": true,
       "ageSeconds": 30.0,
-      "sourceClass": "runtime_receipt",
-      "sourceRank": 100,
+      "sourceClass": "git_ast",
+      "sourceRank": 80,
       "sourceAllowed": true,
       "revisionMatches": true,
       "value": 0
@@ -241,17 +247,17 @@
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0
+      "value": 3
     },
     "planning.todo2code_plan_gap_count": {
       "status": "FRESH",
       "fresh": true,
       "ageSeconds": 30.0,
-      "sourceClass": "runtime_receipt",
-      "sourceRank": 100,
+      "sourceClass": "test_receipt",
+      "sourceRank": 90,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0
+      "value": 1
     },
     "routing.required_capability_gap_count": {
       "status": "FRESH",
@@ -261,7 +267,7 @@
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0
+      "value": 3
     },
     "routing.context_selection_coverage": {
       "status": "FRESH",
@@ -271,7 +277,7 @@
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 1.0
+      "value": 0.7273
     },
     "registry.unverified_required_project_count": {
       "status": "FRESH",
@@ -281,7 +287,7 @@
       "sourceRank": 80,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0
+      "value": 4
     },
     "registry.manifest_coverage": {
       "status": "FRESH",
@@ -291,17 +297,12 @@
       "sourceRank": 80,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 1.0
+      "value": 0.3667
     },
     "offer.facade_digest_mismatch_count": {
-      "status": "FRESH",
-      "fresh": true,
-      "ageSeconds": 30.0,
-      "sourceClass": "test_receipt",
-      "sourceRank": 90,
-      "sourceAllowed": true,
-      "revisionMatches": true,
-      "value": 0
+      "status": "MISSING",
+      "fresh": false,
+      "reason": "metric not observed"
     },
     "offer.duplicate_price_source_count": {
       "status": "FRESH",
@@ -317,8 +318,8 @@
       "status": "FRESH",
       "fresh": true,
       "ageSeconds": 30.0,
-      "sourceClass": "test_receipt",
-      "sourceRank": 90,
+      "sourceClass": "git_ast",
+      "sourceRank": 80,
       "sourceAllowed": true,
       "revisionMatches": true,
       "value": 1.0
@@ -364,15 +365,28 @@
       "priorityClass": "correctness",
       "classRank": 20,
       "importance": 975.0,
-      "dispatchUrgency": 200.0,
-      "violated": false,
+      "dispatchUrgency": 960.0,
+      "violated": true,
       "evidenceStatus": "FRESH",
-      "outcome": "PASS",
+      "outcome": "REPAIR_IMPLEMENTATION",
       "reasons": [
-        "grounded-plan-idle: Dobór narzędzia i plan są ugruntowane w bieżących dowodach.",
-        "Brak aktywnego naruszenia przy świeżych dowodach."
+        "plan-gap-boost: Otwarta intencja nie ma ugruntowanego planu zmian."
       ],
-      "actions": [],
+      "actions": [
+        {
+          "type": "PLAN",
+          "uri": "uri://todo2code/code-change/plan"
+        },
+        {
+          "type": "EXECUTE",
+          "uri": "uri://repair-agent/execute/hash-bound",
+          "maxAttempts": 2
+        },
+        {
+          "type": "VALIDATE",
+          "uri": "uri://validator-agent/validate/independent"
+        }
+      ],
       "expectedEffects": {
         "planning.unverified_tool_selection_count": "decrease",
         "planning.todo2code_plan_gap_count": "decrease",
@@ -399,15 +413,22 @@
       "priorityClass": "correctness",
       "classRank": 20,
       "importance": 970.0,
-      "dispatchUrgency": 200.0,
+      "dispatchUrgency": 680.0,
       "violated": false,
-      "evidenceStatus": "FRESH",
-      "outcome": "PASS",
+      "evidenceStatus": "MISSING_OR_STALE",
+      "outcome": "BLOCK",
       "reasons": [
-        "offer-healthy: Katalog, binding i fasady są spójne.",
-        "Brak aktywnego naruszenia przy świeżych dowodach."
+        "Brak świeżych dowodów: offer.facade_digest_mismatch_count"
       ],
-      "actions": [],
+      "actions": [
+        {
+          "type": "REFRESH_EVIDENCE",
+          "uri": "uri://twin/observe",
+          "metrics": [
+            "offer.facade_digest_mismatch_count"
+          ]
+        }
+      ],
       "expectedEffects": {
         "offer.facade_digest_mismatch_count": "decrease",
         "offer.duplicate_price_source_count": "decrease",
@@ -467,15 +488,28 @@
       "priorityClass": "standardization",
       "classRank": 30,
       "importance": 900.0,
-      "dispatchUrgency": 180.0,
-      "violated": false,
+      "dispatchUrgency": 780.0,
+      "violated": true,
       "evidenceStatus": "FRESH",
-      "outcome": "PASS",
+      "outcome": "REPAIR_IMPLEMENTATION",
       "reasons": [
-        "complete-route: Minimalny kontekst ticketu jest kompletny i zweryfikowany.",
-        "Brak aktywnego naruszenia przy świeżych dowodach."
+        "required-role-gap: Ticket nie ma zweryfikowanego projektu dla wymaganej roli lub concernu HOME."
       ],
-      "actions": [],
+      "actions": [
+        {
+          "type": "PLAN",
+          "uri": "uri://diagit/repair-plan/from-findings"
+        },
+        {
+          "type": "EXECUTE",
+          "uri": "uri://repair-agent/execute/hash-bound",
+          "maxAttempts": 2
+        },
+        {
+          "type": "VALIDATE",
+          "uri": "uri://pyqual/gate/manifest-conformance"
+        }
+      ],
       "expectedEffects": {
         "routing.required_capability_gap_count": "decrease",
         "routing.context_selection_coverage": "increase",
@@ -566,22 +600,105 @@
     "score": 1.0,
     "threshold": 0.75,
     "hardConflict": false,
-    "parallelDispatchAllowed": true,
+    "parallelDispatchAllowed": false,
     "automaticSequentialDispatchAllowed": true,
     "automaticDispatchAllowed": true,
-    "sequentialOrder": [],
+    "sequentialOrder": [
+      "STD-TOOL-GROUNDED-PLANNING",
+      "STD-OFFER-SSOT-INTEGRITY",
+      "STD-ECOSYSTEM-CONTEXT-ROUTING"
+    ],
     "budgetAssessment": {
       "status": "PASS",
-      "concurrentRepairs": 0,
+      "concurrentRepairs": 2,
       "standardChangeProposals": 0,
-      "estimates": {},
+      "estimates": {
+        "STD-TOOL-GROUNDED-PLANNING": {
+          "files": 4,
+          "changedLines": 180,
+          "agentTurns": 6
+        },
+        "STD-ECOSYSTEM-CONTEXT-ROUTING": {
+          "files": 6,
+          "changedLines": 240,
+          "agentTurns": 8
+        }
+      },
       "standardChangeProposalsToday": 0
     },
-    "findings": []
+    "findings": [
+      {
+        "type": "SEQUENCING_REQUIRED",
+        "before": "STD-TOOL-GROUNDED-PLANNING",
+        "after": "STD-OFFER-SSOT-INTEGRITY",
+        "reason": "The required intent also has pending remediation."
+      },
+      {
+        "type": "SEQUENCING_REQUIRED",
+        "before": "STD-TOOL-GROUNDED-PLANNING",
+        "after": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+        "reason": "The required intent also has pending remediation."
+      }
+    ]
   },
   "planDelta": {
     "mode": "propose-only",
-    "actions": []
+    "actions": [
+      {
+        "intentId": "STD-TOOL-GROUNDED-PLANNING",
+        "priorityClass": "correctness",
+        "dispatchUrgency": 960.0,
+        "type": "PLAN",
+        "uri": "uri://todo2code/code-change/plan"
+      },
+      {
+        "intentId": "STD-TOOL-GROUNDED-PLANNING",
+        "priorityClass": "correctness",
+        "dispatchUrgency": 960.0,
+        "type": "EXECUTE",
+        "uri": "uri://repair-agent/execute/hash-bound",
+        "maxAttempts": 2
+      },
+      {
+        "intentId": "STD-TOOL-GROUNDED-PLANNING",
+        "priorityClass": "correctness",
+        "dispatchUrgency": 960.0,
+        "type": "VALIDATE",
+        "uri": "uri://validator-agent/validate/independent"
+      },
+      {
+        "intentId": "STD-OFFER-SSOT-INTEGRITY",
+        "priorityClass": "correctness",
+        "dispatchUrgency": 680.0,
+        "type": "REFRESH_EVIDENCE",
+        "uri": "uri://twin/observe",
+        "metrics": [
+          "offer.facade_digest_mismatch_count"
+        ]
+      },
+      {
+        "intentId": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+        "priorityClass": "standardization",
+        "dispatchUrgency": 780.0,
+        "type": "PLAN",
+        "uri": "uri://diagit/repair-plan/from-findings"
+      },
+      {
+        "intentId": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+        "priorityClass": "standardization",
+        "dispatchUrgency": 780.0,
+        "type": "EXECUTE",
+        "uri": "uri://repair-agent/execute/hash-bound",
+        "maxAttempts": 2
+      },
+      {
+        "intentId": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+        "priorityClass": "standardization",
+        "dispatchUrgency": 780.0,
+        "type": "VALIDATE",
+        "uri": "uri://pyqual/gate/manifest-conformance"
+      }
+    ]
   },
-  "receiptDigest": "sha256:b3029385da583af9cfc07b4b5c70537347298a08946e50121702b1ac799939e7"
+  "receiptDigest": "sha256:046d65023ea812391034cc0d9d19b30020dc56c98a0879a136a2a856b51d8bf4"
 }

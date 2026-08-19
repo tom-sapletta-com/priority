@@ -1,0 +1,48 @@
+apiVersion: semcod.io/v1alpha1
+kind: QualityGateAdapterContract
+metadata:
+  id: evolutionary-priority-dsl
+  version: 0.3.0
+  lifecycle: candidate
+spec:
+  nativePyqualSchemaPinned: false
+  enforcementEnabled: false
+  reason: >-
+    Załączone źródła potwierdzają rolę semcod/pyqual, lecz nie zawierają dokładnej
+    mapy repozytorium ani przypiętego schematu jego konfiguracji. Ten plik jest
+    kontraktem adaptera, nie deklaracją zgodności z aktualnym natywnym pyqual.yaml.
+  gates:
+    - id: policy-schema-and-semantics
+      command:
+        - python3
+        - adapters/standardctl.py
+        - validate
+        - --policy
+        - priority-evolution.dsl.yaml
+        - --schema
+        - schemas/priority-evolution.schema.json
+      expectedExitCodes: [0]
+    - id: ecosystem-registry-schema
+      command:
+        - python3
+        - adapters/ecosystemctl.py
+        - validate-registry
+        - --registry
+        - registry/ecosystem-tools.yaml
+        - --schema
+        - schemas/ecosystem-tool-registry.schema.json
+      expectedExitCodes: [0]
+    - id: unit-and-negative-behavior-tests
+      command:
+        - python3
+        - -m
+        - unittest
+        - discover
+        - -s
+        - tests
+        - -v
+      expectedExitCodes: [0]
+  promotionRequirement:
+    - Pin an exact semcod/pyqual revision and configuration schema.
+    - Prove one negative fixture changes the gate outcome.
+    - Run in shadow before enabling enforcement.

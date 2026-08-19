@@ -1,0 +1,49 @@
+{
+  "schema": "todo2code.plan-validation-receipt/v1",
+  "generatedAt": "2026-08-19T10:00:00Z",
+  "ticketId": "ticket-001",
+  "requestDigest": "sha256:abcb28414f82643fcaefe9c4ea93a0ab9c9f53366f5dbef6dfaa6b2d84e091ee",
+  "plannerResultDigest": "sha256:d7093b7a6501b78e4e262cac78175a1a2c8bfe8f4671be25fee54b865f2e905c",
+  "finalOutcome": "PASS",
+  "recordCount": 2,
+  "plans": [
+    {
+      "planId": "CCP-ECOSYSTEM-INDEX",
+      "paths": [
+        "adapters/ecosystemctl.py",
+        "adapters/toon_index.py",
+        "registry/ecosystem-tools.yaml",
+        "schemas/ecosystem-tool-registry.schema.json"
+      ],
+      "acceptanceCriteria": [
+        "Indeks weryfikuje wymagane moduły i symbole z przypiętych map TOON oraz emituje digest."
+      ],
+      "negativeTests": [
+        "Projekt oparty wyłącznie na dokumentacji nie otrzymuje executionEligible=true."
+      ],
+      "validation": [
+        "python -m unittest discover -s tests -v",
+        "uri://validator-agent/validate/independent"
+      ]
+    },
+    {
+      "planId": "CCP-PLAN-GATE",
+      "paths": [
+        "adapters/ecosystemctl.py",
+        "schemas/planner-result-envelope.schema.json",
+        "tests/test_ecosystemctl.py"
+      ],
+      "acceptanceCriteria": [
+        "Niepusty plan zawiera ścieżki, kryteria i walidację."
+      ],
+      "negativeTests": [
+        "Pusty wynik przy otwartych kryteriach jest odrzucany z T2C_PLAN_GAP."
+      ],
+      "validation": [
+        "python -m unittest tests.test_ecosystemctl -v"
+      ]
+    }
+  ],
+  "findings": [],
+  "receiptDigest": "sha256:8289a3e99605a7cbb1f6111d42010f3795e9c1c7b11ae5a70b49754122f57986"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "ecosystemMapDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055",
+  "metrics": {
+    "projectCount": 15,
+    "verifiedProjectCount": 10,
+    "documentedOnlyProjectCount": 5,
+    "executionEligibleProjectCount": 9,
+    "duplicateHomeCount": 0,
+    "manifestCoverage": 0.3667
+  },
+  "out": "generated/ecosystem-map.json",
+  "llmsOut": "generated/llms.txt"
+}

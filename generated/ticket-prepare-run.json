@@ -1,0 +1,6 @@
+{
+  "ok": true,
+  "routeStatus": "REVIEW_REQUIRED",
+  "outDir": "tickets/ticket-001",
+  "receiptDigest": "sha256:b69d88240d06a6edcddc68a949983c76dd0e137f6addbb7b15891c21cfda90f9"
+}

@@ -1,0 +1,59 @@
+{
+  "mode": "propose-only",
+  "actions": [
+    {
+      "intentId": "STD-TOOL-GROUNDED-PLANNING",
+      "priorityClass": "correctness",
+      "dispatchUrgency": 960.0,
+      "type": "PLAN",
+      "uri": "uri://todo2code/code-change/plan"
+    },
+    {
+      "intentId": "STD-TOOL-GROUNDED-PLANNING",
+      "priorityClass": "correctness",
+      "dispatchUrgency": 960.0,
+      "type": "EXECUTE",
+      "uri": "uri://repair-agent/execute/hash-bound",
+      "maxAttempts": 2
+    },
+    {
+      "intentId": "STD-TOOL-GROUNDED-PLANNING",
+      "priorityClass": "correctness",
+      "dispatchUrgency": 960.0,
+      "type": "VALIDATE",
+      "uri": "uri://validator-agent/validate/independent"
+    },
+    {
+      "intentId": "STD-OFFER-SSOT-INTEGRITY",
+      "priorityClass": "correctness",
+      "dispatchUrgency": 680.0,
+      "type": "REFRESH_EVIDENCE",
+      "uri": "uri://twin/observe",
+      "metrics": [
+        "offer.facade_digest_mismatch_count"
+      ]
+    },
+    {
+      "intentId": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+      "priorityClass": "standardization",
+      "dispatchUrgency": 780.0,
+      "type": "PLAN",
+      "uri": "uri://diagit/repair-plan/from-findings"
+    },
+    {
+      "intentId": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+      "priorityClass": "standardization",
+      "dispatchUrgency": 780.0,
+      "type": "EXECUTE",
+      "uri": "uri://repair-agent/execute/hash-bound",
+      "maxAttempts": 2
+    },
+    {
+      "intentId": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+      "priorityClass": "standardization",
+      "dispatchUrgency": 780.0,
+      "type": "VALIDATE",
+      "uri": "uri://pyqual/gate/manifest-conformance"
+    }
+  ]
+}

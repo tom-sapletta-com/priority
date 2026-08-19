@@ -1,0 +1,29 @@
+# Subactor engineering ecosystem index
+registry: subactor-engineering-ecosystem@0.3.0
+registry_digest: sha256:4930758b69658f4de3481000e70330beed8abe312c812a8b5bcc950ff30576fd
+ecosystem_map_digest: sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055
+status: REVIEW_REQUIRED
+
+Use roles and HOME ownership below. Documentation-only tools may inform a ticket but cannot authorize execution.
+
+- autogrammar/todo2code | evidence=VERIFIED | execution=true | roles=planner,intent-extractor | home=- | capabilities=intent-evidence-graph,bounded-code-change-planning,workspace-preflight | extractIntent=uri://todo2code/intent/extract,planCodeChange=uri://todo2code/code-change/plan,watch=uri://todo2code/watch
+- semcod/giton | evidence=DOCUMENTED | execution=false | roles=local-git-emitter | home=- | capabilities=local-git-hooks | emit=uri://giton/event/emit
+- semcod/pyqual | evidence=DOCUMENTED | execution=false | roles=quality-gate | home=- | capabilities=declarative-quality-gates,repair-loop | evaluate=uri://pyqual/policy/evaluate,exactHeadGate=uri://pyqual/gate/exact-head,manifestGate=uri://pyqual/gate/manifest-conformance
+- subactor/brand | evidence=VERIFIED | execution=true | roles=vocabulary-owner | home=subactor-product-vocabulary | capabilities=product-vocabulary | validateVocabulary=uri://subactor/brand/validate
+- subactor/diagit | evidence=VERIFIED | execution=true | roles=fleet-observer,context-router,repair-plan-source | home=- | capabilities=fleet-audit,project-context-routing,repair-plan-from-findings | incrementalScan=uri://diagit/fleet/incremental-scan,repairPlan=uri://diagit/repair-plan/from-findings,scan=uri://diagit/fleet/scan,selectProjects=uri://diagit/map/select-affected-projects
+- subactor/intent-contract-dsl-runtime | evidence=VERIFIED | execution=false | roles=intent-runtime,digital-twin-control-target | home=- | capabilities=intent-contract-runtime,readiness-remediation-target | verify=uri://intent-contract-dsl-runtime/verify
+- subactor/offer | evidence=VERIFIED | execution=true | roles=commercial-offer-home,business-truth-home | home=commercial-offer-values | capabilities=offer-catalog-ssot,facade-digest-pinning | pinCheck=uri://subactor/offer/pin-check,validate=uri://subactor/offer/validate
+- subactor/onedev-agent | evidence=VERIFIED | execution=true | roles=server-git-gateway,ticket-scope-enforcer,pr-verification | home=- | capabilities=authoritative-git-gate,ticket-scope-enforcement,project-trait-selection | enforce=uri://onedev-agent/policy/enforce,verifyPullRequest=uri://onedev-agent/pr/verify
+- subactor/platform | evidence=VERIFIED | execution=true | roles=policy-instance-owner,ticket-host,orchestration-control | home=engineering-standardization-policy-instance | capabilities=organizational-policy-instance,ticket-allocation | reconcile=uri://subactor/controller/reconcile,ticketCreate=uri://subactor/platform/ticket/create
+- subactor/registry | evidence=VERIFIED | execution=true | roles=organization-registry,context-source | home=organization-project-registry | capabilities=registry-snapshot,assignment-validation | snapshot=uri://subactor/registry/snapshot
+- subactor/repair-agent | evidence=VERIFIED | execution=true | roles=implementation-executor | home=- | capabilities=hash-bound-repair | execute=uri://repair-agent/execute/hash-bound
+- subactor/validator-agent | evidence=VERIFIED | execution=true | roles=independent-validator | home=- | capabilities=independent-patch-validation | validate=uri://validator-agent/validate/independent
+- wellmanifest/new-project | evidence=DOCUMENTED | execution=false | roles=ticket-factory,manifest-standard-owner | home=project-ticket-lifecycle-standard,project-manifest-standard | capabilities=bounded-ticket,manifest-adoption | ticketCreate=uri://wellmanifest/new-project/ticket/create
+- wellmanifest/offer | evidence=DOCUMENTED | execution=false | roles=offer-standard-owner,abstract-standard-owner | home=commercial-offer-standard | capabilities=offer-standard | validateAdoption=uri://wellmanifest/offer/adoption/validate
+- wellmanifest/policy-dsl | evidence=DOCUMENTED | execution=false | roles=abstract-standard-owner,standard-owner,policy-language-standard-owner | home=evolutionary-intent-policy-language | capabilities=priority-policy-language | standardChangeProposal=uri://wellmanifest/standard-change/propose
+
+findings:
+- {"code":"REGISTRY_REQUIRED_PROJECT_REVIEW","evidenceStatus":"DOCUMENTED","projectId":"wellmanifest/policy-dsl","severity":"warning"}
+- {"code":"REGISTRY_REQUIRED_PROJECT_REVIEW","evidenceStatus":"DOCUMENTED","projectId":"wellmanifest/new-project","severity":"warning"}
+- {"code":"REGISTRY_REQUIRED_PROJECT_REVIEW","evidenceStatus":"DOCUMENTED","projectId":"semcod/pyqual","severity":"warning"}
+- {"code":"REGISTRY_REQUIRED_PROJECT_REVIEW","evidenceStatus":"DOCUMENTED","projectId":"wellmanifest/offer","severity":"warning"}

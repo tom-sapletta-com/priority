@@ -2,13 +2,14 @@ apiVersion: wellmanifest.io/v1alpha1
 kind: EvolutionaryIntentPolicy
 metadata:
   id: engineering-standardization
-  version: 0.2.0
+  version: 0.3.0
   lifecycle: candidate
   home:
     repository: subactor/platform
     role: HOME
   description: Organizacyjna instancja polityki dla ekosystemu subactor/semcod/autogrammar, kompilowana według abstrakcyjnego
-    schematu i semantyki HOME w wellmanifest/policy-dsl. Nie przenosi reguł produktowych do standardu wellmanifest.
+    schematu i semantyki HOME w wellmanifest/policy-dsl. Wersja 0.3 dodaje wybór narzędzi na podstawie map TOON, fail-closed
+    PLAN_GAP oraz integralność SSOT oferty bez przenoszenia wartości produktowych do wellmanifest.
 spec:
   scope:
     selectors:
@@ -118,6 +119,40 @@ spec:
       value: 0
     outcome: BLOCK
     remediationUri: uri://pyqual/tests/require-behavioral-negative-test
+  - id: INV-GROUNDED-TOOL-SELECTION
+    statement: Projekt może zostać wybrany do wykonania tylko na podstawie przypiętej mapy kodu, konfiguracji lub świeżego
+      receiptu; sama dokumentacja jest kontekstem, nie uprawnieniem wykonawczym.
+    when:
+      metric: planning.unverified_tool_selection_count
+      op: gt
+      value: 0
+    outcome: BLOCK
+    remediationUri: uri://diagit/map/refresh-and-route
+  - id: INV-NONEMPTY-GROUNDED-PLAN
+    statement: Pusty wynik todo2code przy otwartych kryteriach jest luką planowania T2C_PLAN_GAP, a nie zgodą na brak zmian.
+    when:
+      metric: planning.todo2code_plan_gap_count
+      op: gt
+      value: 0
+    outcome: BLOCK
+    remediationUri: uri://todo2code/code-change/refine-intent
+  - id: INV-OFFER-ONE-VALUE-HOME
+    statement: Wartości cenowe mają dokładnie jeden HOME w subactor/offer; wellmanifest/offer definiuje wyłącznie abstrakcyjny
+      standard adopcji.
+    when:
+      metric: offer.duplicate_price_source_count
+      op: gt
+      value: 0
+    outcome: BLOCK
+    remediationUri: uri://subactor/offer/remove-duplicate-source
+  - id: INV-OFFER-DIGEST-PIN
+    statement: Fasada oferty nie może zostać opublikowana z digestem niezgodnym z przypiętym katalogiem subactor/offer.
+    when:
+      metric: offer.facade_digest_mismatch_count
+      op: gt
+      value: 0
+    outcome: BLOCK
+    remediationUri: uri://subactor/offer/pin-check
   metrics:
   - id: governance.duplicate_home_count
     unit: count
@@ -250,6 +285,83 @@ spec:
     maxAgeSeconds: 3600
     requiredSourceClasses:
     - runtime_receipt
+  - id: planning.unverified_tool_selection_count
+    unit: count
+    direction: decrease
+    target: 0
+    hardLimit: 0
+    maxAgeSeconds: 300
+    requiredSourceClasses:
+    - git_ast
+    - runtime_receipt
+  - id: planning.todo2code_plan_gap_count
+    unit: count
+    direction: decrease
+    target: 0
+    hardLimit: 0
+    maxAgeSeconds: 300
+    requiredSourceClasses:
+    - test_receipt
+    - runtime_receipt
+  - id: routing.required_capability_gap_count
+    unit: count
+    direction: decrease
+    target: 0
+    hardLimit: 0
+    maxAgeSeconds: 300
+    requiredSourceClasses:
+    - git_ast
+    - runtime_receipt
+  - id: routing.context_selection_coverage
+    unit: ratio
+    direction: increase
+    target: 1.0
+    maxAgeSeconds: 900
+    requiredSourceClasses:
+    - git_ast
+    - runtime_receipt
+  - id: registry.unverified_required_project_count
+    unit: count
+    direction: decrease
+    target: 0
+    maxAgeSeconds: 900
+    requiredSourceClasses:
+    - git_ast
+    - configuration
+  - id: registry.manifest_coverage
+    unit: ratio
+    direction: increase
+    target: 1.0
+    maxAgeSeconds: 900
+    requiredSourceClasses:
+    - git_ast
+    - configuration
+  - id: offer.facade_digest_mismatch_count
+    unit: count
+    direction: decrease
+    target: 0
+    hardLimit: 0
+    maxAgeSeconds: 300
+    requiredSourceClasses:
+    - test_receipt
+    - git_ast
+  - id: offer.duplicate_price_source_count
+    unit: count
+    direction: decrease
+    target: 0
+    hardLimit: 0
+    maxAgeSeconds: 300
+    requiredSourceClasses:
+    - git_ast
+    - configuration
+  - id: offer.catalog_binding_coverage
+    unit: ratio
+    direction: increase
+    target: 1.0
+    maxAgeSeconds: 900
+    requiredSourceClasses:
+    - test_receipt
+    - git_ast
   budgets:
     concurrentRepairs: 3
     standardChangeProposalsPerDay: 2
@@ -305,9 +417,12 @@ spec:
     relations:
       reinforces:
       - STD-VALIDATION-BEHAVIOR
+      - STD-TOOL-GROUNDED-PLANNING
+      - STD-OFFER-SSOT-INTEGRITY
       enables:
       - STD-MANIFEST-CONFORMANCE
       - DELIVERY-EVOLUTION
+      - STD-ECOSYSTEM-CONTEXT-ROUTING
       requires: []
       excludes: []
     expectedEffects:
@@ -397,6 +512,8 @@ spec:
       reinforces:
       - STD-GOVERNANCE-TRUTH
       - STD-MANIFEST-CONFORMANCE
+      - STD-TOOL-GROUNDED-PLANNING
+      - STD-OFFER-SSOT-INTEGRITY
       enables:
       - DELIVERY-EVOLUTION
       requires:
@@ -482,6 +599,7 @@ spec:
       - STD-VALIDATION-BEHAVIOR
       enables:
       - DELIVERY-EVOLUTION
+      - STD-ECOSYSTEM-CONTEXT-ROUTING
       requires:
       - STD-GOVERNANCE-TRUTH
       - STD-VALIDATION-BEHAVIOR
@@ -567,6 +685,8 @@ spec:
       - STD-GOVERNANCE-TRUTH
       - STD-VALIDATION-BEHAVIOR
       - STD-MANIFEST-CONFORMANCE
+      - STD-TOOL-GROUNDED-PLANNING
+      - STD-ECOSYSTEM-CONTEXT-ROUTING
       excludes: []
     expectedEffects:
       delivery.user_value: increase
@@ -614,6 +734,235 @@ spec:
         maxAttempts: 2
       standard:
         mode: disabled
+  - id: STD-TOOL-GROUNDED-PLANNING
+    statement: Dobieraj planner i narzędzia wykonawcze z wersjonowanej mapy rzeczywistych modułów i symboli, a każdy pusty
+      plan przy otwartych kryteriach klasyfikuj jako PLAN_GAP.
+    ownerRef: autogrammar/todo2code
+    lifecycle: active
+    priority:
+      class: correctness
+      importance: 975
+      dispatchBase: 700
+      dispatchFloorWhenViolated: 880
+      dispatchCeiling: 990
+      nonDemotableBy:
+      - deadline
+      - feature_urgency
+      - agent_preference
+    violationWhen:
+      any:
+      - metric: planning.unverified_tool_selection_count
+        op: gt
+        value: 0
+      - metric: planning.todo2code_plan_gap_count
+        op: gt
+        value: 0
+    evidence:
+      maxAgeSeconds: 300
+      minimumSourceRank: 80
+      onMissing: BLOCK
+    relations:
+      reinforces:
+      - STD-GOVERNANCE-TRUTH
+      - STD-VALIDATION-BEHAVIOR
+      enables:
+      - STD-ECOSYSTEM-CONTEXT-ROUTING
+      - DELIVERY-EVOLUTION
+      requires:
+      - STD-GOVERNANCE-TRUTH
+      - STD-VALIDATION-BEHAVIOR
+      excludes: []
+    expectedEffects:
+      planning.unverified_tool_selection_count: decrease
+      planning.todo2code_plan_gap_count: decrease
+      agent.rule_citation_coverage: increase
+    adaptation:
+      cooldownSeconds: 300
+      rules:
+      - id: plan-gap-boost
+        when:
+          metric: planning.todo2code_plan_gap_count
+          op: gt
+          value: 0
+        dispatchDelta: 260
+        reason: Otwarta intencja nie ma ugruntowanego planu zmian.
+      - id: grounded-plan-idle
+        when:
+          all:
+          - metric: planning.unverified_tool_selection_count
+            op: eq
+            value: 0
+          - metric: planning.todo2code_plan_gap_count
+            op: eq
+            value: 0
+        dispatchDelta: -500
+        reason: Dobór narzędzia i plan są ugruntowane w bieżących dowodach.
+    repairPolicy:
+      implementation:
+        mode: propose_then_patch
+        plannerUri: uri://todo2code/code-change/plan
+        executorUri: uri://repair-agent/execute/hash-bound
+        validatorUri: uri://validator-agent/validate/independent
+        maxAttempts: 2
+      standard:
+        mode: disabled
+  - id: STD-ECOSYSTEM-CONTEXT-ROUTING
+    statement: Przed utworzeniem ticketu wybierz minimalny zestaw HOME, ADOPT i narzędzi na podstawie mapy floty, wymaganych
+      ról i przypiętych dowodów; luki oznaczają REVIEW_REQUIRED.
+    ownerRef: subactor/diagit
+    lifecycle: active
+    priority:
+      class: standardization
+      importance: 900
+      dispatchBase: 560
+      dispatchFloorWhenViolated: 720
+      dispatchCeiling: 930
+      nonDemotableBy:
+      - agent_preference
+    violationWhen:
+      any:
+      - metric: routing.required_capability_gap_count
+        op: gt
+        value: 0
+      - metric: routing.context_selection_coverage
+        op: lt
+        value: 1.0
+      - metric: registry.unverified_required_project_count
+        op: gt
+        value: 0
+    evidence:
+      maxAgeSeconds: 900
+      minimumSourceRank: 70
+      onMissing: REVIEW_REQUIRED
+    relations:
+      reinforces:
+      - STD-MANIFEST-CONFORMANCE
+      - STD-TOOL-GROUNDED-PLANNING
+      enables:
+      - DELIVERY-EVOLUTION
+      requires:
+      - STD-GOVERNANCE-TRUTH
+      - STD-VALIDATION-BEHAVIOR
+      - STD-TOOL-GROUNDED-PLANNING
+      excludes: []
+    expectedEffects:
+      routing.required_capability_gap_count: decrease
+      routing.context_selection_coverage: increase
+      registry.manifest_coverage: increase
+    adaptation:
+      cooldownSeconds: 300
+      rules:
+      - id: required-role-gap
+        when:
+          metric: routing.required_capability_gap_count
+          op: gt
+          value: 0
+        dispatchDelta: 220
+        reason: Ticket nie ma zweryfikowanego projektu dla wymaganej roli lub concernu HOME.
+      - id: complete-route
+        when:
+          all:
+          - metric: routing.required_capability_gap_count
+            op: eq
+            value: 0
+          - metric: routing.context_selection_coverage
+            op: gte
+            value: 1.0
+          - metric: registry.unverified_required_project_count
+            op: eq
+            value: 0
+        dispatchDelta: -380
+        reason: Minimalny kontekst ticketu jest kompletny i zweryfikowany.
+    repairPolicy:
+      implementation:
+        mode: propose_then_patch
+        plannerUri: uri://diagit/repair-plan/from-findings
+        executorUri: uri://repair-agent/execute/hash-bound
+        validatorUri: uri://pyqual/gate/manifest-conformance
+        maxAttempts: 2
+      standard:
+        mode: disabled
+  - id: STD-OFFER-SSOT-INTEGRITY
+    statement: Utrzymuj ceny i bindingi jako prawdę produktową w subactor/offer, a wellmanifest/offer jako niezależny standard
+      bez kwot; publikację blokuj przy duplikacie lub niespójnym digest pinie.
+    ownerRef: subactor/offer
+    lifecycle: active
+    priority:
+      class: correctness
+      importance: 970
+      dispatchBase: 680
+      dispatchFloorWhenViolated: 860
+      dispatchCeiling: 990
+      nonDemotableBy:
+      - deadline
+      - feature_urgency
+      - agent_preference
+    violationWhen:
+      any:
+      - metric: offer.facade_digest_mismatch_count
+        op: gt
+        value: 0
+      - metric: offer.duplicate_price_source_count
+        op: gt
+        value: 0
+      - metric: offer.catalog_binding_coverage
+        op: lt
+        value: 1.0
+    evidence:
+      maxAgeSeconds: 900
+      minimumSourceRank: 80
+      onMissing: BLOCK
+    relations:
+      reinforces:
+      - STD-GOVERNANCE-TRUTH
+      - STD-VALIDATION-BEHAVIOR
+      enables: []
+      requires:
+      - STD-GOVERNANCE-TRUTH
+      - STD-VALIDATION-BEHAVIOR
+      - STD-TOOL-GROUNDED-PLANNING
+      excludes: []
+    expectedEffects:
+      offer.facade_digest_mismatch_count: decrease
+      offer.duplicate_price_source_count: decrease
+      offer.catalog_binding_coverage: increase
+    adaptation:
+      cooldownSeconds: 300
+      rules:
+      - id: offer-pin-incident
+        when:
+          any:
+          - metric: offer.facade_digest_mismatch_count
+            op: gt
+            value: 0
+          - metric: offer.duplicate_price_source_count
+            op: gt
+            value: 0
+        dispatchDelta: 260
+        reason: Publikowana fasada oferty nie odpowiada jedynemu źródłu wartości.
+      - id: offer-healthy
+        when:
+          all:
+          - metric: offer.facade_digest_mismatch_count
+            op: eq
+            value: 0
+          - metric: offer.duplicate_price_source_count
+            op: eq
+            value: 0
+          - metric: offer.catalog_binding_coverage
+            op: gte
+            value: 1.0
+        dispatchDelta: -480
+        reason: Katalog, binding i fasady są spójne.
+    repairPolicy:
+      implementation:
+        mode: propose_then_patch
+        plannerUri: uri://todo2code/plan/bounded-remediation
+        executorUri: uri://repair-agent/execute/hash-bound
+        validatorUri: uri://subactor/offer/pin-check
+        maxAttempts: 2
+      standard:
+        mode: disabled
   triggers:
   - id: files-fast-loop
     type: fileWatch
@@ -626,6 +975,10 @@ spec:
     - '**/AGENTS.md'
     - '**/CLAUDE.md'
     - '**/GEMINI.md'
+    - '**/dsl-manifest.json'
+    - '**/registry.json'
+    - '**/catalogs/**/offer.json'
+    - '**/bindings/*.json'
     exclude:
     - '**/.git/**'
     - '**/node_modules/**'
@@ -633,6 +986,8 @@ spec:
     emit:
     - uri://diagit/fleet/incremental-scan
     - uri://pyqual/policy/evaluate
+    - uri://subactor/registry/snapshot
+    - uri://diagit/map/select-affected-projects
   - id: five-minute-control-loop
     type: timer
     everySeconds: 300
@@ -665,6 +1020,9 @@ spec:
     - drift.detected
     - receipt.expired
     - policy.conflict
+    - planner.plan_gap
+    - registry.drift
+    - offer.pin_mismatch
     emit:
     - uri://subactor/problem-reaction/classify
     - uri://subactor/remediation/propose
@@ -702,6 +1060,11 @@ spec:
     implementationRepair: uri://repair-agent/execute
     independentValidator: uri://validator-agent/validate
     gitControlPlane: uri://onedev-agent/policy/enforce
+    projectRegistry: uri://subactor/registry/snapshot
+    contextRouter: uri://diagit/map/select-affected-projects
+    codeChangePlanner: uri://todo2code/code-change/plan
+    plannerResultGate: uri://subactor/platform/planner-result/validate
+    offerPinGate: uri://subactor/offer/pin-check
   outputs:
     receiptPath: .wellmanifest/receipts/priority-decision.json
     planDeltaPath: .wellmanifest/receipts/intent-plan-delta.json

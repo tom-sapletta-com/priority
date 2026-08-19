@@ -2,12 +2,6 @@
   "schema": "wellmanifest.priority-state/v1alpha1",
   "revision": "sha256:example-head-20260819-v030",
   "metrics": {
-    "governance.duplicate_home_count": {
-      "value": 0,
-      "observedAt": "2026-08-19T09:59:30Z",
-      "sourceClass": "runtime_receipt",
-      "revision": "sha256:example-head-20260819-v030"
-    },
     "evidence.stale_or_mismatched_receipts": {
       "value": 0,
       "observedAt": "2026-08-19T09:59:30Z",
@@ -104,59 +98,68 @@
       "sourceClass": "runtime_receipt",
       "revision": "sha256:example-head-20260819-v030"
     },
-    "planning.unverified_tool_selection_count": {
+    "governance.duplicate_home_count": {
       "value": 0,
       "observedAt": "2026-08-19T09:59:30Z",
-      "sourceClass": "runtime_receipt",
-      "revision": "sha256:example-head-20260819-v030"
-    },
-    "planning.todo2code_plan_gap_count": {
-      "value": 1,
-      "observedAt": "2026-08-19T09:59:30Z",
-      "sourceClass": "runtime_receipt",
-      "revision": "sha256:example-head-20260819-v030"
-    },
-    "routing.required_capability_gap_count": {
-      "value": 4,
-      "observedAt": "2026-08-19T09:59:30Z",
-      "sourceClass": "runtime_receipt",
-      "revision": "sha256:example-head-20260819-v030"
-    },
-    "routing.context_selection_coverage": {
-      "value": 0.7333,
-      "observedAt": "2026-08-19T09:59:30Z",
-      "sourceClass": "runtime_receipt",
-      "revision": "sha256:example-head-20260819-v030"
+      "sourceClass": "git_ast",
+      "revision": "sha256:example-head-20260819-v030",
+      "evidenceDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
     },
     "registry.unverified_required_project_count": {
       "value": 4,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "git_ast",
-      "revision": "sha256:example-head-20260819-v030"
+      "revision": "sha256:example-head-20260819-v030",
+      "evidenceDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
     },
     "registry.manifest_coverage": {
       "value": 0.3667,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "git_ast",
-      "revision": "sha256:example-head-20260819-v030"
-    },
-    "offer.facade_digest_mismatch_count": {
-      "value": 1,
-      "observedAt": "2026-08-19T09:59:30Z",
-      "sourceClass": "test_receipt",
-      "revision": "sha256:example-head-20260819-v030"
+      "revision": "sha256:example-head-20260819-v030",
+      "evidenceDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
     },
     "offer.duplicate_price_source_count": {
       "value": 0,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "git_ast",
-      "revision": "sha256:example-head-20260819-v030"
+      "revision": "sha256:example-head-20260819-v030",
+      "evidenceDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
     },
     "offer.catalog_binding_coverage": {
-      "value": 0.5,
+      "value": 1.0,
+      "observedAt": "2026-08-19T09:59:30Z",
+      "sourceClass": "git_ast",
+      "revision": "sha256:example-head-20260819-v030",
+      "evidenceDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
+    },
+    "planning.unverified_tool_selection_count": {
+      "value": 3,
+      "observedAt": "2026-08-19T09:59:30Z",
+      "sourceClass": "runtime_receipt",
+      "revision": "sha256:example-head-20260819-v030",
+      "evidenceDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b"
+    },
+    "routing.required_capability_gap_count": {
+      "value": 3,
+      "observedAt": "2026-08-19T09:59:30Z",
+      "sourceClass": "runtime_receipt",
+      "revision": "sha256:example-head-20260819-v030",
+      "evidenceDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b"
+    },
+    "routing.context_selection_coverage": {
+      "value": 0.7273,
+      "observedAt": "2026-08-19T09:59:30Z",
+      "sourceClass": "runtime_receipt",
+      "revision": "sha256:example-head-20260819-v030",
+      "evidenceDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b"
+    },
+    "planning.todo2code_plan_gap_count": {
+      "value": 1,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "test_receipt",
-      "revision": "sha256:example-head-20260819-v030"
+      "revision": "sha256:example-head-20260819-v030",
+      "evidenceDigest": "sha256:594185df858f6d230e3fac196677ce904577cc88e6bc58041699cd944848307e"
     }
   },
   "facts": {
@@ -184,5 +187,32 @@
         "agentTurns": 5
       }
     }
+  },
+  "projection": {
+    "schema": "subactor.priority-state-projection/v1",
+    "generatedAt": "2026-08-19T09:59:30Z",
+    "policyId": "engineering-standardization",
+    "policyVersion": "0.3.0",
+    "missingMetrics": [
+      "offer.facade_digest_mismatch_count"
+    ],
+    "unknownMetrics": [],
+    "provenance": [
+      {
+        "kind": "ecosystem-map",
+        "digest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
+      },
+      {
+        "kind": "context-selection",
+        "digest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b",
+        "status": "REVIEW_REQUIRED"
+      },
+      {
+        "kind": "planner-validation",
+        "digest": "sha256:594185df858f6d230e3fac196677ce904577cc88e6bc58041699cd944848307e",
+        "status": "BLOCK"
+      }
+    ],
+    "projectionDigest": "sha256:0a9036b0da1ada4ba59827b5020f76d8d60f16c91e04770b9cb76fb7b3407a34"
   }
 }

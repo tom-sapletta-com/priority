@@ -1,0 +1,12 @@
+{
+  "schema": "subactor.offer-pin-receipt/v1",
+  "fixture": true,
+  "status": "PASS",
+  "observedAt": "2026-08-19T09:59:30Z",
+  "revision": "sha256:example-head-20260819-v030",
+  "facadeDigestMismatchCount": 0,
+  "duplicatePriceSourceCount": 0,
+  "catalogBindingCoverage": 1.0,
+  "note": "Test fixture only; not a runtime attestation of a live offer deployment.",
+  "receiptDigest": "sha256:be08ee4b61f71df02aa2339b77a90a629e70285bdae8dd9e8f4f7e1c1434c4a3"
+}

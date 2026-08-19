@@ -1,0 +1,24 @@
+apiVersion: subactor.io/v1alpha1
+kind: GitGatewayAdapterContract
+metadata:
+  id: evolutionary-priority-pre-receive
+  version: 0.3.0
+  lifecycle: candidate
+spec:
+  authority: subactor/onedev-agent
+  eventStandard: wellmanifest/git-lifecycle
+  hookTemplate: hooks/pre-receive
+  requirements:
+    materializedRevision: true
+    stateRevisionMustMatchPushedRevision: true
+    exactPolicyDigest: true
+    structuredStderrPrefix: CODEVALIDATOR_RESULT=
+    cannotBypassClientSide: true
+  environment:
+    POLICY_ROOT: absolute path to this package or installed policy bundle
+    POLICY_STATE_PATH: state generated for the exact pushed revision
+    POLICY_RECEIPT_PATH: output path for the decision receipt
+  safety:
+    - The hook never evaluates an unrelated server worktree.
+    - Missing or mismatched state is a rejection.
+    - Candidate, shadow and canary policies cannot authorize dispatch.

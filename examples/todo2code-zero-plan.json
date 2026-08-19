@@ -1,0 +1,12 @@
+{
+  "status": "succeeded",
+  "recordCount": 0,
+  "plans": [],
+  "planIds": [],
+  "diagnostics": [
+    {
+      "code": "T2C_PLAN_GAP",
+      "message": "Deterministic linker found existing target paths but no grounded behavior change."
+    }
+  ]
+}

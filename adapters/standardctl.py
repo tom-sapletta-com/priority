@@ -549,9 +549,15 @@ def complementarity(policy: Json, decisions: list[Decision], state: Json) -> Jso
 
     if not actionable:
         normalized = 1.0
+    elif possible_positive > 0.0:
+        # A plan that satisfies every declared positive relation should score
+        # 1.0.  Negative weights are already applied to ``raw_score`` when a
+        # concrete conflict is observed; reserving all possible negative weights
+        # in the denominator made even a fully satisfied standalone delivery
+        # plan unable to cross the automatic-dispatch threshold.
+        normalized = max(0.0, min(1.0, raw_score / possible_positive))
     else:
-        denominator = max(1.0, possible_positive + abs(sum(min(0.0, float(v)) for v in weights.values())))
-        normalized = max(0.0, min(1.0, 0.5 + raw_score / (2.0 * denominator)))
+        normalized = 1.0 if raw_score >= 0.0 else 0.0
     hard_types = {
         "MISSING_DEPENDENCY",
         "BLOCKED_DEPENDENCY",

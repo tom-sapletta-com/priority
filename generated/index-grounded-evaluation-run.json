@@ -1,0 +1,50 @@
+{
+  "finalOutcome": "BLOCK",
+  "receiptDigest": "sha256:046d65023ea812391034cc0d9d19b30020dc56c98a0879a136a2a856b51d8bf4",
+  "complementarity": {
+    "score": 1.0,
+    "threshold": 0.75,
+    "hardConflict": false,
+    "parallelDispatchAllowed": false,
+    "automaticSequentialDispatchAllowed": true,
+    "automaticDispatchAllowed": true,
+    "sequentialOrder": [
+      "STD-TOOL-GROUNDED-PLANNING",
+      "STD-OFFER-SSOT-INTEGRITY",
+      "STD-ECOSYSTEM-CONTEXT-ROUTING"
+    ],
+    "budgetAssessment": {
+      "status": "PASS",
+      "concurrentRepairs": 2,
+      "standardChangeProposals": 0,
+      "estimates": {
+        "STD-TOOL-GROUNDED-PLANNING": {
+          "files": 4,
+          "changedLines": 180,
+          "agentTurns": 6
+        },
+        "STD-ECOSYSTEM-CONTEXT-ROUTING": {
+          "files": 6,
+          "changedLines": 240,
+          "agentTurns": 8
+        }
+      },
+      "standardChangeProposalsToday": 0
+    },
+    "findings": [
+      {
+        "type": "SEQUENCING_REQUIRED",
+        "before": "STD-TOOL-GROUNDED-PLANNING",
+        "after": "STD-OFFER-SSOT-INTEGRITY",
+        "reason": "The required intent also has pending remediation."
+      },
+      {
+        "type": "SEQUENCING_REQUIRED",
+        "before": "STD-TOOL-GROUNDED-PLANNING",
+        "after": "STD-ECOSYSTEM-CONTEXT-ROUTING",
+        "reason": "The required intent also has pending remediation."
+      }
+    ]
+  },
+  "out": "receipts/index-grounded-decision.json"
+}

@@ -1,0 +1,8 @@
+{
+  "summary": {
+    "added": 5118,
+    "removed": 624,
+    "changedLineCount": 303
+  },
+  "out": "generated/subactor-map-diff.json"
+}

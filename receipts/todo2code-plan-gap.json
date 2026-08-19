@@ -1,0 +1,19 @@
+{
+  "schema": "todo2code.plan-validation-receipt/v1",
+  "generatedAt": "2026-08-19T10:00:00Z",
+  "ticketId": "ticket-001",
+  "requestDigest": "sha256:abcb28414f82643fcaefe9c4ea93a0ab9c9f53366f5dbef6dfaa6b2d84e091ee",
+  "plannerResultDigest": "sha256:7647498f6b0d05171c83f3e655927e84310e6296e855fe5ef01868a700fb8370",
+  "finalOutcome": "BLOCK",
+  "recordCount": 0,
+  "plans": [],
+  "findings": [
+    {
+      "code": "T2C_PLAN_GAP",
+      "severity": "critical",
+      "acceptanceCriterionCount": 5,
+      "message": "Planner emitted zero grounded code-change plans while acceptance criteria remain open."
+    }
+  ],
+  "receiptDigest": "sha256:594185df858f6d230e3fac196677ce904577cc88e6bc58041699cd944848307e"
+}

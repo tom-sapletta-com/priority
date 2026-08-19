@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="${POLICY_ROOT:?POLICY_ROOT must point to the pinned policy bundle}"
+STATE="${POLICY_STATE_PATH:?POLICY_STATE_PATH must point to exact-revision state}"
+OUT="${POLICY_RECEIPT_PATH:-$ROOT/.wellmanifest/receipts/pre-receive-decision.json}"
+POLICY="$ROOT/priority-evolution.dsl.yaml"
+SCHEMA="$ROOT/schemas/priority-evolution.schema.json"
+
+new_revisions=()
+while read -r old_revision new_revision ref_name; do
+  [[ "$new_revision" =~ ^0+$ ]] && continue
+  new_revisions+=("$new_revision")
+done
+
+if [[ ${#new_revisions[@]} -eq 0 ]]; then
+  exit 0
+fi
+
+unique_revision_count="$(printf '%s\n' "${new_revisions[@]}" | sort -u | wc -l | tr -d ' ')"
+if [[ "$unique_revision_count" -ne 1 ]]; then
+  payload="$(python3 - "${new_revisions[*]}" <<'PY'
+import json,sys
+print(json.dumps({
+  'accepted': False,
+  'code': 'MULTI_REVISION_PUSH_UNSUPPORTED',
+  'pushedRevisions': sorted(set(sys.argv[1].split())),
+}, separators=(',', ':')))
+PY
+)"
+  echo "CODEVALIDATOR: push rejected" >&2
+  echo "CODEVALIDATOR_RESULT=$payload" >&2
+  exit 1
+fi
+
+state_revision="$(python3 - "$STATE" <<'PY'
+import json, sys
+value=json.load(open(sys.argv[1], encoding='utf-8'))
+print(value.get('revision') or '')
+PY
+)"
+
+matched=false
+for revision in "${new_revisions[@]}"; do
+  if [[ "$state_revision" == "$revision" || "$state_revision" == "sha256:$revision" ]]; then
+    matched=true
+    break
+  fi
+done
+
+if [[ "$matched" != true ]]; then
+  payload="$(python3 - "$state_revision" "${new_revisions[*]}" <<'PY'
+import json,sys
+print(json.dumps({
+  'accepted': False,
+  'code': 'STATE_REVISION_MISMATCH',
+  'stateRevision': sys.argv[1],
+  'pushedRevisions': sys.argv[2].split(),
+}, separators=(',', ':')))
+PY
+)"
+  echo "CODEVALIDATOR: push rejected" >&2
+  echo "CODEVALIDATOR_RESULT=$payload" >&2
+  exit 1
+fi
+
+rm -f "$OUT"
+failure_code="POLICY_DECISION_REJECTED"
+set +e
+python3 "$ROOT/adapters/standardctl.py" validate \
+  --policy "$POLICY" \
+  --schema "$SCHEMA" >/dev/null 2>&1
+validate_status=$?
+if [[ $validate_status -eq 0 ]]; then
+  python3 "$ROOT/adapters/standardctl.py" evaluate \
+    --policy "$POLICY" \
+    --state "$STATE" \
+    --out "$OUT" >/dev/null 2>&1
+  status=$?
+else
+  status=$validate_status
+  failure_code="POLICY_VALIDATION_FAILED"
+fi
+set -e
+
+if [[ $status -ne 0 ]]; then
+  payload="$(python3 - "$OUT" "$failure_code" <<'PY'
+import json,sys
+try:
+    receipt=json.load(open(sys.argv[1], encoding='utf-8'))
+except Exception as exc:
+    receipt={'accepted':False,'code':sys.argv[2],'error':str(exc)}
+else:
+    receipt={
+      'accepted':False,
+      'finalOutcome':receipt.get('finalOutcome'),
+      'receiptDigest':receipt.get('receiptDigest'),
+      'blockingInvariants':[x.get('id') for x in receipt.get('invariants',[]) if x.get('status')!='PASS'],
+    }
+print(json.dumps(receipt, separators=(',', ':')))
+PY
+)"
+  echo "CODEVALIDATOR: push rejected" >&2
+  echo "CODEVALIDATOR_RESULT=$payload" >&2
+  exit 1
+fi
+
+exit 0

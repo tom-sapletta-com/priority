@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wellmanifest.io/schemas/ecosystem-tool-registry.schema.json",
+  "title": "Ecosystem Tool Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["apiVersion", "kind", "metadata", "spec"],
+  "properties": {
+    "apiVersion": {"const": "subactor.io/v1alpha1"},
+    "kind": {"const": "EcosystemToolRegistry"},
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version", "lifecycle", "home"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "lifecycle": {"enum": ["candidate", "shadow", "canary", "active", "deprecated", "superseded"]},
+        "description": {"type": "string"},
+        "home": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["repository", "role"],
+          "properties": {
+            "repository": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+            "role": {"const": "HOME"}
+          }
+        }
+      }
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceRanks", "manifestFiles", "projects"],
+      "properties": {
+        "sourceRanks": {
+          "type": "object",
+          "additionalProperties": {"type": "integer", "minimum": 0, "maximum": 100}
+        },
+        "manifestFiles": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          }
+        },
+        "projects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/project"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "weight", "keywords"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "weight": {"type": "number", "minimum": 0},
+        "keywords": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "symbolEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "symbols"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "symbols": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"}
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceClass"],
+      "properties": {
+        "sourceClass": {"enum": ["runtime_receipt", "test_receipt", "git_ast", "configuration", "documentation", "agent_claim"]},
+        "requiredModules": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "requiredSymbols": {"type": "array", "items": {"$ref": "#/$defs/symbolEvidence"}},
+        "documents": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "note": {"type": "string"}
+      },
+      "anyOf": [
+        {"required": ["requiredModules"]},
+        {"required": ["requiredSymbols"]},
+        {"required": ["documents"]}
+      ]
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "organization", "repository", "lifecycle", "required", "roles", "capabilities", "interfaces", "evidence"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[^/]+/[^/]+$"},
+        "organization": {"type": "string", "minLength": 1},
+        "repository": {"type": "string", "minLength": 1},
+        "modulePrefix": {"type": "string", "minLength": 1},
+        "lifecycle": {"enum": ["candidate", "shadow", "canary", "active", "deprecated", "superseded"]},
+        "required": {"type": "boolean"},
+        "roles": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "homeFor": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "adopts": {"type": "array", "items": {"type": "string", "pattern": "^[^/]+/[^/]+$"}},
+        "capabilities": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/capability"}},
+        "interfaces": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"type": "string", "pattern": "^uri://"}
+        },
+        "evidence": {"$ref": "#/$defs/evidence"}
+      }
+    }
+  }
+}

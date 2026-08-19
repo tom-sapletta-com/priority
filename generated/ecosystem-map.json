@@ -1,0 +1,1538 @@
+{
+  "schema": "subactor.ecosystem-map/v1",
+  "generatedAt": "2026-08-19T10:00:00Z",
+  "registryId": "subactor-engineering-ecosystem",
+  "registryVersion": "0.3.0",
+  "registryLifecycle": "candidate",
+  "registryHome": {
+    "repository": "subactor/registry",
+    "role": "HOME"
+  },
+  "registryDigest": "sha256:4930758b69658f4de3481000e70330beed8abe312c812a8b5bcc950ff30576fd",
+  "status": "REVIEW_REQUIRED",
+  "sources": {
+    "autogrammar": {
+      "path": "sources/indexes/autogrammar-2026-08-19.toon.yaml",
+      "sha256": "sha256:09fce2609729b130b2d1224821dad947572d29a3cf4a11a5963af41258e47a26",
+      "generatedDate": "2026-08-19",
+      "moduleCount": 6421
+    },
+    "subactor": {
+      "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
+      "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
+      "generatedDate": "2026-08-19",
+      "moduleCount": 6497
+    }
+  },
+  "metrics": {
+    "projectCount": 15,
+    "verifiedProjectCount": 10,
+    "documentedOnlyProjectCount": 5,
+    "executionEligibleProjectCount": 9,
+    "duplicateHomeCount": 0,
+    "manifestCoverage": 0.3667
+  },
+  "homeOwners": {
+    "commercial-offer-standard": [
+      "wellmanifest/offer"
+    ],
+    "commercial-offer-values": [
+      "subactor/offer"
+    ],
+    "engineering-standardization-policy-instance": [
+      "subactor/platform"
+    ],
+    "evolutionary-intent-policy-language": [
+      "wellmanifest/policy-dsl"
+    ],
+    "organization-project-registry": [
+      "subactor/registry"
+    ],
+    "project-manifest-standard": [
+      "wellmanifest/new-project"
+    ],
+    "project-ticket-lifecycle-standard": [
+      "wellmanifest/new-project"
+    ],
+    "subactor-product-vocabulary": [
+      "subactor/brand"
+    ]
+  },
+  "projects": [
+    {
+      "id": "autogrammar/todo2code",
+      "organization": "autogrammar",
+      "repository": "todo2code",
+      "lifecycle": "active",
+      "required": true,
+      "roles": [
+        "planner",
+        "intent-extractor"
+      ],
+      "homeFor": [],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "intent-evidence-graph",
+          "weight": 10,
+          "keywords": [
+            "intent",
+            "evidence",
+            "graph",
+            "task",
+            "todo",
+            "git",
+            "ast",
+            "documentation"
+          ]
+        },
+        {
+          "id": "bounded-code-change-planning",
+          "weight": 12,
+          "keywords": [
+            "plan",
+            "planning",
+            "code",
+            "change",
+            "remediation",
+            "acceptance",
+            "patch"
+          ]
+        },
+        {
+          "id": "workspace-preflight",
+          "weight": 8,
+          "keywords": [
+            "preflight",
+            "workspace",
+            "governance",
+            "branch",
+            "dirty",
+            "baseline"
+          ]
+        }
+      ],
+      "interfaces": {
+        "extractIntent": "uri://todo2code/intent/extract",
+        "planCodeChange": "uri://todo2code/code-change/plan",
+        "watch": "uri://todo2code/watch"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": true,
+        "observedModuleCount": 337,
+        "map": {
+          "organization": "autogrammar",
+          "path": "sources/indexes/autogrammar-2026-08-19.toon.yaml",
+          "sha256": "sha256:09fce2609729b130b2d1224821dad947572d29a3cf4a11a5963af41258e47a26",
+          "generatedDate": "2026-08-19",
+          "declaredModuleCount": 6421,
+          "parsedModuleCount": 6421
+        },
+        "moduleChecks": [
+          {
+            "path": "todo2code/dsl-manifest.json",
+            "present": true
+          },
+          {
+            "path": "todo2code/goal.yaml",
+            "present": true
+          },
+          {
+            "path": "todo2code/schemas/code-change-plan-set.schema.json",
+            "present": true
+          },
+          {
+            "path": "todo2code/src/pipeline/pipeline-run.ts",
+            "present": true
+          },
+          {
+            "path": "todo2code/src/synthesis/code-change-plan-propose.ts",
+            "present": true
+          },
+          {
+            "path": "todo2code/src/services/workspace-preflight.ts",
+            "present": true
+          }
+        ],
+        "symbolChecks": [
+          {
+            "path": "todo2code/src/pipeline/pipeline-run.ts",
+            "symbol": "PipelineRun",
+            "present": true
+          },
+          {
+            "path": "todo2code/src/synthesis/code-change-plan-propose.ts",
+            "symbol": "proposeCodeChangePlans",
+            "present": true
+          },
+          {
+            "path": "todo2code/src/synthesis/code-change-plan-propose.ts",
+            "symbol": "buildPlanFromDiagnostic",
+            "present": true
+          },
+          {
+            "path": "todo2code/src/services/workspace-preflight.ts",
+            "symbol": "WorkspacePreflightError",
+            "present": true
+          }
+        ],
+        "documents": [],
+        "note": null,
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.6667,
+          "categories": {
+            "identity": {
+              "present": true,
+              "matches": [
+                "todo2code/dsl-manifest.json"
+              ]
+            },
+            "goal": {
+              "present": true,
+              "matches": [
+                "todo2code/goal.yaml"
+              ]
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "semcod/giton",
+      "organization": "semcod",
+      "repository": "giton",
+      "lifecycle": "active",
+      "required": false,
+      "roles": [
+        "local-git-emitter"
+      ],
+      "homeFor": [],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "local-git-hooks",
+          "weight": 9,
+          "keywords": [
+            "git",
+            "hook",
+            "pre-commit",
+            "post-commit",
+            "pre-push",
+            "fixup"
+          ]
+        }
+      ],
+      "interfaces": {
+        "emit": "uri://giton/event/emit"
+      },
+      "evidence": {
+        "status": "DOCUMENTED",
+        "sourceClass": "documentation",
+        "sourceRank": 40,
+        "coverage": 1.0,
+        "executionEligible": false,
+        "observedModuleCount": 0,
+        "map": null,
+        "moduleChecks": [],
+        "symbolChecks": [],
+        "documents": [
+          "sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#3.5"
+        ],
+        "note": "Exact repository map was not attached.",
+        "manifest": {
+          "status": "NOT_MEASURED",
+          "coverage": null,
+          "categories": {}
+        }
+      }
+    },
+    {
+      "id": "semcod/pyqual",
+      "organization": "semcod",
+      "repository": "pyqual",
+      "lifecycle": "active",
+      "required": true,
+      "roles": [
+        "quality-gate"
+      ],
+      "homeFor": [],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "declarative-quality-gates",
+          "weight": 12,
+          "keywords": [
+            "quality",
+            "gate",
+            "validate",
+            "validation",
+            "test",
+            "negative",
+            "commit",
+            "manifest"
+          ]
+        },
+        {
+          "id": "repair-loop",
+          "weight": 7,
+          "keywords": [
+            "repair",
+            "retry",
+            "finding",
+            "stderr",
+            "codevalidator"
+          ]
+        }
+      ],
+      "interfaces": {
+        "evaluate": "uri://pyqual/policy/evaluate",
+        "exactHeadGate": "uri://pyqual/gate/exact-head",
+        "manifestGate": "uri://pyqual/gate/manifest-conformance"
+      },
+      "evidence": {
+        "status": "DOCUMENTED",
+        "sourceClass": "documentation",
+        "sourceRank": 40,
+        "coverage": 1.0,
+        "executionEligible": false,
+        "observedModuleCount": 0,
+        "map": null,
+        "moduleChecks": [],
+        "symbolChecks": [],
+        "documents": [
+          "sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#3.1"
+        ],
+        "note": "The source report identifies the role; exact CLI/config schema must be pinned from the repository before enforcement.",
+        "manifest": {
+          "status": "NOT_MEASURED",
+          "coverage": null,
+          "categories": {}
+        }
+      }
+    },
+    {
+      "id": "subactor/brand",
+      "organization": "subactor",
+      "repository": "brand",
+      "lifecycle": "active",
+      "required": false,
+      "roles": [
+        "vocabulary-owner"
+      ],
+      "homeFor": [
+        "subactor-product-vocabulary"
+      ],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "product-vocabulary",
+          "weight": 7,
+          "keywords": [
+            "brand",
+            "vocabulary",
+            "naming",
+            "agent-operation",
+            "plan-name"
+          ]
+        }
+      ],
+      "interfaces": {
+        "validateVocabulary": "uri://subactor/brand/validate"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": true,
+        "observedModuleCount": 22,
+        "map": {
+          "organization": "subactor",
+          "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
+          "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
+          "generatedDate": "2026-08-19",
+          "declaredModuleCount": 6497,
+          "parsedModuleCount": 6497
+        },
+        "moduleChecks": [
+          {
+            "path": "brand/dsl-manifest.json",
+            "present": true
+          },
+          {
+            "path": "brand/profiles/subactor/vocabulary.json",
+            "present": true
+          },
+          {
+            "path": "brand/schemas/vocabulary.schema.json",
+            "present": true
+          }
+        ],
+        "symbolChecks": [],
+        "documents": [],
+        "note": null,
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.3333,
+          "categories": {
+            "identity": {
+              "present": true,
+              "matches": [
+                "brand/dsl-manifest.json"
+              ]
+            },
+            "goal": {
+              "present": false,
+              "matches": []
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "subactor/diagit",
+      "organization": "subactor",
+      "repository": "diagit",
+      "lifecycle": "active",
+      "required": true,
+      "roles": [
+        "fleet-observer",
+        "context-router",
+        "repair-plan-source"
+      ],
+      "homeFor": [],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "fleet-audit",
+          "weight": 12,
+          "keywords": [
+            "fleet",
+            "audit",
+            "repository",
+            "map",
+            "drift",
+            "findings",
+            "state"
+          ]
+        },
+        {
+          "id": "project-context-routing",
+          "weight": 12,
+          "keywords": [
+            "context",
+            "route",
+            "select",
+            "project",
+            "repository",
+            "llm",
+            "ticket"
+          ]
+        },
+        {
+          "id": "repair-plan-from-findings",
+          "weight": 8,
+          "keywords": [
+            "repair",
+            "remediation",
+            "finding",
+            "plan",
+            "governance"
+          ]
+        }
+      ],
+      "interfaces": {
+        "scan": "uri://diagit/fleet/scan",
+        "incrementalScan": "uri://diagit/fleet/incremental-scan",
+        "selectProjects": "uri://diagit/map/select-affected-projects",
+        "repairPlan": "uri://diagit/repair-plan/from-findings"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": true,
+        "observedModuleCount": 53,
+        "map": {
+          "organization": "subactor",
+          "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
+          "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
+          "generatedDate": "2026-08-19",
+          "declaredModuleCount": 6497,
+          "parsedModuleCount": 6497
+        },
+        "moduleChecks": [
+          {
+            "path": "diagit/dsl-manifest.json",
+            "present": true
+          },
+          {
+            "path": "diagit/goal.yaml",
+            "present": true
+          },
+          {
+            "path": "diagit/proto/diagit/v1/audit.proto",
+            "present": true
+          },
+          {
+            "path": "diagit/src/diagit/application/control_service.py",
+            "present": true
+          },
+          {
+            "path": "diagit/src/diagit/infrastructure/git_probe.py",
+            "present": true
+          },
+          {
+            "path": "diagit/src/diagit/infrastructure/projection.py",
+            "present": true
+          }
+        ],
+        "symbolChecks": [
+          {
+            "path": "diagit/src/diagit/application/control_service.py",
+            "symbol": "ControlService",
+            "present": true
+          },
+          {
+            "path": "diagit/src/diagit/application/control_service.py",
+            "symbol": "generate_governance_plan",
+            "present": true
+          },
+          {
+            "path": "diagit/src/diagit/application/control_service.py",
+            "symbol": "generate_repair_plan",
+            "present": true
+          },
+          {
+            "path": "diagit/src/diagit/application/control_service.py",
+            "symbol": "generate_repair_plans_from_findings",
+            "present": true
+          },
+          {
+            "path": "diagit/src/diagit/infrastructure/git_probe.py",
+            "symbol": "discover_repositories",
+            "present": true
+          },
+          {
+            "path": "diagit/src/diagit/infrastructure/git_probe.py",
+            "symbol": "inspect_repository",
+            "present": true
+          },
+          {
+            "path": "diagit/src/diagit/infrastructure/projection.py",
+            "symbol": "Projection",
+            "present": true
+          }
+        ],
+        "documents": [],
+        "note": null,
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.6667,
+          "categories": {
+            "identity": {
+              "present": true,
+              "matches": [
+                "diagit/dsl-manifest.json"
+              ]
+            },
+            "goal": {
+              "present": true,
+              "matches": [
+                "diagit/goal.yaml"
+              ]
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "subactor/intent-contract-dsl-runtime",
+      "organization": "subactor",
+      "repository": "intent-contract-dsl-runtime",
+      "lifecycle": "candidate",
+      "required": false,
+      "roles": [
+        "intent-runtime",
+        "digital-twin-control-target"
+      ],
+      "homeFor": [],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "intent-contract-runtime",
+          "weight": 10,
+          "keywords": [
+            "intent",
+            "contract",
+            "runtime",
+            "verifier",
+            "policy",
+            "execution"
+          ]
+        },
+        {
+          "id": "readiness-remediation-target",
+          "weight": 8,
+          "keywords": [
+            "readiness",
+            "remediation",
+            "authentication",
+            "persistence",
+            "sandbox",
+            "telemetry"
+          ]
+        }
+      ],
+      "interfaces": {
+        "verify": "uri://intent-contract-dsl-runtime/verify"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": false,
+        "observedModuleCount": 1078,
+        "map": {
+          "organization": "subactor",
+          "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
+          "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
+          "generatedDate": "2026-08-19",
+          "declaredModuleCount": 6497,
+          "parsedModuleCount": 6497
+        },
+        "moduleChecks": [
+          {
+            "path": "intent-contract-dsl-runtime/project.manifest.yml",
+            "present": true
+          },
+          {
+            "path": "intent-contract-dsl-runtime/goal.yaml",
+            "present": true
+          },
+          {
+            "path": "intent-contract-dsl-runtime/packages/dsl-runtime/src/index.ts",
+            "present": true
+          },
+          {
+            "path": "intent-contract-dsl-runtime/docs/readiness-remediation-implementation-plan-2026-08-19.md",
+            "present": true
+          }
+        ],
+        "symbolChecks": [
+          {
+            "path": "intent-contract-dsl-runtime/packages/dsl-runtime/src/index.ts",
+            "symbol": "Runtime",
+            "present": true
+          },
+          {
+            "path": "intent-contract-dsl-runtime/packages/dsl-runtime/src/index.ts",
+            "symbol": "PolicyEngine",
+            "present": true
+          },
+          {
+            "path": "intent-contract-dsl-runtime/packages/dsl-runtime/src/index.ts",
+            "symbol": "TelemetryEngine",
+            "present": true
+          }
+        ],
+        "documents": [],
+        "note": null,
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.6667,
+          "categories": {
+            "identity": {
+              "present": true,
+              "matches": [
+                "intent-contract-dsl-runtime/project.manifest.yml"
+              ]
+            },
+            "goal": {
+              "present": true,
+              "matches": [
+                "intent-contract-dsl-runtime/goal.yaml"
+              ]
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "subactor/offer",
+      "organization": "subactor",
+      "repository": "offer",
+      "lifecycle": "active",
+      "required": true,
+      "roles": [
+        "commercial-offer-home",
+        "business-truth-home"
+      ],
+      "homeFor": [
+        "commercial-offer-values"
+      ],
+      "adopts": [
+        "wellmanifest/offer"
+      ],
+      "capabilities": [
+        {
+          "id": "offer-catalog-ssot",
+          "weight": 12,
+          "keywords": [
+            "offer",
+            "price",
+            "pricing",
+            "plan",
+            "catalog",
+            "agent-operation",
+            "binding"
+          ]
+        },
+        {
+          "id": "facade-digest-pinning",
+          "weight": 10,
+          "keywords": [
+            "digest",
+            "sha256",
+            "pin",
+            "facade",
+            "landing",
+            "plans-json"
+          ]
+        }
+      ],
+      "interfaces": {
+        "validate": "uri://subactor/offer/validate",
+        "pinCheck": "uri://subactor/offer/pin-check"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": true,
+        "observedModuleCount": 24,
+        "map": {
+          "organization": "subactor",
+          "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
+          "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
+          "generatedDate": "2026-08-19",
+          "declaredModuleCount": 6497,
+          "parsedModuleCount": 6497
+        },
+        "moduleChecks": [
+          {
+            "path": "offer/dsl-manifest.json",
+            "present": true
+          },
+          {
+            "path": "offer/registry.json",
+            "present": true
+          },
+          {
+            "path": "offer/catalogs/subactor-cloud/v2/offer.json",
+            "present": true
+          },
+          {
+            "path": "offer/bindings/www-sub-actor.json",
+            "present": true
+          },
+          {
+            "path": "offer/schemas/offer-catalog.schema.json",
+            "present": true
+          },
+          {
+            "path": "offer/schemas/site-binding.schema.json",
+            "present": true
+          }
+        ],
+        "symbolChecks": [],
+        "documents": [],
+        "note": null,
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.3333,
+          "categories": {
+            "identity": {
+              "present": true,
+              "matches": [
+                "offer/dsl-manifest.json"
+              ]
+            },
+            "goal": {
+              "present": false,
+              "matches": []
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "subactor/onedev-agent",
+      "organization": "subactor",
+      "repository": "onedev-agent",
+      "lifecycle": "active",
+      "required": true,
+      "roles": [
+        "server-git-gateway",
+        "ticket-scope-enforcer",
+        "pr-verification"
+      ],
+      "homeFor": [],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "authoritative-git-gate",
+          "weight": 12,
+          "keywords": [
+            "git",
+            "pre-receive",
+            "server",
+            "push",
+            "gate",
+            "onedev"
+          ]
+        },
+        {
+          "id": "ticket-scope-enforcement",
+          "weight": 10,
+          "keywords": [
+            "ticket",
+            "scope",
+            "allowed-paths",
+            "branch",
+            "changed-files"
+          ]
+        },
+        {
+          "id": "project-trait-selection",
+          "weight": 8,
+          "keywords": [
+            "project",
+            "trait",
+            "select",
+            "repository",
+            "profile"
+          ]
+        }
+      ],
+      "interfaces": {
+        "enforce": "uri://onedev-agent/policy/enforce",
+        "verifyPullRequest": "uri://onedev-agent/pr/verify"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": true,
+        "observedModuleCount": 61,
+        "map": {
+          "organization": "subactor",
+          "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
+          "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
+          "generatedDate": "2026-08-19",
+          "declaredModuleCount": 6497,
+          "parsedModuleCount": 6497
+        },
+        "moduleChecks": [
+          {
+            "path": "onedev-agent/config/processes/dsl-manifest.json",
+            "present": true
+          },
+          {
+            "path": "onedev-agent/config/processes/registry.json",
+            "present": true
+          },
+          {
+            "path": "onedev-agent/src/onedev_agent/project_tickets.py",
+            "present": true
+          },
+          {
+            "path": "onedev-agent/src/onedev_agent/project_traits.py",
+            "present": true
+          },
+          {
+            "path": "onedev-agent/src/onedev_agent/pr_verification.py",
+            "present": true
+          }
+        ],
+        "symbolChecks": [
+          {
+            "path": "onedev-agent/src/onedev_agent/project_tickets.py",
+            "symbol": "active_repository_tickets",
+            "present": true
+          },
+          {
+            "path": "onedev-agent/src/onedev_agent/project_tickets.py",
+            "symbol": "validate_ticket_scope",
+            "present": true
+          },
+          {
+            "path": "onedev-agent/src/onedev_agent/project_traits.py",
+            "symbol": "profile_project",
+            "present": true
+          },
+          {
+            "path": "onedev-agent/src/onedev_agent/project_traits.py",
+            "symbol": "select_projects",
+            "present": true
+          },
+          {
+            "path": "onedev-agent/src/onedev_agent/pr_verification.py",
+            "symbol": "PullRequestExecutor",
+            "present": true
+          }
+        ],
+        "documents": [],
+        "note": null,
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.3333,
+          "categories": {
+            "identity": {
+              "present": true,
+              "matches": [
+                "onedev-agent/config/processes/dsl-manifest.json"
+              ]
+            },
+            "goal": {
+              "present": false,
+              "matches": []
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "subactor/platform",
+      "organization": "subactor",
+      "repository": "platform",
+      "lifecycle": "active",
+      "required": true,
+      "roles": [
+        "policy-instance-owner",
+        "ticket-host",
+        "orchestration-control"
+      ],
+      "homeFor": [
+        "engineering-standardization-policy-instance"
+      ],
+      "adopts": [
+        "wellmanifest/policy-dsl",
+        "wellmanifest/new-project"
+      ],
+      "capabilities": [
+        {
+          "id": "organizational-policy-instance",
+          "weight": 10,
+          "keywords": [
+            "priority",
+            "priorities",
+            "policy",
+            "governance",
+            "standardization",
+            "evolutionary"
+          ]
+        },
+        {
+          "id": "ticket-allocation",
+          "weight": 8,
+          "keywords": [
+            "ticket",
+            "project",
+            "new-project",
+            "worktree",
+            "branch"
+          ]
+        }
+      ],
+      "interfaces": {
+        "reconcile": "uri://subactor/controller/reconcile",
+        "ticketCreate": "uri://subactor/platform/ticket/create"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": true,
+        "observedModuleCount": 663,
+        "map": {
+          "organization": "subactor",
+          "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
+          "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
+          "generatedDate": "2026-08-19",
+          "declaredModuleCount": 6497,
+          "parsedModuleCount": 6497
+        },
+        "moduleChecks": [
+          {
+            "path": "platform/goal.yaml",
+            "present": true
+          },
+          {
+            "path": "platform/project/new-ticket.sh",
+            "present": true
+          },
+          {
+            "path": "platform/project/TICKETS.md",
+            "present": true
+          }
+        ],
+        "symbolChecks": [],
+        "documents": [],
+        "note": null,
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.3333,
+          "categories": {
+            "identity": {
+              "present": false,
+              "matches": []
+            },
+            "goal": {
+              "present": true,
+              "matches": [
+                "platform/goal.yaml"
+              ]
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "subactor/registry",
+      "organization": "subactor",
+      "repository": "registry",
+      "lifecycle": "active",
+      "required": true,
+      "roles": [
+        "organization-registry",
+        "context-source"
+      ],
+      "homeFor": [
+        "organization-project-registry"
+      ],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "registry-snapshot",
+          "weight": 9,
+          "keywords": [
+            "registry",
+            "repo",
+            "repository",
+            "project",
+            "catalogue",
+            "snapshot",
+            "map"
+          ]
+        },
+        {
+          "id": "assignment-validation",
+          "weight": 8,
+          "keywords": [
+            "assignment",
+            "ownership",
+            "home",
+            "adopt",
+            "entitlement"
+          ]
+        }
+      ],
+      "interfaces": {
+        "snapshot": "uri://subactor/registry/snapshot"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": true,
+        "observedModuleCount": 41,
+        "map": {
+          "organization": "subactor",
+          "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
+          "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
+          "generatedDate": "2026-08-19",
+          "declaredModuleCount": 6497,
+          "parsedModuleCount": 6497
+        },
+        "moduleChecks": [
+          {
+            "path": "registry/src/registry.mjs",
+            "present": true
+          },
+          {
+            "path": "registry/docs/contracts/registry-item.schema.v1.json",
+            "present": true
+          },
+          {
+            "path": "registry/project/new-ticket.sh",
+            "present": true
+          }
+        ],
+        "symbolChecks": [
+          {
+            "path": "registry/src/registry.mjs",
+            "symbol": "validateItem",
+            "present": true
+          },
+          {
+            "path": "registry/src/registry.mjs",
+            "symbol": "validateAssignment",
+            "present": true
+          },
+          {
+            "path": "registry/src/registry.mjs",
+            "symbol": "createRegistrySnapshot",
+            "present": true
+          }
+        ],
+        "documents": [],
+        "note": null,
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.0,
+          "categories": {
+            "identity": {
+              "present": false,
+              "matches": []
+            },
+            "goal": {
+              "present": false,
+              "matches": []
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "subactor/repair-agent",
+      "organization": "subactor",
+      "repository": "repair-agent",
+      "lifecycle": "active",
+      "required": true,
+      "roles": [
+        "implementation-executor"
+      ],
+      "homeFor": [],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "hash-bound-repair",
+          "weight": 12,
+          "keywords": [
+            "repair",
+            "execute",
+            "patch",
+            "reproduction",
+            "validation",
+            "hash",
+            "branch"
+          ]
+        }
+      ],
+      "interfaces": {
+        "execute": "uri://repair-agent/execute/hash-bound"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": true,
+        "observedModuleCount": 46,
+        "map": {
+          "organization": "subactor",
+          "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
+          "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
+          "generatedDate": "2026-08-19",
+          "declaredModuleCount": 6497,
+          "parsedModuleCount": 6497
+        },
+        "moduleChecks": [
+          {
+            "path": "repair-agent/README.md",
+            "present": true
+          },
+          {
+            "path": "repair-agent/src/repair_agent/agent.py",
+            "present": true
+          },
+          {
+            "path": "repair-agent/src/repair_agent/direct_pr.py",
+            "present": true
+          },
+          {
+            "path": "repair-agent/src/repair_agent/lifecycle.py",
+            "present": true
+          }
+        ],
+        "symbolChecks": [
+          {
+            "path": "repair-agent/src/repair_agent/agent.py",
+            "symbol": "RepairAgent",
+            "present": true
+          }
+        ],
+        "documents": [],
+        "note": null,
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.0,
+          "categories": {
+            "identity": {
+              "present": false,
+              "matches": []
+            },
+            "goal": {
+              "present": false,
+              "matches": []
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "subactor/validator-agent",
+      "organization": "subactor",
+      "repository": "validator-agent",
+      "lifecycle": "active",
+      "required": true,
+      "roles": [
+        "independent-validator"
+      ],
+      "homeFor": [],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "independent-patch-validation",
+          "weight": 12,
+          "keywords": [
+            "independent",
+            "validator",
+            "validate",
+            "pull-request",
+            "checks",
+            "policy",
+            "patch"
+          ]
+        }
+      ],
+      "interfaces": {
+        "validate": "uri://validator-agent/validate/independent"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": true,
+        "observedModuleCount": 52,
+        "map": {
+          "organization": "subactor",
+          "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
+          "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
+          "generatedDate": "2026-08-19",
+          "declaredModuleCount": 6497,
+          "parsedModuleCount": 6497
+        },
+        "moduleChecks": [
+          {
+            "path": "validator-agent/goal.yaml",
+            "present": true
+          },
+          {
+            "path": "validator-agent/src/validator_agent/direct_validation.py",
+            "present": true
+          },
+          {
+            "path": "validator-agent/src/validator_agent/preflight.py",
+            "present": true
+          },
+          {
+            "path": "validator-agent/src/validator_agent/registry.py",
+            "present": true
+          }
+        ],
+        "symbolChecks": [
+          {
+            "path": "validator-agent/src/validator_agent/direct_validation.py",
+            "symbol": "DirectPullRequestValidator",
+            "present": true
+          },
+          {
+            "path": "validator-agent/src/validator_agent/direct_validation.py",
+            "symbol": "resolve_required_checks",
+            "present": true
+          }
+        ],
+        "documents": [],
+        "note": null,
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.3333,
+          "categories": {
+            "identity": {
+              "present": false,
+              "matches": []
+            },
+            "goal": {
+              "present": true,
+              "matches": [
+                "validator-agent/goal.yaml"
+              ]
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "wellmanifest/new-project",
+      "organization": "wellmanifest",
+      "repository": "new-project",
+      "lifecycle": "active",
+      "required": true,
+      "roles": [
+        "ticket-factory",
+        "manifest-standard-owner"
+      ],
+      "homeFor": [
+        "project-ticket-lifecycle-standard",
+        "project-manifest-standard"
+      ],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "bounded-ticket",
+          "weight": 10,
+          "keywords": [
+            "ticket",
+            "new-project",
+            "intent",
+            "acceptance",
+            "scope",
+            "worktree"
+          ]
+        },
+        {
+          "id": "manifest-adoption",
+          "weight": 8,
+          "keywords": [
+            "manifest",
+            "adopt",
+            "goal",
+            "pyqual",
+            "standard"
+          ]
+        }
+      ],
+      "interfaces": {
+        "ticketCreate": "uri://wellmanifest/new-project/ticket/create"
+      },
+      "evidence": {
+        "status": "DOCUMENTED",
+        "sourceClass": "documentation",
+        "sourceRank": 40,
+        "coverage": 1.0,
+        "executionEligible": false,
+        "observedModuleCount": 0,
+        "map": null,
+        "moduleChecks": [],
+        "symbolChecks": [],
+        "documents": [
+          "sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#4",
+          "sources/reports/readiness-remediation-plan-2026-08-19.md#ticket-allocation-strategy"
+        ],
+        "note": "Exact repository map was not attached; use as normative context, not executable proof.",
+        "manifest": {
+          "status": "NOT_MEASURED",
+          "coverage": null,
+          "categories": {}
+        }
+      }
+    },
+    {
+      "id": "wellmanifest/offer",
+      "organization": "wellmanifest",
+      "repository": "offer",
+      "lifecycle": "candidate",
+      "required": true,
+      "roles": [
+        "offer-standard-owner",
+        "abstract-standard-owner"
+      ],
+      "homeFor": [
+        "commercial-offer-standard"
+      ],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "offer-standard",
+          "weight": 10,
+          "keywords": [
+            "offer",
+            "standard",
+            "fail-closed",
+            "versioning",
+            "adopt",
+            "ssot"
+          ]
+        }
+      ],
+      "interfaces": {
+        "validateAdoption": "uri://wellmanifest/offer/adoption/validate"
+      },
+      "evidence": {
+        "status": "DOCUMENTED",
+        "sourceClass": "documentation",
+        "sourceRank": 40,
+        "coverage": 1.0,
+        "executionEligible": false,
+        "observedModuleCount": 0,
+        "map": null,
+        "moduleChecks": [],
+        "symbolChecks": [],
+        "documents": [
+          "sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#2.1"
+        ],
+        "note": "Must remain independent from Subactor product values; no prices belong here.",
+        "manifest": {
+          "status": "NOT_MEASURED",
+          "coverage": null,
+          "categories": {}
+        }
+      }
+    },
+    {
+      "id": "wellmanifest/policy-dsl",
+      "organization": "wellmanifest",
+      "repository": "policy-dsl",
+      "lifecycle": "candidate",
+      "required": true,
+      "roles": [
+        "abstract-standard-owner",
+        "standard-owner",
+        "policy-language-standard-owner"
+      ],
+      "homeFor": [
+        "evolutionary-intent-policy-language"
+      ],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "priority-policy-language",
+          "weight": 10,
+          "keywords": [
+            "dsl",
+            "policy",
+            "priority",
+            "intent",
+            "lifecycle",
+            "promotion",
+            "standard"
+          ]
+        }
+      ],
+      "interfaces": {
+        "standardChangeProposal": "uri://wellmanifest/standard-change/propose"
+      },
+      "evidence": {
+        "status": "DOCUMENTED",
+        "sourceClass": "documentation",
+        "sourceRank": 40,
+        "coverage": 1.0,
+        "executionEligible": false,
+        "observedModuleCount": 0,
+        "map": null,
+        "moduleChecks": [],
+        "symbolChecks": [],
+        "documents": [
+          "sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#5"
+        ],
+        "note": "Exact repository map was not attached; execution requires a pinned contract.",
+        "manifest": {
+          "status": "NOT_MEASURED",
+          "coverage": null,
+          "categories": {}
+        }
+      }
+    }
+  ],
+  "findings": [
+    {
+      "code": "REGISTRY_REQUIRED_PROJECT_REVIEW",
+      "severity": "warning",
+      "projectId": "wellmanifest/policy-dsl",
+      "evidenceStatus": "DOCUMENTED"
+    },
+    {
+      "code": "REGISTRY_REQUIRED_PROJECT_REVIEW",
+      "severity": "warning",
+      "projectId": "wellmanifest/new-project",
+      "evidenceStatus": "DOCUMENTED"
+    },
+    {
+      "code": "REGISTRY_REQUIRED_PROJECT_REVIEW",
+      "severity": "warning",
+      "projectId": "semcod/pyqual",
+      "evidenceStatus": "DOCUMENTED"
+    },
+    {
+      "code": "REGISTRY_REQUIRED_PROJECT_REVIEW",
+      "severity": "warning",
+      "projectId": "wellmanifest/offer",
+      "evidenceStatus": "DOCUMENTED"
+    }
+  ],
+  "ecosystemMapDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
+}

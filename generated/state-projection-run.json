@@ -1,0 +1,9 @@
+{
+  "status": "REVIEW_REQUIRED",
+  "missingMetricCount": 1,
+  "missingMetrics": [
+    "offer.facade_digest_mismatch_count"
+  ],
+  "projectionDigest": "sha256:0a9036b0da1ada4ba59827b5020f76d8d60f16c91e04770b9cb76fb7b3407a34",
+  "out": "generated/state-from-index.json"
+}

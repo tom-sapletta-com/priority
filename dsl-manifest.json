@@ -1,0 +1,38 @@
+{
+  "schema": "wellmanifest.dsl-manifest/v1alpha1",
+  "id": "subactor/evolutionary-priority-dsl",
+  "version": "0.3.0",
+  "lifecycle": "candidate",
+  "role": "ADOPT",
+  "home": {
+    "policyInstance": "subactor/platform",
+    "languageStandard": "wellmanifest/policy-dsl",
+    "projectRegistry": "subactor/registry"
+  },
+  "adopts": [
+    "wellmanifest/policy-dsl",
+    "wellmanifest/new-project",
+    "wellmanifest/git-lifecycle",
+    "wellmanifest/offer"
+  ],
+  "exports": [
+    "uri://subactor/platform/planner-result/validate",
+    "uri://subactor/platform/context/route",
+    "uri://subactor/platform/priority/evaluate",
+    "uri://subactor/platform/state/project"
+  ],
+  "tools": {
+    "planner": "autogrammar/todo2code",
+    "fleetObserver": "subactor/diagit",
+    "qualityGate": "semcod/pyqual",
+    "gitGateway": "subactor/onedev-agent",
+    "executor": "subactor/repair-agent",
+    "validator": "subactor/validator-agent"
+  },
+  "constraints": [
+    "No local copy becomes HOME of an abstract wellmanifest standard.",
+    "Documentation-only evidence cannot authorize execution.",
+    "A zero-plan result with open acceptance criteria is T2C_PLAN_GAP.",
+    "Commercial values remain in subactor/offer; wellmanifest/offer contains no product prices."
+  ]
+}

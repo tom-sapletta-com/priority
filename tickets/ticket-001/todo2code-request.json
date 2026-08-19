@@ -1,0 +1,93 @@
+{
+  "schema": "todo2code.grounded-planner-request/v1",
+  "ticketId": "ticket-001",
+  "intent": {
+    "summary": "Kontynuuj rozwój Evolutionary Priority DSL na podstawie map projektów; użyj istniejącego todo2code do planowania, diagit do mapy i routingu, pyqual do bramki, zachowaj subactor/offer jako jedyne HOME wartości oferty i wellmanifest jako niezależny standard.",
+    "taskKind": "code-change",
+    "objectives": [
+      "Zbuduj deterministyczną mapę projektów użyteczną przy tworzeniu ticketu.",
+      "Odrzuć pusty wynik planera jako T2C_PLAN_GAP.",
+      "Wygeneruj politykę agentów i receipty związane z dokładnymi digestami."
+    ],
+    "constraints": [
+      "Nie twórz równoległego super-agenta ani drugiego HOME.",
+      "Dokumentacja bez mapy kodu może być kontekstem, ale nie autoryzuje wykonania.",
+      "Implementer i validator muszą być rozdzieleni."
+    ],
+    "concerns": [
+      "engineering-standardization-policy-instance",
+      "evolutionary-intent-policy-language",
+      "organization-project-registry",
+      "commercial-offer-values",
+      "commercial-offer-standard"
+    ],
+    "tags": [
+      "priority",
+      "standardization",
+      "policy",
+      "intent",
+      "plan",
+      "planning",
+      "todo2code",
+      "fleet",
+      "map",
+      "context",
+      "ticket",
+      "quality",
+      "gate",
+      "offer",
+      "digest",
+      "manifest",
+      "repair",
+      "independent validator"
+    ]
+  },
+  "intentDigest": "sha256:6a2c651749a9d4820b63ed12ef28b9af15ef2bebe1232e04df81da0ec5fb5b6e",
+  "contextDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b",
+  "planner": {
+    "projectId": "autogrammar/todo2code",
+    "uri": "uri://todo2code/code-change/plan",
+    "evidenceStatus": "VERIFIED"
+  },
+  "repositories": [
+    "subactor/platform",
+    "subactor/offer",
+    "wellmanifest/offer",
+    "subactor/registry",
+    "subactor/diagit",
+    "wellmanifest/policy-dsl",
+    "autogrammar/todo2code",
+    "semcod/pyqual",
+    "subactor/validator-agent",
+    "subactor/onedev-agent",
+    "subactor/repair-agent",
+    "wellmanifest/new-project"
+  ],
+  "acceptanceCriteria": [
+    "Mapa ekosystemu wskazuje projekt, rolę, HOME, capability, URI i klasę dowodu.",
+    "Router wybiera minimalny kontekst i fail-closed raportuje role bez wykonawczo zweryfikowanego kontraktu.",
+    "Zero planów przy otwartych kryteriach daje BLOCK z kodem T2C_PLAN_GAP.",
+    "Każdy zaakceptowany plan ma dokładne ścieżki, kryterium negatywne i granicę walidacji.",
+    "subactor/offer pozostaje jedynym HOME wartości cenowych; wellmanifest/offer nie zawiera kwot."
+  ],
+  "scopePolicy": {
+    "selectedRepositoriesOnly": true,
+    "requireExactPathsBeforeEdit": true,
+    "allowPathInferenceOutsideSelectedRepositories": false,
+    "requireWorkspacePreflight": true,
+    "requireCurrentGitAndAstEvidence": true
+  },
+  "planPolicy": {
+    "onZeroPlansWhenOpenCriteria": "T2C_PLAN_GAP",
+    "requireNegativeBehaviorTest": true,
+    "requireValidationBoundary": true,
+    "requireRollback": true,
+    "shapeOnlyEvidenceAccepted": false
+  },
+  "executionPolicy": {
+    "mode": "propose-only",
+    "requiresIndependentValidator": true,
+    "routeStatusRequired": "PASS"
+  },
+  "plannerRequestDigest": "sha256:f897e5a1498af761edef3cad77ba7904d00a254aebe9bd23a3cd231bd1e9d906"
+}

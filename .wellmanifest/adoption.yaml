@@ -1,0 +1,55 @@
+apiVersion: wellmanifest.io/v1alpha1
+kind: StandardAdoption
+metadata:
+  id: evolutionary-priority-dsl
+  version: 0.3.0
+  lifecycle: candidate
+spec:
+  organizationalPolicy:
+    home: subactor/platform
+    path: priority-evolution.dsl.yaml
+    semanticDigest: sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f
+    fileDigest: sha256:9377f61eeea6a28d9eb201be5c4cfe14f17682793b7eb340f06a52e771c6bd24
+  projectRegistry:
+    home: subactor/registry
+    path: registry/ecosystem-tools.yaml
+    semanticDigest: sha256:4930758b69658f4de3481000e70330beed8abe312c812a8b5bcc950ff30576fd
+    fileDigest: sha256:4018d7095b18f0a1f2b8cceaa773211388980ecb6c7a0b5410fd48cc49553ff7
+  standards:
+  - id: wellmanifest/policy-dsl
+    role: HOME
+    evidenceStatus: DOCUMENTED
+    executionPinned: false
+    reason: Exact repository map and contract version were not attached.
+  - id: wellmanifest/new-project
+    role: HOME
+    evidenceStatus: DOCUMENTED
+    executionPinned: false
+    reason: Ticket lifecycle is source-supported but exact repository map is absent.
+  - id: wellmanifest/git-lifecycle
+    role: HOME
+    evidenceStatus: DOCUMENTED
+    executionPinned: false
+    reason: The event standard is referenced by the source report; exact contract is not pinned.
+  - id: wellmanifest/offer
+    role: HOME
+    evidenceStatus: DOCUMENTED
+    executionPinned: false
+    reason: Independent abstract offer standard; it must not contain Subactor prices.
+  sourceIndexes:
+  - organization: subactor
+    generatedDate: '2026-08-19'
+    path: sources/indexes/subactor-2026-08-19.toon.yaml
+    digest: sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82
+  - organization: autogrammar
+    generatedDate: '2026-08-19'
+    path: sources/indexes/autogrammar-2026-08-19.toon.yaml
+    digest: sha256:09fce2609729b130b2d1224821dad947572d29a3cf4a11a5963af41258e47a26
+  enforcement:
+    enabled: false
+    reason: Policy and registry are candidate; pyqual and wellmanifest execution contracts remain unpinned.
+    promotionRequired:
+    - exact semcod/pyqual map and schema
+    - exact wellmanifest contract versions
+    - shadow receipts
+    - independent validation

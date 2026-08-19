@@ -1,0 +1,29 @@
+apiVersion: wellmanifest.io/v1alpha1
+kind: ProjectGoal
+metadata:
+  id: evolutionary-priority-dsl
+  version: 0.3.0
+spec:
+  outcome: >-
+    Nadać różnym agentom jeden, deterministyczny kierunek zmian na podstawie
+    wersjonowanych intencji, świeżych dowodów, rzeczywistej mapy projektów i
+    niezależnej walidacji.
+  successMetrics:
+    - id: policy.schema_valid
+      target: true
+    - id: tests.behavioral_pass_count
+      target: 33
+    - id: planning.todo2code_plan_gap_false_pass_count
+      target: 0
+    - id: governance.duplicate_home_count
+      target: 0
+    - id: routing.required_capability_gap_count
+      target: 0
+    - id: offer.facade_digest_mismatch_count
+      target: 0
+  constraints:
+    - fail closed on missing behavioral evidence
+    - preserve separation of duties
+    - keep every generated artifact digest-bound
+    - never infer behavior from file or symbol presence alone
+  currentClassification: candidate reference implementation
