@@ -732,11 +732,19 @@ def validate_plan_result(request: Json, result: Json, generated_at: str | None =
     criteria = request.get("acceptanceCriteria", [])
     plans, record_count = _plans_from_result(result)
     findings: list[Json] = []
-    if result.get("status") != "succeeded":
+    status = result.get("status")
+    if status == "not-run":
+        findings.append({
+            "code": result.get("code") or "T2C_PLANNER_NOT_RUN",
+            "severity": "critical",
+            "status": status,
+            "message": result.get("message") or "Planner was not invoked; no grounded plan exists.",
+        })
+    elif status != "succeeded":
         findings.append({
             "code": "T2C_PLANNER_FAILED",
             "severity": "critical",
-            "status": result.get("status"),
+            "status": status,
         })
     if record_count != len(plans):
         findings.append({
@@ -745,7 +753,7 @@ def validate_plan_result(request: Json, result: Json, generated_at: str | None =
             "recordCount": record_count,
             "parsedPlans": len(plans),
         })
-    if criteria and record_count == 0:
+    if status == "succeeded" and criteria and record_count == 0:
         findings.append({
             "code": "T2C_PLAN_GAP",
             "severity": "critical",

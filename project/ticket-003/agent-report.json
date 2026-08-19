@@ -1,0 +1,26 @@
+{
+  "schema": "wellmanifest.agent/report/v1",
+  "workspaceRoot": "/home/tom/github/autogrammar/priority",
+  "gitToplevel": "/home/tom/github/autogrammar/priority",
+  "pwd": "/home/tom/github/autogrammar/priority",
+  "home": "wellmanifest",
+  "shape": "domain_pack",
+  "adopt": ["wellmanifest/policy-dsl"],
+  "ticketId": "ticket-003",
+  "filesTouched": [
+    "CHANGELOG.md",
+    "Makefile",
+    "README.md",
+    "VERSION",
+    "adapters/autonomyctl.py",
+    "adapters/ecosystemctl.py",
+    "adapters/statectl.py",
+    "docs/DECISIONS.md",
+    "project/ticket-003/README.md",
+    "project/ticket-003/agent-report.json",
+    "schemas/autonomy-cycle.schema.json",
+    "schemas/tool-discovery.schema.json",
+    "tests/test_autonomyctl.py"
+  ],
+  "outcome": "completed"
+}

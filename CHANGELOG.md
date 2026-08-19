@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.1 — 2026-08-19
+
+### Added
+
+- `adapters/autonomyctl.py` closed cycle: discover → index → route → invoke-or-abstain → evaluate;
+- typed abstentions `T2C_PLANNER_NOT_PINNED` and `T2C_PLANNER_CONTRACT_UNBOUND`;
+- offer pin-check invocation only when binding and facade are pinned;
+- `make cycle` and negative tests that the cycle never applies a patch.
+
+### Fixed
+
+- unpinned planner is `not-run`, not a fake `succeeded` + zero plans;
+- README still advertised 33 tests after the 0.3.0 token and report fixes.
+
 ## 0.3.0 — 2026-08-19
 
 ### Added

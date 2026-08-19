@@ -23,3 +23,7 @@ A TOON map proves indexed structure. It does not prove digest equality, test beh
 ## ADR-006 — Candidate policy cannot dispatch
 
 A `candidate`, `shadow` or `canary` policy may calculate priorities and proposed actions, but only `active` can open the execution gate.
+
+## ADR-007 — Autonomy is a closed observe-evaluate loop, not silent execution
+
+`autonomyctl cycle` discovers pinned tools, indexes, routes, invokes or abstains, evaluates and writes receipts. Missing `todo2code` CLI or offer pin-check is `not-run` / `NOT_MEASURED`, never a invented `succeeded` plan. The cycle never applies a source patch. `applyAttempted` is always false.

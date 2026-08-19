@@ -1,11 +1,11 @@
 # Verification report
 
-- Version: `0.3.0`
+- Version: `0.3.1`
 - Generated at: `2026-08-19T10:00:00Z`
 - Policy digest: `sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f`
 - Registry digest: `sha256:4930758b69658f4de3481000e70330beed8abe312c812a8b5bcc950ff30576fd`
-- Report digest: `sha256:90559c6a9cdb3f8a7a865c53b2d48ced1e239ac8dfd572e6a982ff63484fa404`
-- Tests: **36/36 passed**
+- Report digest: `sha256:383edc73daa8962918cc714d631836df8ba373c7903779541a3717e351de2b3e`
+- Tests: **41/41 passed**
 
 ## Output receipts
 
@@ -19,6 +19,11 @@
 ## Test runner output
 
 ```text
+test_cli_without_graph_is_contract_unbound (test_autonomyctl.AutonomyCtlTests.test_cli_without_graph_is_contract_unbound) ... ok
+test_cycle_abstains_and_never_applies (test_autonomyctl.AutonomyCtlTests.test_cycle_abstains_and_never_applies) ... ok
+test_injected_offer_fixture_is_not_live_attestation_but_is_measured (test_autonomyctl.AutonomyCtlTests.test_injected_offer_fixture_is_not_live_attestation_but_is_measured) ... ok
+test_injected_zero_plan_stays_plan_gap (test_autonomyctl.AutonomyCtlTests.test_injected_zero_plan_stays_plan_gap) ... ok
+test_unpinned_planner_is_not_run_not_fake_success (test_autonomyctl.AutonomyCtlTests.test_unpinned_planner_is_not_run_not_fake_success) ... ok
 test_documentation_only_tool_is_not_execution_eligible (test_ecosystemctl.EcosystemCtlTests.test_documentation_only_tool_is_not_execution_eligible) ... ok
 test_duplicate_home_becomes_blocking_finding (test_ecosystemctl.EcosystemCtlTests.test_duplicate_home_becomes_blocking_finding) ... ok
 test_grounded_plan_is_accepted (test_ecosystemctl.EcosystemCtlTests.test_grounded_plan_is_accepted) ... ok
@@ -57,7 +62,7 @@ test_parses_modules_and_header (test_toon_index.ToonIndexTests.test_parses_modul
 test_project_roots_are_counted (test_toon_index.ToonIndexTests.test_project_roots_are_counted) ... ok
 
 ----------------------------------------------------------------------
-Ran 36 tests
+Ran 41 tests
 
 OK
 ```

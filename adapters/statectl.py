@@ -179,10 +179,16 @@ def project_state(
 
     if planner_receipt is not None:
         planner_digest = str(planner_receipt.get("receiptDigest") or digest(planner_receipt))
+        plan_gap_codes = {
+            "T2C_PLAN_GAP",
+            "T2C_PLANNER_NOT_RUN",
+            "T2C_PLANNER_NOT_PINNED",
+            "T2C_PLANNER_CONTRACT_UNBOUND",
+        }
         plan_gap_count = sum(
             1
             for finding in planner_receipt.get("findings", [])
-            if isinstance(finding, Mapping) and finding.get("code") == "T2C_PLAN_GAP"
+            if isinstance(finding, Mapping) and finding.get("code") in plan_gap_codes
         )
         state["metrics"]["planning.todo2code_plan_gap_count"] = metric(
             plan_gap_count, observed_at, "test_receipt", revision, planner_digest

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wellmanifest.io/schemas/tool-discovery.v1.json",
+  "title": "Pinned tool discovery",
+  "type": "object",
+  "required": ["schema", "planner", "offer", "applyAllowed", "discoveryDigest"],
+  "properties": {
+    "schema": {"const": "subactor.tool-discovery/v1"},
+    "packageRoot": {"type": "string"},
+    "planner": {"type": "object"},
+    "offer": {"type": "object"},
+    "applyAllowed": {"const": false},
+    "discoveryDigest": {"type": "string"}
+  }
+}

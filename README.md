@@ -187,7 +187,15 @@ python3 -m pip install -r requirements.txt
 make verify
 ```
 
-`make verify` wykonuje walidację schematów, kompilację adapterów oraz 33 testów jednostkowych i negatywnych.
+`make verify` wykonuje walidację schematów, kompilację adapterów oraz 41 testów jednostkowych i negatywnych.
+
+### Cykl accountable autonomy
+
+```bash
+make cycle
+```
+
+`adapters/autonomyctl.py cycle` zamyka pętlę obserwacja → routing → wywołanie albo abstencja → ewaluacja. Brak przypiętego CLI `todo2code` daje `not-run / T2C_PLANNER_NOT_PINNED`, a nie fałszywe `succeeded` z zerową liczbą planów. Pin-check oferty uruchamia się wyłącznie przy przypiętym `OFFER_BINDING` i `OFFER_FACADE`. Cykl nigdy nie stosuje patcha: `applyAttempted=false`, a `dispatch` zostaje zamknięty przy lifecycle `candidate`.
 
 ### Reprodukcja załączonego snapshotu
 
@@ -245,7 +253,8 @@ generated/ecosystem-map.json               snapshot mapy
 generated/ticket-context-selection.json    wybór kontekstu
 generated/state-from-index.json             stan z obserwacji
 receipts/index-grounded-decision.json       decyzja na bazie indeksu
-generated/verification-report.json          raport 33 testów i walidacji
+generated/verification-report.json          raport testów i walidacji
+adapters/autonomyctl.py                     cykl discover → evaluate, bez auto-apply
 generated/verification-report.md            czytelny raport w Markdown
 generated/reproducibility-report.json       digests 18 odtwarzalnych artefaktów
 .wellmanifest/generated/agent-policy.md     wspólny kontekst agentów

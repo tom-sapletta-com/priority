@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wellmanifest.io/schemas/autonomy-cycle.v1.json",
+  "title": "Accountable autonomy cycle receipt",
+  "type": "object",
+  "required": ["schema", "generatedAt", "revision", "applyAttempted", "applyAllowed", "dispatchAllowed", "finalOutcome", "steps", "cycleDigest"],
+  "properties": {
+    "schema": {"const": "subactor.autonomy-cycle/v1"},
+    "generatedAt": {"type": "string"},
+    "revision": {"type": "string"},
+    "applyAttempted": {"const": false},
+    "applyAllowed": {"const": false},
+    "dispatchAllowed": {"type": "boolean"},
+    "finalOutcome": {"enum": ["PASS", "BLOCK", "REVIEW_REQUIRED", "ACTION_REQUIRED"]},
+    "discoveryDigest": {"type": "string"},
+    "plannerRequestDigest": {"type": "string"},
+    "plannerReceiptDigest": {"type": "string"},
+    "decisionDigest": {"type": "string"},
+    "steps": {"type": "array", "minItems": 1},
+    "abstentions": {"type": "array", "items": {"type": "string"}},
+    "cycleDigest": {"type": "string"}
+  }
+}
