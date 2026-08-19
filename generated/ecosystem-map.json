@@ -8,8 +8,8 @@
     "repository": "subactor/registry",
     "role": "HOME"
   },
-  "registryDigest": "sha256:4930758b69658f4de3481000e70330beed8abe312c812a8b5bcc950ff30576fd",
-  "status": "REVIEW_REQUIRED",
+  "registryDigest": "sha256:bbffea79164bec56bddcb1bee5aeefd09e77c330ca733e01fec59e8f0ad38cca",
+  "status": "PASS",
   "sources": {
     "autogrammar": {
       "path": "sources/indexes/autogrammar-2026-08-19.toon.yaml",
@@ -17,20 +17,32 @@
       "generatedDate": "2026-08-19",
       "moduleCount": 6421
     },
+    "pyqual": {
+      "path": "sources/indexes/pyqual-2026-04-25.toon.yaml",
+      "sha256": "sha256:72172888d7d8e2c781fd81b2a159dd49cc42a4a08f4990735b59348977e199cb",
+      "generatedDate": "2026-04-25",
+      "moduleCount": 179
+    },
     "subactor": {
       "path": "sources/indexes/subactor-2026-08-19.toon.yaml",
       "sha256": "sha256:60258aecd20713d807307266f61d24ea4b5f288c7537ee169340fd5acb39fc82",
       "generatedDate": "2026-08-19",
       "moduleCount": 6497
+    },
+    "wellmanifest": {
+      "path": "sources/indexes/wellmanifest-2026-08-16.toon.yaml",
+      "sha256": "sha256:554fbfa0f264123efbc1c74e5252d7ba84308f45c8cbd63a0e3ecd74ffb1672c",
+      "generatedDate": "2026-08-16",
+      "moduleCount": 2088
     }
   },
   "metrics": {
-    "projectCount": 15,
-    "verifiedProjectCount": 10,
-    "documentedOnlyProjectCount": 5,
-    "executionEligibleProjectCount": 9,
+    "projectCount": 16,
+    "verifiedProjectCount": 15,
+    "documentedOnlyProjectCount": 1,
+    "executionEligibleProjectCount": 12,
     "duplicateHomeCount": 0,
-    "manifestCoverage": 0.3667
+    "manifestCoverage": 0.3111
   },
   "homeOwners": {
     "commercial-offer-standard": [
@@ -299,23 +311,67 @@
         "manifestGate": "uri://pyqual/gate/manifest-conformance"
       },
       "evidence": {
-        "status": "DOCUMENTED",
-        "sourceClass": "documentation",
-        "sourceRank": 40,
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
         "coverage": 1.0,
-        "executionEligible": false,
-        "observedModuleCount": 0,
-        "map": null,
-        "moduleChecks": [],
-        "symbolChecks": [],
+        "executionEligible": true,
+        "observedModuleCount": 107,
+        "map": {
+          "organization": "pyqual",
+          "path": "sources/indexes/pyqual-2026-04-25.toon.yaml",
+          "sha256": "sha256:72172888d7d8e2c781fd81b2a159dd49cc42a4a08f4990735b59348977e199cb",
+          "generatedDate": "2026-04-25",
+          "declaredModuleCount": 179,
+          "parsedModuleCount": 179
+        },
+        "moduleChecks": [
+          {
+            "path": "pyqual/report.py",
+            "present": true
+          },
+          {
+            "path": "pyqual/cli/main.py",
+            "present": true
+          },
+          {
+            "path": "pyqual/cli/cmd_run.py",
+            "present": true
+          }
+        ],
+        "symbolChecks": [
+          {
+            "path": "pyqual/report.py",
+            "symbol": "evaluate_gates",
+            "present": true
+          },
+          {
+            "path": "pyqual/report.py",
+            "symbol": "generate_report",
+            "present": true
+          }
+        ],
         "documents": [
           "sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#3.1"
         ],
-        "note": "The source report identifies the role; exact CLI/config schema must be pinned from the repository before enforcement.",
+        "note": "Package map from 2026-04-25 is pinned; integration/pyqual-adapter.yaml remains enforcement-disabled.",
         "manifest": {
-          "status": "NOT_MEASURED",
-          "coverage": null,
-          "categories": {}
+          "status": "DRIFT",
+          "coverage": 0.0,
+          "categories": {
+            "identity": {
+              "present": false,
+              "matches": []
+            },
+            "goal": {
+              "present": false,
+              "matches": []
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
         }
       }
     },
@@ -1337,6 +1393,102 @@
       }
     },
     {
+      "id": "wellmanifest/git-lifecycle",
+      "organization": "wellmanifest",
+      "repository": "git-lifecycle",
+      "lifecycle": "active",
+      "required": false,
+      "roles": [
+        "git-lifecycle-standard-owner"
+      ],
+      "homeFor": [],
+      "adopts": [],
+      "capabilities": [
+        {
+          "id": "git-lifecycle-standard",
+          "weight": 8,
+          "keywords": [
+            "git",
+            "lifecycle",
+            "hook",
+            "transition",
+            "catalog",
+            "validate"
+          ]
+        }
+      ],
+      "interfaces": {
+        "validateLifecycle": "uri://wellmanifest/git-lifecycle/validate"
+      },
+      "evidence": {
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
+        "coverage": 1.0,
+        "executionEligible": true,
+        "observedModuleCount": 35,
+        "map": {
+          "organization": "wellmanifest",
+          "path": "sources/indexes/wellmanifest-2026-08-16.toon.yaml",
+          "sha256": "sha256:554fbfa0f264123efbc1c74e5252d7ba84308f45c8cbd63a0e3ecd74ffb1672c",
+          "generatedDate": "2026-08-16",
+          "declaredModuleCount": 2088,
+          "parsedModuleCount": 2088
+        },
+        "moduleChecks": [
+          {
+            "path": "git-lifecycle/standard/lifecycle.py",
+            "present": true
+          },
+          {
+            "path": "git-lifecycle/standard/conformance.py",
+            "present": true
+          },
+          {
+            "path": "git-lifecycle/standard/git-lifecycle.schema.json",
+            "present": true
+          }
+        ],
+        "symbolChecks": [
+          {
+            "path": "git-lifecycle/standard/lifecycle.py",
+            "symbol": "Lifecycle",
+            "present": true
+          },
+          {
+            "path": "git-lifecycle/standard/lifecycle.py",
+            "symbol": "validate_path",
+            "present": true
+          },
+          {
+            "path": "git-lifecycle/standard/lifecycle.py",
+            "symbol": "parse_bundle",
+            "present": true
+          }
+        ],
+        "documents": [],
+        "note": "Map pinned from the 2026-08-16 wellmanifest index; not a required ticket role.",
+        "manifest": {
+          "status": "DRIFT",
+          "coverage": 0.0,
+          "categories": {
+            "identity": {
+              "present": false,
+              "matches": []
+            },
+            "goal": {
+              "present": false,
+              "matches": []
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
+        }
+      }
+    },
+    {
       "id": "wellmanifest/new-project",
       "organization": "wellmanifest",
       "repository": "new-project",
@@ -1380,24 +1532,65 @@
         "ticketCreate": "uri://wellmanifest/new-project/ticket/create"
       },
       "evidence": {
-        "status": "DOCUMENTED",
-        "sourceClass": "documentation",
-        "sourceRank": 40,
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
         "coverage": 1.0,
-        "executionEligible": false,
-        "observedModuleCount": 0,
-        "map": null,
-        "moduleChecks": [],
+        "executionEligible": true,
+        "observedModuleCount": 574,
+        "map": {
+          "organization": "wellmanifest",
+          "path": "sources/indexes/wellmanifest-2026-08-16.toon.yaml",
+          "sha256": "sha256:554fbfa0f264123efbc1c74e5252d7ba84308f45c8cbd63a0e3ecd74ffb1672c",
+          "generatedDate": "2026-08-16",
+          "declaredModuleCount": 2088,
+          "parsedModuleCount": 2088
+        },
+        "moduleChecks": [
+          {
+            "path": "new-project/dsl-manifest.json",
+            "present": true
+          },
+          {
+            "path": "new-project/goal.yaml",
+            "present": true
+          },
+          {
+            "path": "new-project/project/new-ticket.sh",
+            "present": true
+          },
+          {
+            "path": "new-project/project/governance-check.sh",
+            "present": true
+          }
+        ],
         "symbolChecks": [],
         "documents": [
           "sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#4",
           "sources/reports/readiness-remediation-plan-2026-08-19.md#ticket-allocation-strategy"
         ],
-        "note": "Exact repository map was not attached; use as normative context, not executable proof.",
+        "note": "Structural map is pinned; diagit still reports worktree overlap on this HOME.",
         "manifest": {
-          "status": "NOT_MEASURED",
-          "coverage": null,
-          "categories": {}
+          "status": "DRIFT",
+          "coverage": 0.6667,
+          "categories": {
+            "identity": {
+              "present": true,
+              "matches": [
+                "new-project/dsl-manifest.json"
+              ]
+            },
+            "goal": {
+              "present": true,
+              "matches": [
+                "new-project/goal.yaml"
+              ]
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
         }
       }
     },
@@ -1433,23 +1626,56 @@
         "validateAdoption": "uri://wellmanifest/offer/adoption/validate"
       },
       "evidence": {
-        "status": "DOCUMENTED",
-        "sourceClass": "documentation",
-        "sourceRank": 40,
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
         "coverage": 1.0,
         "executionEligible": false,
-        "observedModuleCount": 0,
-        "map": null,
-        "moduleChecks": [],
+        "observedModuleCount": 3,
+        "map": {
+          "organization": "wellmanifest",
+          "path": "sources/indexes/wellmanifest-2026-08-16.toon.yaml",
+          "sha256": "sha256:554fbfa0f264123efbc1c74e5252d7ba84308f45c8cbd63a0e3ecd74ffb1672c",
+          "generatedDate": "2026-08-16",
+          "declaredModuleCount": 2088,
+          "parsedModuleCount": 2088
+        },
+        "moduleChecks": [
+          {
+            "path": "offer/AGENTS.md",
+            "present": true
+          },
+          {
+            "path": "offer/README.md",
+            "present": true
+          },
+          {
+            "path": "offer/docs/STANDARD.md",
+            "present": true
+          }
+        ],
         "symbolChecks": [],
         "documents": [
           "sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#2.1"
         ],
-        "note": "Must remain independent from Subactor product values; no prices belong here.",
+        "note": "Abstract standard map is pinned; lifecycle stays candidate and this HOME must not hold prices.",
         "manifest": {
-          "status": "NOT_MEASURED",
-          "coverage": null,
-          "categories": {}
+          "status": "DRIFT",
+          "coverage": 0.0,
+          "categories": {
+            "identity": {
+              "present": false,
+              "matches": []
+            },
+            "goal": {
+              "present": false,
+              "matches": []
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
         }
       }
     },
@@ -1487,52 +1713,82 @@
         "standardChangeProposal": "uri://wellmanifest/standard-change/propose"
       },
       "evidence": {
-        "status": "DOCUMENTED",
-        "sourceClass": "documentation",
-        "sourceRank": 40,
+        "status": "VERIFIED",
+        "sourceClass": "git_ast",
+        "sourceRank": 80,
         "coverage": 1.0,
         "executionEligible": false,
-        "observedModuleCount": 0,
-        "map": null,
-        "moduleChecks": [],
-        "symbolChecks": [],
+        "observedModuleCount": 69,
+        "map": {
+          "organization": "wellmanifest",
+          "path": "sources/indexes/wellmanifest-2026-08-16.toon.yaml",
+          "sha256": "sha256:554fbfa0f264123efbc1c74e5252d7ba84308f45c8cbd63a0e3ecd74ffb1672c",
+          "generatedDate": "2026-08-16",
+          "declaredModuleCount": 2088,
+          "parsedModuleCount": 2088
+        },
+        "moduleChecks": [
+          {
+            "path": "policy-dsl/dsl-manifest.json",
+            "present": true
+          },
+          {
+            "path": "policy-dsl/schemas/policy-ir.schema.json",
+            "present": true
+          },
+          {
+            "path": "policy-dsl/profiles/sales/reference_engine.py",
+            "present": true
+          },
+          {
+            "path": "policy-dsl/project/new-ticket.sh",
+            "present": true
+          }
+        ],
+        "symbolChecks": [
+          {
+            "path": "policy-dsl/profiles/sales/reference_engine.py",
+            "symbol": "decide",
+            "present": true
+          },
+          {
+            "path": "policy-dsl/profiles/sales/reference_engine.py",
+            "symbol": "validate_decision",
+            "present": true
+          },
+          {
+            "path": "policy-dsl/profiles/sales/reference_engine.py",
+            "symbol": "load_catalog",
+            "present": true
+          }
+        ],
         "documents": [
           "sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#5"
         ],
-        "note": "Exact repository map was not attached; execution requires a pinned contract.",
+        "note": "Map pinned; lifecycle remains candidate so this HOME is not execution-eligible.",
         "manifest": {
-          "status": "NOT_MEASURED",
-          "coverage": null,
-          "categories": {}
+          "status": "DRIFT",
+          "coverage": 0.3333,
+          "categories": {
+            "identity": {
+              "present": true,
+              "matches": [
+                "policy-dsl/dsl-manifest.json"
+              ]
+            },
+            "goal": {
+              "present": false,
+              "matches": []
+            },
+            "quality": {
+              "present": false,
+              "matches": []
+            }
+          }
         }
       }
     }
   ],
-  "findings": [
-    {
-      "code": "REGISTRY_REQUIRED_PROJECT_REVIEW",
-      "severity": "warning",
-      "projectId": "wellmanifest/policy-dsl",
-      "evidenceStatus": "DOCUMENTED"
-    },
-    {
-      "code": "REGISTRY_REQUIRED_PROJECT_REVIEW",
-      "severity": "warning",
-      "projectId": "wellmanifest/new-project",
-      "evidenceStatus": "DOCUMENTED"
-    },
-    {
-      "code": "REGISTRY_REQUIRED_PROJECT_REVIEW",
-      "severity": "warning",
-      "projectId": "semcod/pyqual",
-      "evidenceStatus": "DOCUMENTED"
-    },
-    {
-      "code": "REGISTRY_REQUIRED_PROJECT_REVIEW",
-      "severity": "warning",
-      "projectId": "wellmanifest/offer",
-      "evidenceStatus": "DOCUMENTED"
-    }
-  ],
-  "ecosystemMapDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
+  "findings": [],
+  "ecosystemMapDigest": "sha256:86b6108e7aa84cf86e1a7ce390348e8dc70b2d141df22d3b7397f5a45443854b"
 }

@@ -103,56 +103,56 @@
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "git_ast",
       "revision": "sha256:example-head-20260819-v030",
-      "evidenceDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
+      "evidenceDigest": "sha256:86b6108e7aa84cf86e1a7ce390348e8dc70b2d141df22d3b7397f5a45443854b"
     },
     "registry.unverified_required_project_count": {
-      "value": 4,
+      "value": 0,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "git_ast",
       "revision": "sha256:example-head-20260819-v030",
-      "evidenceDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
+      "evidenceDigest": "sha256:86b6108e7aa84cf86e1a7ce390348e8dc70b2d141df22d3b7397f5a45443854b"
     },
     "registry.manifest_coverage": {
-      "value": 0.3667,
+      "value": 0.3111,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "git_ast",
       "revision": "sha256:example-head-20260819-v030",
-      "evidenceDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
+      "evidenceDigest": "sha256:86b6108e7aa84cf86e1a7ce390348e8dc70b2d141df22d3b7397f5a45443854b"
     },
     "offer.duplicate_price_source_count": {
       "value": 0,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "git_ast",
       "revision": "sha256:example-head-20260819-v030",
-      "evidenceDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
+      "evidenceDigest": "sha256:86b6108e7aa84cf86e1a7ce390348e8dc70b2d141df22d3b7397f5a45443854b"
     },
     "offer.catalog_binding_coverage": {
       "value": 1.0,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "git_ast",
       "revision": "sha256:example-head-20260819-v030",
-      "evidenceDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
+      "evidenceDigest": "sha256:86b6108e7aa84cf86e1a7ce390348e8dc70b2d141df22d3b7397f5a45443854b"
     },
     "planning.unverified_tool_selection_count": {
-      "value": 3,
+      "value": 2,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "runtime_receipt",
       "revision": "sha256:example-head-20260819-v030",
-      "evidenceDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b"
+      "evidenceDigest": "sha256:c745022ded0ce4d88f5ad74782ca976b61c788a7cacfe7919a1ed2778046d462"
     },
     "routing.required_capability_gap_count": {
-      "value": 3,
+      "value": 2,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "runtime_receipt",
       "revision": "sha256:example-head-20260819-v030",
-      "evidenceDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b"
+      "evidenceDigest": "sha256:c745022ded0ce4d88f5ad74782ca976b61c788a7cacfe7919a1ed2778046d462"
     },
     "routing.context_selection_coverage": {
-      "value": 0.7273,
+      "value": 0.8182,
       "observedAt": "2026-08-19T09:59:30Z",
       "sourceClass": "runtime_receipt",
       "revision": "sha256:example-head-20260819-v030",
-      "evidenceDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b"
+      "evidenceDigest": "sha256:c745022ded0ce4d88f5ad74782ca976b61c788a7cacfe7919a1ed2778046d462"
     },
     "planning.todo2code_plan_gap_count": {
       "value": 1,
@@ -200,11 +200,11 @@
     "provenance": [
       {
         "kind": "ecosystem-map",
-        "digest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055"
+        "digest": "sha256:86b6108e7aa84cf86e1a7ce390348e8dc70b2d141df22d3b7397f5a45443854b"
       },
       {
         "kind": "context-selection",
-        "digest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b",
+        "digest": "sha256:c745022ded0ce4d88f5ad74782ca976b61c788a7cacfe7919a1ed2778046d462",
         "status": "REVIEW_REQUIRED"
       },
       {
@@ -213,6 +213,6 @@
         "status": "BLOCK"
       }
     ],
-    "projectionDigest": "sha256:0a9036b0da1ada4ba59827b5020f76d8d60f16c91e04770b9cb76fb7b3407a34"
+    "projectionDigest": "sha256:5d50a267a043b6226ae1db67a057c7a7c90323a04f94a25f76aaca7470c9e69f"
   }
 }

@@ -1,12 +1,12 @@
 {
   "schema": "subactor.evolutionary-priority-verification/v1",
   "generatedAt": "2026-08-19T10:00:00Z",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "policyDigest": "sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f",
-  "registryDigest": "sha256:4930758b69658f4de3481000e70330beed8abe312c812a8b5bcc950ff30576fd",
+  "registryDigest": "sha256:bbffea79164bec56bddcb1bee5aeefd09e77c330ca733e01fec59e8f0ad38cca",
   "tests": {
-    "run": 41,
-    "passed": 41,
+    "run": 45,
+    "passed": 45,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
@@ -22,14 +22,14 @@
   },
   "outputReceipts": {
     "generated/ecosystem-map.json": {
-      "status": "REVIEW_REQUIRED",
-      "fileDigest": "sha256:bdcb3f9e93797f016c02e7d0c68a6bbc215533825e51a265f73d51483b8cdc1c",
-      "digest": "sha256:bdcb3f9e93797f016c02e7d0c68a6bbc215533825e51a265f73d51483b8cdc1c"
+      "status": "PASS",
+      "fileDigest": "sha256:9864dcac78b9b168ad6e28e4aa4a647cadb52db0101352a6735b740ecece036c",
+      "digest": "sha256:9864dcac78b9b168ad6e28e4aa4a647cadb52db0101352a6735b740ecece036c"
     },
     "generated/ticket-context-selection.json": {
       "status": "REVIEW_REQUIRED",
-      "fileDigest": "sha256:350e59ff6ee653754d025ef3b99faf1996917637f49a8008d2ff7d136a970f4b",
-      "digest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b"
+      "fileDigest": "sha256:8244b5c8b964813f10021bf593e1262a596210d6083c1fde74a30984358133f4",
+      "digest": "sha256:c745022ded0ce4d88f5ad74782ca976b61c788a7cacfe7919a1ed2778046d462"
     },
     "receipts/todo2code-plan-gap.json": {
       "status": "BLOCK",
@@ -43,8 +43,8 @@
     },
     "receipts/index-grounded-decision.json": {
       "status": "BLOCK",
-      "fileDigest": "sha256:4c476cb4ae33a9f02abe6d3edd2a8ee9e2f18b61036fc065b88b8b8e0c167e0f",
-      "digest": "sha256:046d65023ea812391034cc0d9d19b30020dc56c98a0879a136a2a856b51d8bf4"
+      "fileDigest": "sha256:536531498025c9a4bf2632eaa567a306cc9b7e4be34fc29defab2270aa6fed43",
+      "digest": "sha256:27b820eeef3c4060efee32d8c4ac2a766a1e993b2ee4b4d121c4142806a67f61"
     },
     "receipts/healthy-decision.json": {
       "status": "PASS",
@@ -53,5 +53,5 @@
     }
   },
   "failedTests": [],
-  "reportDigest": "sha256:383edc73daa8962918cc714d631836df8ba373c7903779541a3717e351de2b3e"
+  "reportDigest": "sha256:43dd3796ba0caa45a43e39f41e5b93f20bef8ef44b70ccf2877758d51af5eb43"
 }

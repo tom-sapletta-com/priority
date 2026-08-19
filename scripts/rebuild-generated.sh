@@ -25,6 +25,8 @@ allow_review python3 adapters/ecosystemctl.py index \
   --schema schemas/ecosystem-tool-registry.schema.json \
   --map subactor=sources/indexes/subactor-2026-08-19.toon.yaml \
   --map autogrammar=sources/indexes/autogrammar-2026-08-19.toon.yaml \
+  --map wellmanifest=sources/indexes/wellmanifest-2026-08-16.toon.yaml \
+  --map pyqual=sources/indexes/pyqual-2026-04-25.toon.yaml \
   --out generated/ecosystem-map.json \
   --llms-out generated/llms.txt \
   --now "$NOW" > generated/ecosystem-index-run.json

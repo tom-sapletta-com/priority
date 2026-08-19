@@ -1,0 +1,3179 @@
+{
+  "schemaVersion": "t2c.diagnostics/v1",
+  "generatedAt": "2026-08-19T19:28:25.237Z",
+  "graphFingerprint": "014c8fee23b0745beaf03045801e3a976f5358102196158e700b8a8ef93ce7d5",
+  "diagnostics": [
+    {
+      "id": "DIAG-0156b5d777494f0736ee",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: AutonomyError",
+      "recordIds": [
+        "INT-AST-542d617e978c7e91b3e5"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-03a38128c4b77a408061",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: modules_under",
+      "recordIds": [
+        "INT-AST-3742eb5aeff0a239f1c9"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-03aa47e0048777fb1577",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: StandardCtlTests",
+      "recordIds": [
+        "INT-AST-18a97a8328977edb456b"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-04b70d9facba8f330cab",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: get_path",
+      "recordIds": [
+        "INT-AST-23cbb05e89f1e241b584"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-076fbf917fab2e348b2e",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_complementarity_budget_is_measured",
+      "recordIds": [
+        "INT-AST-03b64123320e85743fbb"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-07b499132c9d9eb80494",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: roots",
+      "recordIds": [
+        "INT-AST-b22e9d21efe3d8d73970"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-12a7ae635e5ff03c24f6",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: invoke_planner",
+      "recordIds": [
+        "INT-AST-1f1fae950d2fd94bfa13"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-1328ab3e17f75a01fd16",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: utc_now",
+      "recordIds": [
+        "INT-AST-6374e7118e5011268116"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-14bc1ede34e69e2cc315",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: setUpClass",
+      "recordIds": [
+        "INT-AST-c9e2b6b9ca2db4230363"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-1c5ac7e6212376affa6f",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_active_policy_can_dispatch_bounded_delivery",
+      "recordIds": [
+        "INT-AST-30a4f09e3919053cf8e1"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-1e26317441b48a4f2788",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: load_yaml",
+      "recordIds": [
+        "INT-AST-b649a8e9f57c96df70b8"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-1fa3693b4b02bd5f2b99",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: build_decisions",
+      "recordIds": [
+        "INT-AST-9f7aa4652b5073672079"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-21b61a8181106d2bcfa0",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: has_module",
+      "recordIds": [
+        "INT-AST-11e8921cf3ad4a99ac47"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-2251ac4f7cb63dfc4e2e",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_planner_request_encodes_zero_plan_policy",
+      "recordIds": [
+        "INT-AST-6c9b4685327ff5c15c42"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-231803ad129c955c45d9",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_validate_registry",
+      "recordIds": [
+        "INT-AST-e95f9479fd18197aa8a2"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-243abaa9bbd8468a8f60",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_healthy_state_passes_but_candidate_cannot_dispatch",
+      "recordIds": [
+        "INT-AST-41149cf32446ebf16a06"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-27cf86c60caf7219a71d",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_cycle_abstains_and_never_applies",
+      "recordIds": [
+        "INT-AST-1d4fb9fc6d3704e4f9b6"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-2906c8db35b9a7dae71b",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: stable_json",
+      "recordIds": [
+        "INT-AST-ade9fbb6de8783ca76d0"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-2a4c5d321014a14fd382",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: glob_matches",
+      "recordIds": [
+        "INT-AST-98d3e7a4ef4534dff92a"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-2a93adaf98f61f40b0b8",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_registry_matches_schema",
+      "recordIds": [
+        "INT-AST-f1fcda9c8ce6c577a952"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-2bbbf665718e97a736fc",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: EcosystemCtlTests",
+      "recordIds": [
+        "INT-AST-fd0165b7af8fe7f7ace5"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-2bd51a65a69e3c4ea6af",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_router_tokens_are_not_split_on_polish_stroke",
+      "recordIds": [
+        "INT-AST-29166abdc0eca1387bec"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-2f89ab921a9d5a2fdefd",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: metric",
+      "recordIds": [
+        "INT-AST-c756e1c7736892f4f7f7"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-3111c3fc91f50b62cc52",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: global_invariants",
+      "recordIds": [
+        "INT-AST-3f9efca46bbc35866426"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-33c5a7b4dd8a1d63a549",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: StateProjectionError",
+      "recordIds": [
+        "INT-AST-7520ade34a72bbcea3c9"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-3521288d134d4f7d860e",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: stable_json",
+      "recordIds": [
+        "INT-AST-155a73025c3ac70f810d"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-3780fb02fc9dbe2efbf0",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: ToonIndex",
+      "recordIds": [
+        "INT-AST-c5d5362d9e85dfd89ecf"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-3e3e4c75545714141c13",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: project_state",
+      "recordIds": [
+        "INT-AST-f3f8319f49230afd3d41"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-403c6daa72b8ee0408e7",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: project_roots",
+      "recordIds": [
+        "INT-AST-22bd1ab5f838cb0211cc"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-43dbdf0a71f6c5155df1",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: parser",
+      "recordIds": [
+        "INT-AST-0e73d32a3ea6d243cc1a"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-4434e86be325ff0f6313",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_documentation_only_tool_is_not_execution_eligible",
+      "recordIds": [
+        "INT-AST-7d757ce175292f9e2f56"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-45d1d3213d65f4fa2537",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: metric_value",
+      "recordIds": [
+        "INT-AST-b2989c26cdbceb865b8d"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-46243a5e49462ed46b1c",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: load_json",
+      "recordIds": [
+        "INT-AST-0331a385de281eca224a"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-46f6f88a24d578d35770",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_home_owners_are_unique",
+      "recordIds": [
+        "INT-AST-5bb59f7ffd3b1f9948e6"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-4abdef66f2b887f1ee92",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: run_cycle",
+      "recordIds": [
+        "INT-AST-e16a601294dcb1c59a75"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-4c92637b59ef196b8782",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: complementarity",
+      "recordIds": [
+        "INT-AST-77a17183d59e9e4cdad3"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-4cde0eb2dd494e8ffd27",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: as_json",
+      "recordIds": [
+        "INT-AST-603814ef08269399618d"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-505cda97633811638bde",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: stable_json",
+      "recordIds": [
+        "INT-AST-67d266746b2f8de56589"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-5195875fdb3083a09f0d",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: create_planner_request",
+      "recordIds": [
+        "INT-AST-2dac2db04e1753b374f6"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-52932c201f4ad41baa21",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_validate",
+      "recordIds": [
+        "INT-AST-76117495b3d79d25ba83"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-53075cef8c8cacb9bfc2",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: EcosystemError",
+      "recordIds": [
+        "INT-AST-b0a34298e619367b3fbb"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-55e56dd96817893c9575",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_policy_matches_schema_and_semantics",
+      "recordIds": [
+        "INT-AST-8c4719e41171c4f87dc9"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-5aa3f4781188593eba81",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: setUpClass",
+      "recordIds": [
+        "INT-AST-7aebda171fac49855c43"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-6060fc11e6738e136149",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: oscillation_guard",
+      "recordIds": [
+        "INT-AST-734939ebe3c86d0854e1"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-62b07f5f4c500ba063b9",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_router_selects_real_planner_and_fleet_observer",
+      "recordIds": [
+        "INT-AST-1a175bfe086fb265eb73"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-630ff71d9afb7707c322",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: ToonDetail",
+      "recordIds": [
+        "INT-AST-9cc34d598b7969442081"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-6421fff43a990d9d8eee",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_evaluate",
+      "recordIds": [
+        "INT-AST-316260954ef284a7e77b"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-66244c1f4454ef0de27d",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_separation_of_duties_is_constitutional_block",
+      "recordIds": [
+        "INT-AST-2146e87633e1a18eab4e"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-6b3f4138789fcb5b4729",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_injected_offer_fixture_is_not_live_attestation_but_is_measured",
+      "recordIds": [
+        "INT-AST-3855ae5958198843c448"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-6b8c758b8889b35ccd1f",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_grounded_plan_is_accepted",
+      "recordIds": [
+        "INT-AST-21402f2501b77b0a7e91"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-6cdf920480752b26f5e4",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: parse_toon_index",
+      "recordIds": [
+        "INT-AST-6ba1b5bef3ee7fd0a096"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-6e184bcf34cbffcad10b",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: PolicyError",
+      "recordIds": [
+        "INT-AST-0cfe34022708a40de68a"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-7056becaf87f79c6040a",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_tokenize_drops_function_words_and_maps_synonyms",
+      "recordIds": [
+        "INT-AST-05dca37ae0811eb26f0a"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-72d1662ebe8b37c41e0b",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: parse_time",
+      "recordIds": [
+        "INT-AST-f68e9eaa7f5326e0942a"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-7a43e187ed9da7e23f6f",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_plan_gap_and_offer_pin_block",
+      "recordIds": [
+        "INT-AST-05c3f87cc10164f5b9eb"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-7b2a61b9f0600161f02f",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_rejects_revision_mismatch",
+      "recordIds": [
+        "INT-AST-8ad9eb8686eeffdeb5e5"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-7c6dc2f1365df1693c04",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: discover_tools",
+      "recordIds": [
+        "INT-AST-251ab59e187c1bb52466"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-7d2f81907113f53fb473",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: load_json",
+      "recordIds": [
+        "INT-AST-72144c329b9be832f22c"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-7f71145bc4f1c310ff69",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_unmeasured_oscillation_requires_review",
+      "recordIds": [
+        "INT-AST-c278ecbafc3447fcc575"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-8315a0b1d7f9b3f9bb9a",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_unpinned_planner_is_not_run_not_fake_success",
+      "recordIds": [
+        "INT-AST-0ff3e0874be5ea4cca4b"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-85985a5d2317b3510d03",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: main",
+      "recordIds": [
+        "INT-AST-1a91a0929b66a0244288"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-8842a8b3c2b69c291c00",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_discover",
+      "recordIds": [
+        "INT-AST-80cfb89e6b73262851b0"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-8a95a5c63fa39fa82c3e",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_parses_compact_class_members",
+      "recordIds": [
+        "INT-AST-d57237959e2643883028"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-8c0575c25f017958ce7e",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: PreReceiveTests",
+      "recordIds": [
+        "INT-AST-a9da857b1bc8d5fb1503"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-8f6456b6518c20422223",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: snapshot_mtimes",
+      "recordIds": [
+        "INT-AST-b6a5c797ca45d6375b42"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-9093941bea33654813e6",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_watch",
+      "recordIds": [
+        "INT-AST-435d164201673e188d73"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-9449fb48de1bb0d8ff82",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_duplicate_home_becomes_blocking_finding",
+      "recordIds": [
+        "INT-AST-f8860c6cae7d56d5f554"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-96da0da0736072b540a8",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: parser",
+      "recordIds": [
+        "INT-AST-d8559dfa044293cd0e3c"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-970cbc0db814bf358053",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: setUpClass",
+      "recordIds": [
+        "INT-AST-3f4b45cb01ded367ed1d"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-97537be4f3f9b4170270",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: evaluate",
+      "recordIds": [
+        "INT-AST-b6fe31d9ed1f8038bedf"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-985b9768a01a8886fce6",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: render_context",
+      "recordIds": [
+        "INT-AST-390feef4ffa7bc3274a3"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-9a088b1b22d87b7be641",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: validate_semantics",
+      "recordIds": [
+        "INT-AST-768e8d99e50443ea8eed"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-9a78fba4b9cc64d6f890",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_verified_tools_are_execution_eligible",
+      "recordIds": [
+        "INT-AST-bd87c14985ea227249da"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-9adf7ee1e088040a85ca",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: utc_now",
+      "recordIds": [
+        "INT-AST-a7aa7f4ae2787d66ce7b"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-9c01ffce2c04467cef25",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: diff_toon_indexes",
+      "recordIds": [
+        "INT-AST-7b94597696cf2baf5a88"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-9c8b0962e8bdf789736b",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_offer_receipt_closes_behavioral_metric_gap",
+      "recordIds": [
+        "INT-AST-406a1266c631aa707857"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-9f0680ef5463ef9a3af0",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: main",
+      "recordIds": [
+        "INT-AST-5d46cbff2b057c19f249"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-9fd2c6e5bb56ff55e9d3",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: main",
+      "recordIds": [
+        "INT-AST-7521cd2dd0fd055d863a"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-a06d6ea92208d2e29275",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_tool_planning_precedes_dependent_repairs",
+      "recordIds": [
+        "INT-AST-191175e7b8845b27c620"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-a16cb9565e888c92a9a2",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_diff_reports_added_removed_and_changed",
+      "recordIds": [
+        "INT-AST-e70c9f8aeeb9a535c941"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-a415ac1db61cf92f2686",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: AutonomyCtlTests",
+      "recordIds": [
+        "INT-AST-580db6039f7649d4dc8e"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-a69ccc9670176cb0ac55",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_cli_without_graph_is_contract_unbound",
+      "recordIds": [
+        "INT-AST-7daa347ec74eb08e004e"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-a86245f89d38025a59cd",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: run_hook",
+      "recordIds": [
+        "INT-AST-893862ce942c1ff8df2f"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-a8fa21b1f9ae6f3f1d15",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_project_roots_are_counted",
+      "recordIds": [
+        "INT-AST-3dc1f18318db248237c3"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-aa91db2ccc45a643e0ee",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_accepts_exact_revision_with_pass_state",
+      "recordIds": [
+        "INT-AST-0a1397000abd7d8587a1"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-ac2ef4eabb621f927972",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: compare",
+      "recordIds": [
+        "INT-AST-65379ed94e3da6d45938"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-ac74c57077919c599ec9",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_parses_modules_and_header",
+      "recordIds": [
+        "INT-AST-8b09b367da3842d5c28b"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-aec49608df7598d4f81b",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: build_ecosystem_map",
+      "recordIds": [
+        "INT-AST-62d1a68dd812f7dc006b"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-b17001e2ff0032cc2c46",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: render_llms_index",
+      "recordIds": [
+        "INT-AST-4161b84b491b6bf735c7"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-b2ed6843ba2a034ae42f",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_validate_plan",
+      "recordIds": [
+        "INT-AST-d6a1abfd1225c3c2999a"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-b33c14fe22b1d86f21dc",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_cycle",
+      "recordIds": [
+        "INT-AST-55e1f8048df56e20068d"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-b57918379cd1ca2a6247",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: metric_freshness",
+      "recordIds": [
+        "INT-AST-99d55b460d391cf67d44"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-b76cb0749dbde0ed1cb2",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: setUpClass",
+      "recordIds": [
+        "INT-AST-1d6551d3adb915a6572c"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-b9e316992b3dd927feb0",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_tokenize_keeps_polish_l_stroke_words_intact",
+      "recordIds": [
+        "INT-AST-ce3b9dbde885d5977d0f"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-bd468afc57dd4f94a1e6",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: file_digest",
+      "recordIds": [
+        "INT-AST-41ca99308a5fcb45d4c6"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-bf9344787d6089d07889",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: intent_evidence_status",
+      "recordIds": [
+        "INT-AST-448a7a03f5cfc43bd0a5"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-c0ed86aa564103bab92b",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: iso",
+      "recordIds": [
+        "INT-AST-a9985b8e5efe8ac26ae5"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-c27a01c2343159decabf",
+      "code": "UNLINKED_RECORD",
+      "severity": "warning",
+      "title": "Rekord niepołączony z przepływem wiedzy",
+      "detail": "Nie znaleziono relacji dla INT-GIT-2264bbcab68cb5f735a8: Record ticket-001 publish report bound to this repository root.",
+      "recordIds": [
+        "INT-GIT-2264bbcab68cb5f735a8"
+      ],
+      "suggestedAction": "Dodać wspólny ticket, symbol, ścieżkę lub bardziej jednoznaczny obiekt intencji."
+    },
+    {
+      "id": "DIAG-c2eec43087977595c9cf",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: load_json",
+      "recordIds": [
+        "INT-AST-de71e713a9bf84da29f5"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-c5d0932eb1036b0918fc",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: digest",
+      "recordIds": [
+        "INT-AST-76084c0e5611a18ddcb6"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-c97a22f9dbf71f050e33",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_zero_plan_is_blocked",
+      "recordIds": [
+        "INT-AST-983543cf3801f6ed4c9d"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-cad2f2a5cdd1cfcbf168",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: main",
+      "recordIds": [
+        "INT-AST-4c91420996462c24a40a"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-cb597ebeac4effc0532d",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: visit",
+      "recordIds": [
+        "INT-AST-8bf102b92cd9e814ba10"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-cc6d40ca82dc191f4a64",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_projection_derives_route_and_plan_gap_metrics",
+      "recordIds": [
+        "INT-AST-472fb657a64ea0ac340c"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-ccdc9e234a96ffaaa234",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_rejects_policy_block_with_machine_result",
+      "recordIds": [
+        "INT-AST-cd1e95daeb233a101d1c"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-ceb77b3ce911c3018625",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: write_map",
+      "recordIds": [
+        "INT-AST-e524994ca9145e0526e2"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-cf8dd3ccf56db4aef3f2",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_stale_metric_fails_closed",
+      "recordIds": [
+        "INT-AST-2e91c9d9d56cd9bcad0e"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-d21be554d901baf55e98",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: parse_map_arguments",
+      "recordIds": [
+        "INT-AST-559da6aa47f98aa41afa"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-d23a854c779b78629f42",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: parser",
+      "recordIds": [
+        "INT-AST-9094516aa6c226bb2a86"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-d2abf64dd75f65d83de4",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_compile",
+      "recordIds": [
+        "INT-AST-ce466177b3594745d3f1"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-d63ce0d7df57bdb69073",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_route",
+      "recordIds": [
+        "INT-AST-0f634fba77e8efc2e915"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-d65aed459ce141b4a849",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: tokenize",
+      "recordIds": [
+        "INT-AST-2bae8a97a36759f45f02"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-d6632059f7efc75899fb",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: evaluate_condition",
+      "recordIds": [
+        "INT-AST-560d391254d2cd0a9562"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-d681707e426019aabc3c",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: validate_plan_result",
+      "recordIds": [
+        "INT-AST-9ffa35c3f143df853aca"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-da274cbcbb53964c984c",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: digest",
+      "recordIds": [
+        "INT-AST-5771ad97b11a2544b6af"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-dba6026e05e60906eac8",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: write_json",
+      "recordIds": [
+        "INT-AST-3d24a52bb3a046bbc906"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-dcf7c89778b62d4468ed",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_prepare_ticket",
+      "recordIds": [
+        "INT-AST-7a51f5bc6841e422f255"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-dd0915986c5564c831ce",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_injected_zero_plan_stays_plan_gap",
+      "recordIds": [
+        "INT-AST-47b4c0de59736353a284"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-ddcf2c4e0fd95e777fde",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: invoke_offer_pin",
+      "recordIds": [
+        "INT-AST-1a217ab1c564e3275572"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-dde03062307a67b799d7",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: compile_facades",
+      "recordIds": [
+        "INT-AST-4ef2e303c31205654ca8"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-e00298b04005d7aef901",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: ToonIndexTests",
+      "recordIds": [
+        "INT-AST-03f3704ad7f4afa7ea98"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-e0a1f4c52ea2f6d8f8b7",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: write_json",
+      "recordIds": [
+        "INT-AST-30662f8fd937d9581786"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-e3ae184faf9e75ea2f37",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: load_yaml",
+      "recordIds": [
+        "INT-AST-22db76a58a6c38c725a9"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-e531d8d2dd1c6250a471",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: route_ticket",
+      "recordIds": [
+        "INT-AST-415ef5494bf63bb6e8f3"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-e5f8e10e6b3e17747072",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: StateCtlTests",
+      "recordIds": [
+        "INT-AST-13bb1ca10ba6527eab78"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-eaaf96e31b1a6416f832",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: render_ticket_context",
+      "recordIds": [
+        "INT-AST-5303e5e1746bb7be92ef"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-ead6f3dd9cc4b3763efd",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: load_yaml",
+      "recordIds": [
+        "INT-AST-0ccf68c3ca4c5e7c3cd5"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-ee1ef24f86a5e0f76567",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_router_fails_closed_for_documentation_only_required_role",
+      "recordIds": [
+        "INT-AST-ca959f0dba1befe7b50a"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-efc2e526afc5ffadd370",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: state_for",
+      "recordIds": [
+        "INT-AST-a632cb9b7265eea993b1"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-f2a7437c1e2e794742e2",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: validate_document",
+      "recordIds": [
+        "INT-AST-0741d917bbb5d18636a1"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-f2b7fafa27c2fa24b10f",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: Decision",
+      "recordIds": [
+        "INT-AST-222e4a5aea3985c86344"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-f3c8158c7c8eb1004815",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_rejects_multiple_new_revisions",
+      "recordIds": [
+        "INT-AST-483e8d38260101072f1c"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-f4837767eadde961a59f",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: has_symbol",
+      "recordIds": [
+        "INT-AST-4cc3f6a77aa3fd91a64f"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-f5358ad17c06870b21a1",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_behavioral_offer_metric_stays_missing_without_receipt",
+      "recordIds": [
+        "INT-AST-6b742db39dc0d330d4eb"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-f5cd26a062ca945d9826",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_llms_index_marks_documentation_boundary",
+      "recordIds": [
+        "INT-AST-aba70405c3dde9f8c1d4"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-f7ae7389cc1d4c4d7543",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_revision_mismatch_invalidates_evidence",
+      "recordIds": [
+        "INT-AST-68771fcef784f9a2b2d0"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-f8b9eb1d9414cf2c964f",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_diff_maps",
+      "recordIds": [
+        "INT-AST-af5df386c7391cb46015"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-f8e0e8e5136f7b7f1657",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: parser",
+      "recordIds": [
+        "INT-AST-ae8c1b8f1c3032d67871"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-fc200eb9fdcf4f844caa",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: test_offer_receipt_revision_must_match",
+      "recordIds": [
+        "INT-AST-b5fc690744d331490636"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-fca9fbf155da2a0553c9",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: digest",
+      "recordIds": [
+        "INT-AST-5a940979594b97870abe"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-fe774d73bf7600d63e09",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: cmd_index",
+      "recordIds": [
+        "INT-AST-120fc7153dfe697e3e1e"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-ff2d77dbab9b96f2cce9",
+      "code": "IMPLEMENTED_NOT_PLANNED",
+      "severity": "warning",
+      "title": "Implementacja bez powiązanego planu",
+      "detail": "Fakt implementacyjny nie ma relacji do NL, TODO ani dokumentacji intencji: referenced_metrics",
+      "recordIds": [
+        "INT-AST-8d6e627ea40e5f9c49ea"
+      ],
+      "suggestedAction": "Powiązać symbol z ticketem/TODO lub udokumentować, dlaczego implementacja jest poza planem."
+    },
+    {
+      "id": "DIAG-016b2f7139a58ce70bc0",
+      "code": "ALIGNED",
+      "severity": "info",
+      "title": "Brak blokujących rozbieżności",
+      "detail": "Dostępne źródła nie wykazały konfliktu wymagającego blokady. Nie jest to automatyczne zatwierdzenie DONE.",
+      "recordIds": [],
+      "suggestedAction": "Przejrzeć raport i zatwierdzić wynik zgodnie z polityką projektu."
+    },
+    {
+      "id": "DIAG-039c1d5251ed6f6ef371",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana intent_evidence_status nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-448a7a03f5cfc43bd0a5"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-040f4ae1bb4a0c076255",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_duplicate_home_becomes_blocking_finding nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-f8860c6cae7d56d5f554"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-06e373a2c248b1e62f07",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana main nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-1a91a0929b66a0244288"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-087f532ccb79ab90d564",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana tokenize nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-2bae8a97a36759f45f02"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-092877d0d7fca3b6481f",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_rejects_revision_mismatch nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-8ad9eb8686eeffdeb5e5"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-0b07ac38c6949923b6c9",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana parse_toon_index nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-6ba1b5bef3ee7fd0a096"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-0bc44b4291a9e46ccead",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana load_yaml nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-0ccf68c3ca4c5e7c3cd5"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-0d265096e9617b64f0c2",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_llms_index_marks_documentation_boundary nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-aba70405c3dde9f8c1d4"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-0f876018551b1dd46306",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana modules_under nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-3742eb5aeff0a239f1c9"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-144ac5d3c629d6977af9",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana invoke_planner nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-1f1fae950d2fd94bfa13"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-14b8dd892fca154ab260",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana ToonIndex nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-c5d5362d9e85dfd89ecf"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-14c7dce864e8cd70d384",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana AutonomyError nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-542d617e978c7e91b3e5"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-1a2e0a2ec7b05f05f8e9",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_tokenize_drops_function_words_and_maps_synonyms nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-05dca37ae0811eb26f0a"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-1a845c35f801baa7af2a",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_active_policy_can_dispatch_bounded_delivery nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-30a4f09e3919053cf8e1"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-1dc3652aa89f7c264161",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_injected_zero_plan_stays_plan_gap nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-47b4c0de59736353a284"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-1f54a63f6bcfa5d15972",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana glob_matches nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-98d3e7a4ef4534dff92a"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-21de14ac5e6c5d3bffef",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana has_symbol nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-4cc3f6a77aa3fd91a64f"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-2237eb9691f0f3603e79",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_home_owners_are_unique nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-5bb59f7ffd3b1f9948e6"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-228e7bbc6874d2d8cd0b",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana Decision nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-222e4a5aea3985c86344"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-249fb1fac58339bf39b2",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_rejects_multiple_new_revisions nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-483e8d38260101072f1c"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-27932c3dd2a6c1fdf654",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_index nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-120fc7153dfe697e3e1e"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-2929a70d0dd2f90f8da8",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana complementarity nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-77a17183d59e9e4cdad3"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-29b857e3d9e5afe3e3fe",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana a fail-closed autonomy cycle that invokes pinned tools or abstains. nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-GIT-71dabc6dbf17a5bd2746"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-2a4baf478a287481ead1",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana load_json nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-72144c329b9be832f22c"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-2a5c1deb67bae0f09437",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana compile_facades nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-4ef2e303c31205654ca8"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-2a9d626a6ec9b9a8013d",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana route_ticket nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-415ef5494bf63bb6e8f3"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-31a604ccf71a5a8e73ce",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana write_map nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-e524994ca9145e0526e2"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-327164acfd16ed7d60ae",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana global_invariants nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-3f9efca46bbc35866426"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-329b4fe0e6c355da09b3",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_rejects_policy_block_with_machine_result nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-cd1e95daeb233a101d1c"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-3412ebc16c4bf3d217e9",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_compile nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-ce466177b3594745d3f1"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-34209e9d9f861cb13ec1",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana ToonDetail nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-9cc34d598b7969442081"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-35a3ed727a9197c35911",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana main nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-4c91420996462c24a40a"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-39abb5b38c26c04a7ab2",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana load_json nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-de71e713a9bf84da29f5"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-3a1e6a2ea853489f4392",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana parser nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-ae8c1b8f1c3032d67871"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-3be19c22abfb50053d3a",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana run_hook nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-893862ce942c1ff8df2f"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-3ccb69efe0f58711ef00",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_discover nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-80cfb89e6b73262851b0"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-3daebede4dbfed636288",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana setUpClass nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-c9e2b6b9ca2db4230363"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-40550b2d01843eb6a630",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_tool_planning_precedes_dependent_repairs nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-191175e7b8845b27c620"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-44885036ad04da2f3390",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_project_roots_are_counted nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-3dc1f18318db248237c3"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-45ced5af19ba65f7bdc2",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana ToonIndexTests nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-03f3704ad7f4afa7ea98"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-47bb689d056c52ea6d36",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_validate_registry nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-e95f9479fd18197aa8a2"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-486cdd0de5d082c08794",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana validate_semantics nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-768e8d99e50443ea8eed"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-491106e743c620e84c61",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_grounded_plan_is_accepted nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-21402f2501b77b0a7e91"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-4924aa6f64c685e1183e",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_offer_receipt_revision_must_match nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-b5fc690744d331490636"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-49d30103b13c7130e476",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_watch nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-435d164201673e188d73"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-4a5fd46d94c7c561faa2",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana visit nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-8bf102b92cd9e814ba10"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-4d73100e298ceb15caf2",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana discover_tools nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-251ab59e187c1bb52466"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-54681f249667052c6d1f",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana state_for nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-a632cb9b7265eea993b1"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-547a5352d38c9e437cfd",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana parser nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-0e73d32a3ea6d243cc1a"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-5695039e0c84b46413dd",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_plan_gap_and_offer_pin_block nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-05c3f87cc10164f5b9eb"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-56aa7337b8ef24c7591d",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_stale_metric_fails_closed nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-2e91c9d9d56cd9bcad0e"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-578c4f36609f8ef7bb07",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_healthy_state_passes_but_candidate_cannot_dispatch nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-41149cf32446ebf16a06"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-57c5f4e10183fad8ffac",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_verified_tools_are_execution_eligible nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-bd87c14985ea227249da"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-580497fcd879917fe2e8",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_router_fails_closed_for_documentation_only_required_role nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-ca959f0dba1befe7b50a"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-58060927abf7ed115eb0",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana iso nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-a9985b8e5efe8ac26ae5"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-5d3dbefc672c2f0a5107",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana invoke_offer_pin nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-1a217ab1c564e3275572"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-5d50b6b7b0852090b3d6",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana roots nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-b22e9d21efe3d8d73970"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-5dad43dfc1ddae4d3c44",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana stable_json nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-ade9fbb6de8783ca76d0"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-5f19cd5b93c3bec349c8",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_accepts_exact_revision_with_pass_state nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-0a1397000abd7d8587a1"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-60deb3c7941afc4cd7a3",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana StandardCtlTests nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-18a97a8328977edb456b"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-612709d1c612e1443f2c",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana create_planner_request nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-2dac2db04e1753b374f6"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-624273a787eeacf342e8",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana EcosystemError nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-b0a34298e619367b3fbb"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-652c2b51407e890dce7a",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana write_json nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-30662f8fd937d9581786"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-656f85a1ea70b1bc47fe",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana setUpClass nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-1d6551d3adb915a6572c"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-65cecde6c12baa482188",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana PreReceiveTests nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-a9da857b1bc8d5fb1503"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-6a086bde9d1d7e44235d",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana project_roots nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-22bd1ab5f838cb0211cc"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-6dd3d495c7f505e74b87",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana oscillation_guard nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-734939ebe3c86d0854e1"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-6df00a972ae6fa7cb415",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_planner_request_encodes_zero_plan_policy nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-6c9b4685327ff5c15c42"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-6f4b89071ab4f8954410",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana PolicyError nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-0cfe34022708a40de68a"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-7025ba39202a2a3aa7cb",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_validate_plan nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-d6a1abfd1225c3c2999a"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-735e710ef5e9c0e87a6b",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana validate_document nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-0741d917bbb5d18636a1"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-790d40c3d7a55c5968cc",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana digest nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-5a940979594b97870abe"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-7a24fb89292a16a2ed98",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_separation_of_duties_is_constitutional_block nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-2146e87633e1a18eab4e"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-7b6d04eacad4faef18c8",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana digest nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-5771ad97b11a2544b6af"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-7cd4dda77747ceeff4c1",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana stable_json nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-67d266746b2f8de56589"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-7d4c13127aa59f69cc9a",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana parser nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-d8559dfa044293cd0e3c"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-80bb9b0618b89b8f7dc1",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana write_json nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-3d24a52bb3a046bbc906"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-81af0107a017e60b8251",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_unmeasured_oscillation_requires_review nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-c278ecbafc3447fcc575"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-849c6c531ee2c398ff83",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_tokenize_keeps_polish_l_stroke_words_intact nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-ce3b9dbde885d5977d0f"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-8525e7423a10c6c01e43",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana load_yaml nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-22db76a58a6c38c725a9"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-8844b3ca9186eb4aae83",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana AutonomyCtlTests nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-580db6039f7649d4dc8e"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-8b33844b975d80574444",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana build_decisions nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-9f7aa4652b5073672079"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-8bee984bb55917a8ca8e",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana EcosystemCtlTests nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-fd0165b7af8fe7f7ace5"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-8e82d15ee8a6f353a401",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana digest nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-76084c0e5611a18ddcb6"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-8ff7839ebca4515204e4",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana parser nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-9094516aa6c226bb2a86"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-94b85773b2cf9539cf48",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana snapshot_mtimes nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-b6a5c797ca45d6375b42"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-961cab0bb3de115081b1",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana parse_time nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-f68e9eaa7f5326e0942a"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-988f9fcca27f39c79913",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_projection_derives_route_and_plan_gap_metrics nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-472fb657a64ea0ac340c"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-9e1d71c795ff86aa827a",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_evaluate nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-316260954ef284a7e77b"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-9f2774b86c1c663a07d9",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana utc_now nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-a7aa7f4ae2787d66ce7b"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-9f9c7896cfb7ba6d8dfa",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana render_ticket_context nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-5303e5e1746bb7be92ef"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-a1dcf80bb7661e852f7b",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana compare nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-65379ed94e3da6d45938"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-a35906c12c927c4940d3",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana StateProjectionError nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-7520ade34a72bbcea3c9"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-a45ed26281f524c31aa4",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_policy_matches_schema_and_semantics nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-8c4719e41171c4f87dc9"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-a4cf4b8e94753906e620",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana build_ecosystem_map nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-62d1a68dd812f7dc006b"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-a7d25b9d5207a8cd5e49",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana main nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-7521cd2dd0fd055d863a"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-a91c2e7f5321f03078ad",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana stable_json nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-155a73025c3ac70f810d"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-ab066113f1cfa3a5ce39",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana parse_map_arguments nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-559da6aa47f98aa41afa"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-abbdf4c4f335f48c3498",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_registry_matches_schema nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-f1fcda9c8ce6c577a952"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-ad5bbcc4f66ff2d09382",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana setUpClass nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-7aebda171fac49855c43"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-ae036de3a8bce4ab0d10",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana diff_toon_indexes nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-7b94597696cf2baf5a88"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-af2db99d52ed4fd9a3b9",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_offer_receipt_closes_behavioral_metric_gap nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-406a1266c631aa707857"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-af5a23d85b37897773f7",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana Publish evolutionary priority DSL as a standalone reference package. nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-GIT-48b3888d5354994f3046"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-b1f008fe68dcd1ddd863",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana project_state nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-f3f8319f49230afd3d41"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-b2ca214d88b9ae3daf03",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_cycle nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-55e1f8048df56e20068d"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-b3b9549f29bd8ea489a1",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana utc_now nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-6374e7118e5011268116"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-b3c2a585c9ad426e67f0",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_diff_reports_added_removed_and_changed nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-e70c9f8aeeb9a535c941"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-b3ee574b77a3393b8772",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_revision_mismatch_invalidates_evidence nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-68771fcef784f9a2b2d0"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-b4f79e397d097d8d2943",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana main nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-5d46cbff2b057c19f249"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-b564ec41aacd7f527777",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana load_json nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-0331a385de281eca224a"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-b87f13cb19639a78ffcc",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_validate nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-76117495b3d79d25ba83"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-ba30a49143e2acaecb91",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana metric_freshness nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-99d55b460d391cf67d44"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-bd71fac33a9cc01dcafe",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_documentation_only_tool_is_not_execution_eligible nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-7d757ce175292f9e2f56"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-be89c841293fb0175361",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana evaluate_condition nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-560d391254d2cd0a9562"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-c2776d220bbe5ab94639",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana has_module nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-11e8921cf3ad4a99ac47"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-c3b534a9dbc84393c376",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana as_json nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-603814ef08269399618d"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-c532265463d7d8217027",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_router_tokens_are_not_split_on_polish_stroke nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-29166abdc0eca1387bec"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-c61e8bc1f84c3d3a508b",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_parses_modules_and_header nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-8b09b367da3842d5c28b"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-cbd627548273fb4d0293",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana setUpClass nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-3f4b45cb01ded367ed1d"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-cc209c51aab2612e3d28",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_parses_compact_class_members nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-d57237959e2643883028"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-cd08d9a0660c545f5042",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_router_selects_real_planner_and_fleet_observer nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-1a175bfe086fb265eb73"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-ce191595be45b2f6af92",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana render_llms_index nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-4161b84b491b6bf735c7"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-ce1b3820e957b50ec953",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana render_context nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-390feef4ffa7bc3274a3"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-d0a423c5375a67951e04",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana Record ticket-001 publish report bound to this repository root. nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-GIT-2264bbcab68cb5f735a8"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-d2737a2eefcb042b521c",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_route nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-0f634fba77e8efc2e915"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-d2cead21daf5bdb46a95",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_cycle_abstains_and_never_applies nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-1d4fb9fc6d3704e4f9b6"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-d54ca61b75b17dd3e585",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana metric nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-c756e1c7736892f4f7f7"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-dfe683704215ae1fed2a",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana Publish Evolutionary Priority DSL 0.3.0 with grounded receipts. nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-GIT-b10181906b1779e9af90"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-e19196ac82b7f1d25395",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_prepare_ticket nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-7a51f5bc6841e422f255"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-e234227f3c7317d4df6f",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana evaluate nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-b6fe31d9ed1f8038bedf"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-e55db93446abf66695fa",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana file_digest nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-41ca99308a5fcb45d4c6"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-e5b9234ace14c4a8e9da",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana StateCtlTests nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-13bb1ca10ba6527eab78"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-e6b46fec9c1e909bb54e",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana validate_plan_result nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-9ffa35c3f143df853aca"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-ea6a7724eb746ff61329",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_injected_offer_fixture_is_not_live_attestation_but_is_measured nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-3855ae5958198843c448"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-edbee7b68fd648876d4b",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana load_yaml nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-b649a8e9f57c96df70b8"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-efa4221325e999476b98",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_unpinned_planner_is_not_run_not_fake_success nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-0ff3e0874be5ea4cca4b"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-f3df122af2f8fd258d70",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_complementarity_budget_is_measured nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-03b64123320e85743fbb"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-f5dee6635088ec962dc6",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_zero_plan_is_blocked nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-983543cf3801f6ed4c9d"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-f69ccad44e3e5b76cb32",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana metric_value nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-b2989c26cdbceb865b8d"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-f81f8550b6fa44854f88",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_cli_without_graph_is_contract_unbound nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-7daa347ec74eb08e004e"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-f8bbd14009ab7f67e8a0",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana run_cycle nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-e16a601294dcb1c59a75"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-fbd00a8b7aa004f3935a",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana referenced_metrics nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-8d6e627ea40e5f9c49ea"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-fe85bc60a0e43a04c27f",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana cmd_diff_maps nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-af5df386c7391cb46015"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-ff54b22e95ebffa200c2",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana get_path nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-23cbb05e89f1e241b584"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    },
+    {
+      "id": "DIAG-ffb07bda064412945915",
+      "code": "IMPLEMENTED_NOT_DOCUMENTED",
+      "severity": "info",
+      "title": "Zmiana bez dokumentacji wydania",
+      "detail": "Zmiana test_behavioral_offer_metric_stays_missing_without_receipt nie ma powiązanego wpisu dokumentacyjnego lub changelogu.",
+      "recordIds": [
+        "INT-AST-6b742db39dc0d330d4eb"
+      ],
+      "suggestedAction": "Dodać albo powiązać wpis CHANGELOG/dokumentacji, jeśli zmiana jest publiczna."
+    }
+  ],
+  "counts": {
+    "info": 146,
+    "warning": 142,
+    "review_required": 0,
+    "blocking": 0
+  }
+}

@@ -1,13 +1,13 @@
 {
-  "status": "REVIEW_REQUIRED",
-  "ecosystemMapDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055",
+  "status": "PASS",
+  "ecosystemMapDigest": "sha256:86b6108e7aa84cf86e1a7ce390348e8dc70b2d141df22d3b7397f5a45443854b",
   "metrics": {
-    "projectCount": 15,
-    "verifiedProjectCount": 10,
-    "documentedOnlyProjectCount": 5,
-    "executionEligibleProjectCount": 9,
+    "projectCount": 16,
+    "verifiedProjectCount": 15,
+    "documentedOnlyProjectCount": 1,
+    "executionEligibleProjectCount": 12,
     "duplicateHomeCount": 0,
-    "manifestCoverage": 0.3667
+    "manifestCoverage": 0.3111
   },
   "out": "generated/ecosystem-map.json",
   "llmsOut": "generated/llms.txt"

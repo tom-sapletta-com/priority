@@ -3,12 +3,12 @@
   "generatedAt": "2026-08-19T10:00:00Z",
   "ticketId": "ticket-001",
   "routeStatus": "REVIEW_REQUIRED",
-  "contextDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b",
-  "plannerRequestDigest": "sha256:f897e5a1498af761edef3cad77ba7904d00a254aebe9bd23a3cd231bd1e9d906",
+  "contextDigest": "sha256:c745022ded0ce4d88f5ad74782ca976b61c788a7cacfe7919a1ed2778046d462",
+  "plannerRequestDigest": "sha256:16d549d0340af9c135a666d72290b70037fe585e1b47533e8883af7bc168879e",
   "artifacts": [
     "context-selection.json",
     "todo2code-request.json",
     "CONTEXT.md"
   ],
-  "receiptDigest": "sha256:b69d88240d06a6edcddc68a949983c76dd0e137f6addbb7b15891c21cfda90f9"
+  "receiptDigest": "sha256:23cd62ce0679bfe4264074d1a8678eed5dce9ff5e215c5e5fc9973650be6a4f3"
 }

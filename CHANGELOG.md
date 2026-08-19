@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.3.2 — 2026-08-19
+
+### Added
+
+- pinned wellmanifest 2026-08-16 and pyqual 2026-04-25 TOON maps;
+- `wellmanifest/git-lifecycle` as a mapped, non-required standard;
+- bounded `sources/planner` graph and diagnostics for the autonomy cycle;
+- default discovery of sibling offer binding `www-sub-actor` and its facade.
+
+### Changed
+
+- required wellmanifest and pyqual projects move from documentation-only to
+  map-backed `git_ast` evidence;
+- candidate standards can be `VERIFIED` without becoming `executionEligible`;
+- `make cycle` invokes pinned `todo2code` and live offer pin-check when those
+  files exist.
+
 ## 0.3.1 — 2026-08-19
 
 ### Added

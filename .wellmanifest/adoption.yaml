@@ -13,29 +13,29 @@ spec:
   projectRegistry:
     home: subactor/registry
     path: registry/ecosystem-tools.yaml
-    semanticDigest: sha256:4930758b69658f4de3481000e70330beed8abe312c812a8b5bcc950ff30576fd
-    fileDigest: sha256:4018d7095b18f0a1f2b8cceaa773211388980ecb6c7a0b5410fd48cc49553ff7
+    semanticDigest: sha256:bbffea79164bec56bddcb1bee5aeefd09e77c330ca733e01fec59e8f0ad38cca
+    fileDigest: sha256:64ef5c7ac7c424b5e12228309c087c6759f422c21e4511ba3ae2f6f387e86084
   standards:
   - id: wellmanifest/policy-dsl
     role: HOME
-    evidenceStatus: DOCUMENTED
+    evidenceStatus: VERIFIED
     executionPinned: false
-    reason: Exact repository map and contract version were not attached.
+    reason: Map pinned; lifecycle remains candidate so this HOME cannot authorize execution.
   - id: wellmanifest/new-project
     role: HOME
-    evidenceStatus: DOCUMENTED
+    evidenceStatus: VERIFIED
     executionPinned: false
-    reason: Ticket lifecycle is source-supported but exact repository map is absent.
+    reason: Structural map is pinned; policy lifecycle is still candidate.
   - id: wellmanifest/git-lifecycle
     role: HOME
-    evidenceStatus: DOCUMENTED
+    evidenceStatus: VERIFIED
     executionPinned: false
-    reason: The event standard is referenced by the source report; exact contract is not pinned.
+    reason: Map pinned from the 2026-08-16 wellmanifest index; not a required ticket role.
   - id: wellmanifest/offer
     role: HOME
-    evidenceStatus: DOCUMENTED
+    evidenceStatus: VERIFIED
     executionPinned: false
-    reason: Independent abstract offer standard; it must not contain Subactor prices.
+    reason: Abstract standard map is pinned; this HOME must not hold Subactor prices.
   sourceIndexes:
   - organization: subactor
     generatedDate: '2026-08-19'
@@ -45,11 +45,25 @@ spec:
     generatedDate: '2026-08-19'
     path: sources/indexes/autogrammar-2026-08-19.toon.yaml
     digest: sha256:09fce2609729b130b2d1224821dad947572d29a3cf4a11a5963af41258e47a26
+  - organization: wellmanifest
+    generatedDate: '2026-08-16'
+    path: sources/indexes/wellmanifest-2026-08-16.toon.yaml
+    digest: sha256:554fbfa0f264123efbc1c74e5252d7ba84308f45c8cbd63a0e3ecd74ffb1672c
+  - organization: pyqual
+    generatedDate: '2026-04-25'
+    path: sources/indexes/pyqual-2026-04-25.toon.yaml
+    digest: sha256:72172888d7d8e2c781fd81b2a159dd49cc42a4a08f4990735b59348977e199cb
+  plannerContract:
+    graph: sources/planner/intent.graph.json
+    diagnostics: sources/planner/diagnostics.json
+    boundedTo:
+    - adapters/
+    - tests/
   enforcement:
     enabled: false
-    reason: Policy and registry are candidate; pyqual and wellmanifest execution contracts remain unpinned.
+    reason: Policy lifecycle remains candidate; a verified map is not a production gate.
     promotionRequired:
-    - exact semcod/pyqual map and schema
-    - exact wellmanifest contract versions
-    - shadow receipts
+    - native pyqual schema pin and enabled enforcement
+    - policy lifecycle shadow with independent receipts
     - independent validation
+    - no false PASS in negative tests

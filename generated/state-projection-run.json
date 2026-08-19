@@ -4,6 +4,6 @@
   "missingMetrics": [
     "offer.facade_digest_mismatch_count"
   ],
-  "projectionDigest": "sha256:0a9036b0da1ada4ba59827b5020f76d8d60f16c91e04770b9cb76fb7b3407a34",
+  "projectionDigest": "sha256:5d50a267a043b6226ae1db67a057c7a7c90323a04f94a25f76aaca7470c9e69f",
   "out": "generated/state-from-index.json"
 }

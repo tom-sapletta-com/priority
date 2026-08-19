@@ -40,6 +40,19 @@ class AutonomyCtlTests(unittest.TestCase):
         self.assertNotIn("T2C_PLAN_GAP", codes)
         self.assertEqual(receipt["finalOutcome"], "BLOCK")
 
+    def test_local_planner_sources_pin_when_discovery_enabled(self) -> None:
+        discovery = discover_tools(
+            ROOT,
+            environ={
+                "AUTONOMY_DISCOVER_SIBLINGS": "1",
+                "TODO2CODE_CLI": str(ROOT / "adapters" / "autonomyctl.py"),
+                "OFFER_ROOT": "",
+            },
+        )
+        self.assertTrue((ROOT / "sources" / "planner" / "intent.graph.json").is_file())
+        self.assertTrue(discovery["planner"]["pinned"])
+        self.assertEqual(discovery["planner"]["reason"], "pinned")
+
     def test_cli_without_graph_is_contract_unbound(self) -> None:
         discovery = discover_tools(
             ROOT,

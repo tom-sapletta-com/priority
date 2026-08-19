@@ -6,7 +6,7 @@
   "policyLifecycle": "candidate",
   "policyDigest": "sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f",
   "stateRevision": "sha256:example-head-20260819-v030",
-  "stateDigest": "sha256:ea70bb00fa967f43cc79584b0ff2e9cdb38f5fdb39f12c03be77756fd4c93e45",
+  "stateDigest": "sha256:b646475d20476248dad703c158799292509726972f982dc3029980a331cd31d1",
   "finalOutcome": "BLOCK",
   "executionGate": {
     "dispatchAllowed": false,
@@ -247,7 +247,7 @@
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 3
+      "value": 2
     },
     "planning.todo2code_plan_gap_count": {
       "status": "FRESH",
@@ -267,7 +267,7 @@
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 3
+      "value": 2
     },
     "routing.context_selection_coverage": {
       "status": "FRESH",
@@ -277,7 +277,7 @@
       "sourceRank": 100,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0.7273
+      "value": 0.8182
     },
     "registry.unverified_required_project_count": {
       "status": "FRESH",
@@ -287,7 +287,7 @@
       "sourceRank": 80,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 4
+      "value": 0
     },
     "registry.manifest_coverage": {
       "status": "FRESH",
@@ -297,7 +297,7 @@
       "sourceRank": 80,
       "sourceAllowed": true,
       "revisionMatches": true,
-      "value": 0.3667
+      "value": 0.3111
     },
     "offer.facade_digest_mismatch_count": {
       "status": "MISSING",
@@ -700,5 +700,5 @@
       }
     ]
   },
-  "receiptDigest": "sha256:046d65023ea812391034cc0d9d19b30020dc56c98a0879a136a2a856b51d8bf4"
+  "receiptDigest": "sha256:27b820eeef3c4060efee32d8c4ac2a766a1e993b2ee4b4d121c4142806a67f61"
 }

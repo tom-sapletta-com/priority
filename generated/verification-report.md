@@ -1,19 +1,19 @@
 # Verification report
 
-- Version: `0.3.1`
+- Version: `0.3.2`
 - Generated at: `2026-08-19T10:00:00Z`
 - Policy digest: `sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f`
-- Registry digest: `sha256:4930758b69658f4de3481000e70330beed8abe312c812a8b5bcc950ff30576fd`
-- Report digest: `sha256:383edc73daa8962918cc714d631836df8ba373c7903779541a3717e351de2b3e`
-- Tests: **41/41 passed**
+- Registry digest: `sha256:bbffea79164bec56bddcb1bee5aeefd09e77c330ca733e01fec59e8f0ad38cca`
+- Report digest: `sha256:43dd3796ba0caa45a43e39f41e5b93f20bef8ef44b70ccf2877758d51af5eb43`
+- Tests: **45/45 passed**
 
 ## Output receipts
 
-- `generated/ecosystem-map.json` — `REVIEW_REQUIRED` — file `sha256:bdcb3f9e93797f016c02e7d0c68a6bbc215533825e51a265f73d51483b8cdc1c` — receipt `sha256:bdcb3f9e93797f016c02e7d0c68a6bbc215533825e51a265f73d51483b8cdc1c`
-- `generated/ticket-context-selection.json` — `REVIEW_REQUIRED` — file `sha256:350e59ff6ee653754d025ef3b99faf1996917637f49a8008d2ff7d136a970f4b` — receipt `sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b`
+- `generated/ecosystem-map.json` — `PASS` — file `sha256:9864dcac78b9b168ad6e28e4aa4a647cadb52db0101352a6735b740ecece036c` — receipt `sha256:9864dcac78b9b168ad6e28e4aa4a647cadb52db0101352a6735b740ecece036c`
+- `generated/ticket-context-selection.json` — `REVIEW_REQUIRED` — file `sha256:8244b5c8b964813f10021bf593e1262a596210d6083c1fde74a30984358133f4` — receipt `sha256:c745022ded0ce4d88f5ad74782ca976b61c788a7cacfe7919a1ed2778046d462`
 - `receipts/todo2code-plan-gap.json` — `BLOCK` — file `sha256:ef33cb097d93080e9e59a1ea01eb13e27ae2252a697de98cc3cb1baefb203c4d` — receipt `sha256:594185df858f6d230e3fac196677ce904577cc88e6bc58041699cd944848307e`
 - `receipts/todo2code-plan-valid.json` — `PASS` — file `sha256:1fcc91aa0c9caeb8496ddaa0e3e0ac20c143b1af0e4ef868f09a92093fe08476` — receipt `sha256:8289a3e99605a7cbb1f6111d42010f3795e9c1c7b11ae5a70b49754122f57986`
-- `receipts/index-grounded-decision.json` — `BLOCK` — file `sha256:4c476cb4ae33a9f02abe6d3edd2a8ee9e2f18b61036fc065b88b8b8e0c167e0f` — receipt `sha256:046d65023ea812391034cc0d9d19b30020dc56c98a0879a136a2a856b51d8bf4`
+- `receipts/index-grounded-decision.json` — `BLOCK` — file `sha256:536531498025c9a4bf2632eaa567a306cc9b7e4be34fc29defab2270aa6fed43` — receipt `sha256:27b820eeef3c4060efee32d8c4ac2a766a1e993b2ee4b4d121c4142806a67f61`
 - `receipts/healthy-decision.json` — `PASS` — file `sha256:83855d0cc08f1a25877df6b681a941c2817c1c2ff6c7951d87d9817956bf6305` — receipt `sha256:b3029385da583af9cfc07b4b5c70537347298a08946e50121702b1ac799939e7`
 
 ## Test runner output
@@ -23,12 +23,16 @@ test_cli_without_graph_is_contract_unbound (test_autonomyctl.AutonomyCtlTests.te
 test_cycle_abstains_and_never_applies (test_autonomyctl.AutonomyCtlTests.test_cycle_abstains_and_never_applies) ... ok
 test_injected_offer_fixture_is_not_live_attestation_but_is_measured (test_autonomyctl.AutonomyCtlTests.test_injected_offer_fixture_is_not_live_attestation_but_is_measured) ... ok
 test_injected_zero_plan_stays_plan_gap (test_autonomyctl.AutonomyCtlTests.test_injected_zero_plan_stays_plan_gap) ... ok
+test_local_planner_sources_pin_when_discovery_enabled (test_autonomyctl.AutonomyCtlTests.test_local_planner_sources_pin_when_discovery_enabled) ... ok
 test_unpinned_planner_is_not_run_not_fake_success (test_autonomyctl.AutonomyCtlTests.test_unpinned_planner_is_not_run_not_fake_success) ... ok
+test_candidate_standard_can_be_verified_but_not_executable (test_ecosystemctl.EcosystemCtlTests.test_candidate_standard_can_be_verified_but_not_executable) ... ok
+test_default_indexes_include_wellmanifest_and_pyqual (test_ecosystemctl.EcosystemCtlTests.test_default_indexes_include_wellmanifest_and_pyqual) ... ok
 test_documentation_only_tool_is_not_execution_eligible (test_ecosystemctl.EcosystemCtlTests.test_documentation_only_tool_is_not_execution_eligible) ... ok
 test_duplicate_home_becomes_blocking_finding (test_ecosystemctl.EcosystemCtlTests.test_duplicate_home_becomes_blocking_finding) ... ok
 test_grounded_plan_is_accepted (test_ecosystemctl.EcosystemCtlTests.test_grounded_plan_is_accepted) ... ok
 test_home_owners_are_unique (test_ecosystemctl.EcosystemCtlTests.test_home_owners_are_unique) ... ok
 test_llms_index_marks_documentation_boundary (test_ecosystemctl.EcosystemCtlTests.test_llms_index_marks_documentation_boundary) ... ok
+test_pinned_quality_gate_is_execution_eligible (test_ecosystemctl.EcosystemCtlTests.test_pinned_quality_gate_is_execution_eligible) ... ok
 test_planner_request_encodes_zero_plan_policy (test_ecosystemctl.EcosystemCtlTests.test_planner_request_encodes_zero_plan_policy) ... ok
 test_registry_matches_schema (test_ecosystemctl.EcosystemCtlTests.test_registry_matches_schema) ... ok
 test_router_fails_closed_for_documentation_only_required_role (test_ecosystemctl.EcosystemCtlTests.test_router_fails_closed_for_documentation_only_required_role) ... ok
@@ -62,7 +66,7 @@ test_parses_modules_and_header (test_toon_index.ToonIndexTests.test_parses_modul
 test_project_roots_are_counted (test_toon_index.ToonIndexTests.test_project_roots_are_counted) ... ok
 
 ----------------------------------------------------------------------
-Ran 41 tests
+Ran 45 tests
 
 OK
 ```

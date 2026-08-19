@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "adapters"))
 from ecosystemctl import (  # noqa: E402
     build_ecosystem_map,
     create_planner_request,
+    default_index_maps,
     load_json,
     load_yaml,
     render_llms_index,
@@ -29,7 +30,11 @@ class EcosystemCtlTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.registry = load_yaml(ROOT / "registry" / "ecosystem-tools.yaml")
         cls.registry_schema = load_json(ROOT / "schemas" / "ecosystem-tool-registry.schema.json")
-        cls.ecosystem_map = load_json(ROOT / "generated" / "ecosystem-map.json")
+        cls.ecosystem_map = build_ecosystem_map(
+            cls.registry,
+            default_index_maps(ROOT),
+            "2026-08-19T10:00:00Z",
+        )
         cls.request = load_json(ROOT / "examples" / "ticket-context-request.json")
 
     def test_registry_matches_schema(self) -> None:
@@ -49,9 +54,26 @@ class EcosystemCtlTests(unittest.TestCase):
             self.assertTrue(projects[project_id]["evidence"]["executionEligible"])
 
     def test_documentation_only_tool_is_not_execution_eligible(self) -> None:
-        project = next(item for item in self.ecosystem_map["projects"] if item["id"] == "semcod/pyqual")
+        project = next(item for item in self.ecosystem_map["projects"] if item["id"] == "semcod/giton")
         self.assertEqual(project["evidence"]["status"], "DOCUMENTED")
         self.assertFalse(project["evidence"]["executionEligible"])
+
+    def test_pinned_quality_gate_is_execution_eligible(self) -> None:
+        project = next(item for item in self.ecosystem_map["projects"] if item["id"] == "semcod/pyqual")
+        self.assertEqual(project["evidence"]["status"], "VERIFIED")
+        self.assertTrue(project["evidence"]["executionEligible"])
+
+    def test_candidate_standard_can_be_verified_but_not_executable(self) -> None:
+        projects = {item["id"]: item for item in self.ecosystem_map["projects"]}
+        for project_id in ("wellmanifest/policy-dsl", "wellmanifest/offer"):
+            self.assertEqual(projects[project_id]["evidence"]["status"], "VERIFIED")
+            self.assertFalse(projects[project_id]["evidence"]["executionEligible"])
+        self.assertEqual(projects["wellmanifest/new-project"]["evidence"]["status"], "VERIFIED")
+        self.assertTrue(projects["wellmanifest/new-project"]["evidence"]["executionEligible"])
+
+    def test_default_indexes_include_wellmanifest_and_pyqual(self) -> None:
+        maps = default_index_maps(ROOT)
+        self.assertGreaterEqual(set(maps), {"subactor", "autogrammar", "wellmanifest", "pyqual"})
 
     def test_tokenize_keeps_polish_l_stroke_words_intact(self) -> None:
         tokens = tokenize("dokładnymi digestami istniejącego równoległego super-agenta")
@@ -123,7 +145,8 @@ class EcosystemCtlTests(unittest.TestCase):
     def test_llms_index_marks_documentation_boundary(self) -> None:
         text = render_llms_index(self.ecosystem_map)
         self.assertIn("Documentation-only tools may inform a ticket but cannot authorize execution", text)
-        self.assertIn("semcod/pyqual | evidence=DOCUMENTED | execution=false", text)
+        self.assertIn("semcod/giton | evidence=DOCUMENTED | execution=false", text)
+        self.assertIn("semcod/pyqual | evidence=VERIFIED | execution=true", text)
 
 
 if __name__ == "__main__":

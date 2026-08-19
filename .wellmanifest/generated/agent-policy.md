@@ -3,7 +3,7 @@
 Policy: `engineering-standardization` `0.3.0`
 Policy digest: `sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f`
 State revision: `sha256:example-head-20260819-v030`
-Decision receipt: `sha256:046d65023ea812391034cc0d9d19b30020dc56c98a0879a136a2a856b51d8bf4`
+Decision receipt: `sha256:27b820eeef3c4060efee32d8c4ac2a766a1e993b2ee4b4d121c4142806a67f61`
 Final outcome: **BLOCK**
 
 ## Non-negotiable operating order

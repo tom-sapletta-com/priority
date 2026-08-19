@@ -87,6 +87,29 @@ def parse_map_arguments(values: Iterable[str]) -> dict[str, ToonIndex]:
     return result
 
 
+DEFAULT_INDEX_FILES = (
+    ("subactor", "sources/indexes/subactor-2026-08-19.toon.yaml"),
+    ("autogrammar", "sources/indexes/autogrammar-2026-08-19.toon.yaml"),
+    ("wellmanifest", "sources/indexes/wellmanifest-2026-08-16.toon.yaml"),
+    ("pyqual", "sources/indexes/pyqual-2026-04-25.toon.yaml"),
+)
+
+
+def default_index_maps(root: Path) -> dict[str, ToonIndex]:
+    pairs = [
+        f"{organization}={root / relative}"
+        for organization, relative in DEFAULT_INDEX_FILES
+        if (root / relative).is_file()
+    ]
+    return parse_map_arguments(pairs)
+
+
+def _project_index(project: Json, maps: Mapping[str, ToonIndex]) -> ToonIndex | None:
+    organization = str(project["organization"])
+    repository = str(project.get("repository", ""))
+    return maps.get(organization) or maps.get(repository)
+
+
 def _manifest_assessment(project: Json, index: ToonIndex | None, manifest_files: Mapping[str, Any]) -> Json:
     if index is None or not project.get("modulePrefix"):
         return {"status": "NOT_MEASURED", "coverage": None, "categories": {}}
@@ -118,7 +141,7 @@ def _project_evidence(project: Json, maps: Mapping[str, ToonIndex], source_ranks
     source_class = str(evidence["sourceClass"])
     source_rank = int(source_ranks.get(source_class, -1))
     organization = str(project["organization"])
-    index = maps.get(organization)
+    index = _project_index(project, maps)
     required_modules = [str(item) for item in evidence.get("requiredModules", [])]
     required_symbols = evidence.get("requiredSymbols", [])
 

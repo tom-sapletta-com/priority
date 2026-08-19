@@ -21,14 +21,18 @@ run_observation() {
   fi
 }
 
-run_observation python3 "$ROOT/adapters/ecosystemctl.py" index \
-  --registry "$ROOT/registry/ecosystem-tools.yaml" \
-  --schema "$ROOT/schemas/ecosystem-tool-registry.schema.json" \
-  --map "subactor=$SUBACTOR_MAP" \
-  --map "autogrammar=$AUTOGRAMMAR_MAP" \
-  --out "$OUT_ROOT/generated/ecosystem-map.json" \
-  --llms-out "$OUT_ROOT/generated/llms.txt" \
+index_args=(
+  --registry "$ROOT/registry/ecosystem-tools.yaml"
+  --schema "$ROOT/schemas/ecosystem-tool-registry.schema.json"
+  --map "subactor=$SUBACTOR_MAP"
+  --map "autogrammar=$AUTOGRAMMAR_MAP"
+  --out "$OUT_ROOT/generated/ecosystem-map.json"
+  --llms-out "$OUT_ROOT/generated/llms.txt"
   --now "$NOW"
+)
+[[ -n "${WELLMANIFEST_MAP:-}" ]] && index_args+=(--map "wellmanifest=$WELLMANIFEST_MAP")
+[[ -n "${PYQUAL_MAP:-}" ]] && index_args+=(--map "pyqual=$PYQUAL_MAP")
+run_observation python3 "$ROOT/adapters/ecosystemctl.py" index "${index_args[@]}"
 
 run_observation python3 "$ROOT/adapters/ecosystemctl.py" route-ticket \
   --ecosystem-map "$OUT_ROOT/generated/ecosystem-map.json" \

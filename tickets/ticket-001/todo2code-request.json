@@ -43,7 +43,7 @@
     ]
   },
   "intentDigest": "sha256:6a2c651749a9d4820b63ed12ef28b9af15ef2bebe1232e04df81da0ec5fb5b6e",
-  "contextDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b",
+  "contextDigest": "sha256:c745022ded0ce4d88f5ad74782ca976b61c788a7cacfe7919a1ed2778046d462",
   "planner": {
     "projectId": "autogrammar/todo2code",
     "uri": "uri://todo2code/code-change/plan",
@@ -54,8 +54,8 @@
     "subactor/offer",
     "wellmanifest/offer",
     "subactor/registry",
-    "subactor/diagit",
     "wellmanifest/policy-dsl",
+    "subactor/diagit",
     "autogrammar/todo2code",
     "semcod/pyqual",
     "subactor/validator-agent",
@@ -89,5 +89,5 @@
     "requiresIndependentValidator": true,
     "routeStatusRequired": "PASS"
   },
-  "plannerRequestDigest": "sha256:f897e5a1498af761edef3cad77ba7904d00a254aebe9bd23a3cd231bd1e9d906"
+  "plannerRequestDigest": "sha256:16d549d0340af9c135a666d72290b70037fe585e1b47533e8883af7bc168879e"
 }

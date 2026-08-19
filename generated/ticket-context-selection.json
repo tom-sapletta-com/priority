@@ -3,7 +3,7 @@
   "generatedAt": "2026-08-19T10:00:00Z",
   "ticketId": "ticket-001",
   "requestDigest": "sha256:abcb28414f82643fcaefe9c4ea93a0ab9c9f53366f5dbef6dfaa6b2d84e091ee",
-  "ecosystemMapDigest": "sha256:2b4f3320adcf7c6b45a7d3f6511ec2d7cf0464fd7809eb6b1b8b10918e215055",
+  "ecosystemMapDigest": "sha256:86b6108e7aa84cf86e1a7ce390348e8dc70b2d141df22d3b7397f5a45443854b",
   "status": "REVIEW_REQUIRED",
   "tokens": [
     "agent",
@@ -172,7 +172,7 @@
     },
     {
       "id": "wellmanifest/offer",
-      "score": 230.0,
+      "score": 240.0,
       "reasons": [
         "required roles: offer-standard-owner",
         "HOME for: commercial-offer-standard",
@@ -189,10 +189,10 @@
       "interfaces": {
         "validateAdoption": "uri://wellmanifest/offer/adoption/validate"
       },
-      "evidenceStatus": "DOCUMENTED",
-      "sourceRank": 40,
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
       "executionEligible": false,
-      "manifestStatus": "NOT_MEASURED"
+      "manifestStatus": "DRIFT"
     },
     {
       "id": "subactor/registry",
@@ -216,6 +216,30 @@
       "evidenceStatus": "VERIFIED",
       "sourceRank": 80,
       "executionEligible": true,
+      "manifestStatus": "DRIFT"
+    },
+    {
+      "id": "wellmanifest/policy-dsl",
+      "score": 220.0,
+      "reasons": [
+        "required roles: policy-language-standard-owner",
+        "HOME for: evolutionary-intent-policy-language",
+        "priority-policy-language: dsl, intent, policy, priority, standard"
+      ],
+      "roles": [
+        "abstract-standard-owner",
+        "standard-owner",
+        "policy-language-standard-owner"
+      ],
+      "homeFor": [
+        "evolutionary-intent-policy-language"
+      ],
+      "interfaces": {
+        "standardChangeProposal": "uri://wellmanifest/standard-change/propose"
+      },
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": false,
       "manifestStatus": "DRIFT"
     },
     {
@@ -246,30 +270,6 @@
       "manifestStatus": "DRIFT"
     },
     {
-      "id": "wellmanifest/policy-dsl",
-      "score": 210.0,
-      "reasons": [
-        "required roles: policy-language-standard-owner",
-        "HOME for: evolutionary-intent-policy-language",
-        "priority-policy-language: dsl, intent, policy, priority, standard"
-      ],
-      "roles": [
-        "abstract-standard-owner",
-        "standard-owner",
-        "policy-language-standard-owner"
-      ],
-      "homeFor": [
-        "evolutionary-intent-policy-language"
-      ],
-      "interfaces": {
-        "standardChangeProposal": "uri://wellmanifest/standard-change/propose"
-      },
-      "evidenceStatus": "DOCUMENTED",
-      "sourceRank": 40,
-      "executionEligible": false,
-      "manifestStatus": "NOT_MEASURED"
-    },
-    {
       "id": "autogrammar/todo2code",
       "score": 188.0,
       "reasons": [
@@ -295,7 +295,7 @@
     },
     {
       "id": "semcod/pyqual",
-      "score": 175.0,
+      "score": 185.0,
       "reasons": [
         "required roles: quality-gate",
         "declarative-quality-gates: gate, manifest, quality",
@@ -311,10 +311,10 @@
         "exactHeadGate": "uri://pyqual/gate/exact-head",
         "manifestGate": "uri://pyqual/gate/manifest-conformance"
       },
-      "evidenceStatus": "DOCUMENTED",
-      "sourceRank": 40,
-      "executionEligible": false,
-      "manifestStatus": "NOT_MEASURED"
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": true,
+      "manifestStatus": "DRIFT"
     },
     {
       "id": "subactor/validator-agent",
@@ -380,7 +380,7 @@
     },
     {
       "id": "wellmanifest/new-project",
-      "score": 46.0,
+      "score": 56.0,
       "reasons": [
         "bounded-ticket: intent, ticket",
         "manifest-adoption: manifest, pyqual, standard"
@@ -396,10 +396,10 @@
       "interfaces": {
         "ticketCreate": "uri://wellmanifest/new-project/ticket/create"
       },
-      "evidenceStatus": "DOCUMENTED",
-      "sourceRank": 40,
-      "executionEligible": false,
-      "manifestStatus": "NOT_MEASURED"
+      "evidenceStatus": "VERIFIED",
+      "sourceRank": 80,
+      "executionEligible": true,
+      "manifestStatus": "DRIFT"
     }
   ],
   "excludedProjects": [],
@@ -409,22 +409,15 @@
       "severity": "warning",
       "role": "policy-language-standard-owner",
       "projectId": "wellmanifest/policy-dsl",
-      "evidenceStatus": "DOCUMENTED"
-    },
-    {
-      "code": "ROUTER_REQUIRED_ROLE_NOT_EXECUTION_VERIFIED",
-      "severity": "warning",
-      "role": "quality-gate",
-      "projectId": "semcod/pyqual",
-      "evidenceStatus": "DOCUMENTED"
+      "evidenceStatus": "VERIFIED"
     },
     {
       "code": "ROUTER_REQUIRED_ROLE_NOT_EXECUTION_VERIFIED",
       "severity": "warning",
       "role": "offer-standard-owner",
       "projectId": "wellmanifest/offer",
-      "evidenceStatus": "DOCUMENTED"
+      "evidenceStatus": "VERIFIED"
     }
   ],
-  "contextDigest": "sha256:92d3bc5acb31e778994e66a1ed0e9beb8223c475f97885fbbaa9bea9c2e83a3b"
+  "contextDigest": "sha256:c745022ded0ce4d88f5ad74782ca976b61c788a7cacfe7919a1ed2778046d462"
 }

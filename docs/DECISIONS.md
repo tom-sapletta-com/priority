@@ -27,3 +27,11 @@ A `candidate`, `shadow` or `canary` policy may calculate priorities and proposed
 ## ADR-007 — Autonomy is a closed observe-evaluate loop, not silent execution
 
 `autonomyctl cycle` discovers pinned tools, indexes, routes, invokes or abstains, evaluates and writes receipts. Missing `todo2code` CLI or offer pin-check is `not-run` / `NOT_MEASURED`, never a invented `succeeded` plan. The cycle never applies a source patch. `applyAttempted` is always false.
+
+## ADR-008 — A pinned map is structural proof, not a promotion
+
+Pinning `wellmanifest/*` and `semcod/pyqual` maps can change evidence from
+`DOCUMENTED` to `VERIFIED`. It does not change policy lifecycle from
+`candidate`, does not enable pyqual enforcement, and does not make a
+candidate HOME `executionEligible`. Behavioral offer proof still requires a
+live pin-check receipt bound to a revision.

@@ -117,6 +117,7 @@ spec:
   - id: wellmanifest/policy-dsl
     organization: wellmanifest
     repository: policy-dsl
+    modulePrefix: policy-dsl/
     lifecycle: candidate
     required: true
     roles:
@@ -139,13 +140,25 @@ spec:
     interfaces:
       standardChangeProposal: uri://wellmanifest/standard-change/propose
     evidence:
-      sourceClass: documentation
+      sourceClass: git_ast
+      requiredModules:
+      - policy-dsl/dsl-manifest.json
+      - policy-dsl/schemas/policy-ir.schema.json
+      - policy-dsl/profiles/sales/reference_engine.py
+      - policy-dsl/project/new-ticket.sh
+      requiredSymbols:
+      - path: policy-dsl/profiles/sales/reference_engine.py
+        symbols:
+        - decide
+        - validate_decision
+        - load_catalog
       documents:
       - sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#5
-      note: Exact repository map was not attached; execution requires a pinned contract.
+      note: Map pinned; lifecycle remains candidate so this HOME is not execution-eligible.
   - id: wellmanifest/new-project
     organization: wellmanifest
     repository: new-project
+    modulePrefix: new-project/
     lifecycle: active
     required: true
     roles:
@@ -175,11 +188,16 @@ spec:
     interfaces:
       ticketCreate: uri://wellmanifest/new-project/ticket/create
     evidence:
-      sourceClass: documentation
+      sourceClass: git_ast
+      requiredModules:
+      - new-project/dsl-manifest.json
+      - new-project/goal.yaml
+      - new-project/project/new-ticket.sh
+      - new-project/project/governance-check.sh
       documents:
       - sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#4
       - sources/reports/readiness-remediation-plan-2026-08-19.md#ticket-allocation-strategy
-      note: Exact repository map was not attached; use as normative context, not executable proof.
+      note: Structural map is pinned; diagit still reports worktree overlap on this HOME.
   - id: autogrammar/todo2code
     organization: autogrammar
     repository: todo2code
@@ -314,6 +332,7 @@ spec:
   - id: semcod/pyqual
     organization: semcod
     repository: pyqual
+    modulePrefix: pyqual/
     lifecycle: active
     required: true
     roles:
@@ -343,10 +362,19 @@ spec:
       exactHeadGate: uri://pyqual/gate/exact-head
       manifestGate: uri://pyqual/gate/manifest-conformance
     evidence:
-      sourceClass: documentation
+      sourceClass: git_ast
+      requiredModules:
+      - pyqual/report.py
+      - pyqual/cli/main.py
+      - pyqual/cli/cmd_run.py
+      requiredSymbols:
+      - path: pyqual/report.py
+        symbols:
+        - evaluate_gates
+        - generate_report
       documents:
       - sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#3.1
-      note: The source report identifies the role; exact CLI/config schema must be pinned from the repository before enforcement.
+      note: Package map from 2026-04-25 is pinned; integration/pyqual-adapter.yaml remains enforcement-disabled.
   - id: semcod/giton
     organization: semcod
     repository: giton
@@ -543,6 +571,7 @@ spec:
   - id: wellmanifest/offer
     organization: wellmanifest
     repository: offer
+    modulePrefix: offer/
     lifecycle: candidate
     required: true
     roles:
@@ -563,10 +592,47 @@ spec:
     interfaces:
       validateAdoption: uri://wellmanifest/offer/adoption/validate
     evidence:
-      sourceClass: documentation
+      sourceClass: git_ast
+      requiredModules:
+      - offer/AGENTS.md
+      - offer/README.md
+      - offer/docs/STANDARD.md
       documents:
       - sources/reports/ecosystem-strategic-technical-report-2026-08-19.md#2.1
-      note: Must remain independent from Subactor product values; no prices belong here.
+      note: Abstract standard map is pinned; lifecycle stays candidate and this HOME must not hold prices.
+  - id: wellmanifest/git-lifecycle
+    organization: wellmanifest
+    repository: git-lifecycle
+    modulePrefix: git-lifecycle/
+    lifecycle: active
+    required: false
+    roles:
+    - git-lifecycle-standard-owner
+    capabilities:
+    - id: git-lifecycle-standard
+      weight: 8
+      keywords:
+      - git
+      - lifecycle
+      - hook
+      - transition
+      - catalog
+      - validate
+    interfaces:
+      validateLifecycle: uri://wellmanifest/git-lifecycle/validate
+    evidence:
+      sourceClass: git_ast
+      requiredModules:
+      - git-lifecycle/standard/lifecycle.py
+      - git-lifecycle/standard/conformance.py
+      - git-lifecycle/standard/git-lifecycle.schema.json
+      requiredSymbols:
+      - path: git-lifecycle/standard/lifecycle.py
+        symbols:
+        - Lifecycle
+        - validate_path
+        - parse_bundle
+      note: Map pinned from the 2026-08-16 wellmanifest index; not a required ticket role.
   - id: subactor/brand
     organization: subactor
     repository: brand

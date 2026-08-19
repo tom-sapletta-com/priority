@@ -10,6 +10,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "adapters"))
 
+from ecosystemctl import build_ecosystem_map, default_index_maps, load_json, load_yaml, route_ticket  # noqa: E402
 from statectl import StateProjectionError, project_state  # noqa: E402
 
 
@@ -17,12 +18,25 @@ class StateCtlTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.policy = yaml.safe_load((ROOT / "priority-evolution.dsl.yaml").read_text(encoding="utf-8"))
-        cls.ecosystem = json.loads((ROOT / "generated" / "ecosystem-map.json").read_text(encoding="utf-8"))
-        cls.route = json.loads((ROOT / "generated" / "ticket-context-selection.json").read_text(encoding="utf-8"))
+        cls.ecosystem = build_ecosystem_map(
+            load_yaml(ROOT / "registry" / "ecosystem-tools.yaml"),
+            default_index_maps(ROOT),
+            "2026-08-19T10:00:00Z",
+        )
+        cls.route = route_ticket(
+            cls.ecosystem,
+            load_json(ROOT / "examples" / "ticket-context-request.json"),
+            "2026-08-19T10:00:00Z",
+        )
         cls.plan_gap = json.loads((ROOT / "receipts" / "todo2code-plan-gap.json").read_text(encoding="utf-8"))
         cls.base = json.loads((ROOT / "examples" / "healthy-state.json").read_text(encoding="utf-8"))
         cls.revision = cls.base["revision"]
         cls.observed_at = "2026-08-19T09:59:30Z"
+        cls.unverified_roles = sum(
+            1
+            for item in cls.route["findings"]
+            if item["code"] == "ROUTER_REQUIRED_ROLE_NOT_EXECUTION_VERIFIED"
+        )
 
     def test_projection_derives_route_and_plan_gap_metrics(self) -> None:
         state = project_state(
@@ -35,7 +49,8 @@ class StateCtlTests(unittest.TestCase):
             planner_receipt=self.plan_gap,
         )
         self.assertEqual(state["metrics"]["planning.todo2code_plan_gap_count"]["value"], 1)
-        self.assertEqual(state["metrics"]["planning.unverified_tool_selection_count"]["value"], 3)
+        self.assertEqual(state["metrics"]["planning.unverified_tool_selection_count"]["value"], self.unverified_roles)
+        self.assertGreaterEqual(self.unverified_roles, 1)
         self.assertGreater(state["metrics"]["routing.required_capability_gap_count"]["value"], 0)
 
     def test_behavioral_offer_metric_stays_missing_without_receipt(self) -> None:

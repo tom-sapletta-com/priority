@@ -55,13 +55,15 @@ Aktualny snapshot z dołączonych indeksów:
 
 - `subactor`: 6497 modułów w mapie z 2026-08-19;
 - `autogrammar`: 6421 modułów w mapie z 2026-08-19;
-- 15 projektów w rejestrze;
-- 10 projektów zweryfikowanych strukturalnie;
-- 9 projektów wykonawczo kwalifikowanych;
+- `wellmanifest`: 2088 modułów w mapie z 2026-08-16;
+- `pyqual`: 179 modułów w mapie z 2026-04-25;
+- 16 projektów w rejestrze;
+- 15 projektów zweryfikowanych strukturalnie;
+- 12 projektów wykonawczo kwalifikowanych;
 - 0 zduplikowanych właścicieli HOME;
-- 4 wymagane projekty pozostające na poziomie dokumentacyjnym.
+- 1 projekt dokumentacyjny (`semcod/giton`, nie jest required).
 
-Dlatego bieżący `generated/ecosystem-map.json` ma status `REVIEW_REQUIRED`, a nie sztuczne `PASS`.
+`generated/ecosystem-map.json` może mieć status `PASS` jako dowód strukturalny. To nie jest promocja polityki ani prawo do enforcementu: lifecycle pozostaje `candidate`.
 
 ### 2. Router kontekstu dla `project/ticket-*`
 
@@ -86,7 +88,7 @@ Dokumentacja może dodać projekt do kontekstu, ale przy ticketach zmieniającyc
 - `subactor/offer` jako jedyny HOME wartości oferty;
 - `wellmanifest/offer` jako osobny HOME abstrakcyjnego standardu oferty.
 
-Status kontekstu pozostaje `REVIEW_REQUIRED`, ponieważ do pakietu nie dołączono dokładnych map kodu `semcod/pyqual` ani `wellmanifest/*`.
+Status kontekstu pozostaje `REVIEW_REQUIRED`, ponieważ `wellmanifest/policy-dsl` i `wellmanifest/offer` są zweryfikowane strukturalnie, lecz ich lifecycle to `candidate`, więc nie dają prawa wykonawczego.
 
 ### 3. `todo2code` jako planner, nie dekoracja
 
@@ -187,7 +189,7 @@ python3 -m pip install -r requirements.txt
 make verify
 ```
 
-`make verify` wykonuje walidację schematów, kompilację adapterów oraz 41 testów jednostkowych i negatywnych.
+`make verify` wykonuje walidację schematów, kompilację adapterów oraz testy jednostkowe i negatywne.
 
 ### Cykl accountable autonomy
 
@@ -195,7 +197,7 @@ make verify
 make cycle
 ```
 
-`adapters/autonomyctl.py cycle` zamyka pętlę obserwacja → routing → wywołanie albo abstencja → ewaluacja. Brak przypiętego CLI `todo2code` daje `not-run / T2C_PLANNER_NOT_PINNED`, a nie fałszywe `succeeded` z zerową liczbą planów. Pin-check oferty uruchamia się wyłącznie przy przypiętym `OFFER_BINDING` i `OFFER_FACADE`. Cykl nigdy nie stosuje patcha: `applyAttempted=false`, a `dispatch` zostaje zamknięty przy lifecycle `candidate`.
+`adapters/autonomyctl.py cycle` zamyka pętlę obserwacja → routing → wywołanie albo abstencja → ewaluacja. Brak CLI `todo2code` daje `not-run / T2C_PLANNER_NOT_PINNED`. CLI bez `T2C_GRAPH` i `T2C_DIAGNOSTICS` daje `T2C_PLANNER_CONTRACT_UNBOUND`. Domyślny pin leży w `sources/planner/`. Pin-check oferty używa sibling `subactor/offer` i fasady `www-sub-actor`, o ile istnieją. Cykl nigdy nie stosuje patcha: `applyAttempted=false`, a `dispatch` zostaje zamknięty przy lifecycle `candidate`.
 
 ### Reprodukcja załączonego snapshotu
 
@@ -263,14 +265,14 @@ AGENTS.md / CLAUDE.md / GEMINI.md           deterministyczne fasady
 
 ## Aktualny wynik fail-closed
 
-Dla stanu zbudowanego z załączonych indeksów i zerowego wyniku planera:
+Dla stanu zbudowanego z załączonych indeksów:
 
-- mapa ekosystemu: `REVIEW_REQUIRED`;
-- routing ticketu: `REVIEW_REQUIRED`;
-- walidacja pustego planu: `BLOCK / T2C_PLAN_GAP`;
-- offer digest pin: `UNKNOWN`, ponieważ brak behawioralnego receiptu;
+- mapa ekosystemu: `PASS` strukturalnie, bez promocji polityki;
+- routing ticketu: `REVIEW_REQUIRED` (candidate HOME bez execution);
+- wynik planera: żywe `todo2code propose-code-change` zakończone `succeeded` + 0 planów → `BLOCK / T2C_PLAN_GAP`;
+- offer digest pin: żywy `pin-check` na `www-sub-actor` → `PASS` (`fixture=false`);
 - końcowa decyzja: `BLOCK`;
-- dispatch: `false` również dlatego, że lifecycle polityki to `candidate`.
+- dispatch: `false`, ponieważ lifecycle polityki to `candidate`.
 
 `examples/healthy-state.json` jest wyłącznie deterministyczną fixture testową. Jej `PASS` nie jest twierdzeniem o stanie produkcji.
 
@@ -278,9 +280,7 @@ Dla stanu zbudowanego z załączonych indeksów i zerowego wyniku planera:
 
 Pakiet jest działającą implementacją referencyjną, lecz nie ma jeszcze prawa do enforcementu produkcyjnego. Do przejścia w `shadow` potrzebne są:
 
-1. dokładna mapa i kontrakt `semcod/pyqual`;
-2. dokładne mapy i wersje `wellmanifest/policy-dsl`, `new-project`, `git-lifecycle` i `offer`;
-3. rzeczywisty receipt `subactor/offer pin-check` związany z rewizją;
-4. uruchomienie prawdziwego `todo2code` na wygenerowanym requestcie;
-5. niezależna walidacja patcha i co najmniej 30 shadow receipts;
-6. brak false PASS w testach negatywnych.
+1. natywny schemat i włączony enforcement `semcod/pyqual` (adapter nadal wyłączony);
+2. niezależna walidacja patcha i co najmniej 30 shadow receipts;
+3. brak false PASS w testach negatywnych;
+4. sprzątnięcie `WORKTREE_OVERLAP` na `www-sub-actor` / `new-project` / `core`, bo żywa fasada oferty stoi na nachodzących worktree.

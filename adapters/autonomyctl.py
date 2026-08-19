@@ -20,10 +20,10 @@ from typing import Any
 from ecosystemctl import (
     build_ecosystem_map,
     create_planner_request,
+    default_index_maps,
     digest,
     load_json,
     load_yaml,
-    parse_map_arguments,
     render_llms_index,
     route_ticket,
     utc_now,
@@ -67,6 +67,14 @@ def discover_tools(root: Path, environ: dict[str, str] | None = None) -> Json:
     cli = _first_existing(cli_candidates)
     graph = Path(env["T2C_GRAPH"]) if env.get("T2C_GRAPH") else None
     diagnostics = Path(env["T2C_DIAGNOSTICS"]) if env.get("T2C_DIAGNOSTICS") else None
+    if graph is None and search_siblings:
+        local_graph = root / "sources" / "planner" / "intent.graph.json"
+        if local_graph.is_file():
+            graph = local_graph
+    if diagnostics is None and search_siblings:
+        local_diagnostics = root / "sources" / "planner" / "diagnostics.json"
+        if local_diagnostics.is_file():
+            diagnostics = local_diagnostics
     offer_root = Path(env["OFFER_ROOT"]) if env.get("OFFER_ROOT") else None
     if offer_root is None and search_siblings:
         sibling = root.parent.parent / "subactor" / "offer"
@@ -75,6 +83,16 @@ def discover_tools(root: Path, environ: dict[str, str] | None = None) -> Json:
     pin_check = (offer_root / "scripts" / "pin-check.py") if offer_root else None
     binding = Path(env["OFFER_BINDING"]) if env.get("OFFER_BINDING") else None
     facade = Path(env["OFFER_FACADE"]) if env.get("OFFER_FACADE") else None
+    if binding is None and search_siblings and offer_root is not None:
+        local_binding = offer_root / "bindings" / "www-sub-actor.json"
+        if local_binding.is_file():
+            binding = local_binding
+    if facade is None and search_siblings:
+        local_facade = (
+            root.parent.parent / "subactor" / "www-sub-actor" / "src" / "php_app" / "config" / "plans.json"
+        )
+        if local_facade.is_file():
+            facade = local_facade
     planner_ready = bool(cli and graph and diagnostics and cli.is_file() and graph.is_file() and diagnostics.is_file())
     offer_ready = bool(
         pin_check and binding and facade
@@ -112,7 +130,14 @@ def discover_tools(root: Path, environ: dict[str, str] | None = None) -> Json:
     return report
 
 
-def invoke_planner(discovery: Json, *, injected: Path | None = None, now: str) -> Json:
+def invoke_planner(
+    discovery: Json,
+    *,
+    injected: Path | None = None,
+    now: str,
+    out_path: Path | None = None,
+    cwd: Path | None = None,
+) -> Json:
     if injected is not None:
         result = load_json(injected)
         result.setdefault("diagnostics", [])
@@ -137,7 +162,8 @@ def invoke_planner(discovery: Json, *, injected: Path | None = None, now: str) -
             "message": "todo2code CLI exists but T2C_GRAPH and T2C_DIAGNOSTICS are not pinned.",
             "invocation": {"mode": "abstain", "cli": planner["cli"]},
         }
-    out = Path(planner["graph"]).with_name("autonomy-planner-plans.json")
+    out = out_path or Path(planner["graph"]).with_name("autonomy-planner-plans.json")
+    out.parent.mkdir(parents=True, exist_ok=True)
     command = [
         "node",
         planner["cli"],
@@ -148,7 +174,17 @@ def invoke_planner(discovery: Json, *, injected: Path | None = None, now: str) -
         "--out",
         str(out),
     ]
-    completed = subprocess.run(command, capture_output=True, text=True, check=False)
+    run_env = dict(os.environ)
+    if cwd is not None:
+        run_env["T2C_ROOT"] = str(cwd)
+    completed = subprocess.run(
+        command,
+        capture_output=True,
+        text=True,
+        check=False,
+        cwd=str(cwd) if cwd is not None else None,
+        env=run_env,
+    )
     if completed.returncode != 0 or not out.is_file():
         return {
             "status": "failed",
@@ -219,10 +255,7 @@ def run_cycle(
     write_json(generated / "tool-discovery.json", discovery)
 
     registry = load_yaml(root / "registry" / "ecosystem-tools.yaml")
-    maps = parse_map_arguments([
-        f"subactor={root / 'sources/indexes/subactor-2026-08-19.toon.yaml'}",
-        f"autogrammar={root / 'sources/indexes/autogrammar-2026-08-19.toon.yaml'}",
-    ])
+    maps = default_index_maps(root)
     ecosystem_map = build_ecosystem_map(registry, maps, now)
     write_json(generated / "ecosystem-map.json", ecosystem_map)
     (generated / "llms.txt").write_text(render_llms_index(ecosystem_map), encoding="utf-8")
@@ -234,7 +267,13 @@ def run_cycle(
     write_json(ticket_dir / "todo2code-request.json", planner_request)
     write_json(ticket_dir / "context-selection.json", route)
 
-    planner_envelope = invoke_planner(discovery, injected=planner_result, now=now)
+    planner_envelope = invoke_planner(
+        discovery,
+        injected=planner_result,
+        now=now,
+        out_path=generated / "autonomy-planner-plans.json",
+        cwd=root,
+    )
     write_json(generated / "planner-result.json", planner_envelope)
     planner_receipt = validate_plan_result(request, planner_envelope, now)
     write_json(receipts / "planner-validation.json", planner_receipt)
