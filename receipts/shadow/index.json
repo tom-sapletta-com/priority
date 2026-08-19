@@ -1,0 +1,13 @@
+{
+  "schema": "subactor.shadow-receipt-log/v1",
+  "policyLifecycle": "candidate",
+  "requiredCount": 30,
+  "recordedCount": 1,
+  "promotionAllowed": false,
+  "latest": "0001-autonomy-cycle.json",
+  "latestCycleDigest": "sha256:c687c246a628a286c813fe3aee9cf7717b39046ff632ce777b3f2e997f6c86a3",
+  "latestRevision": "git:9d8f285fcf12d9fe0fd0b39b4c84bada61ee8a1d",
+  "latestOutcome": "BLOCK",
+  "note": "Shadow receipts are observations. They do not promote candidate to shadow.",
+  "indexDigest": "sha256:77ffa69206ce5b831f881a3c0d5865009175896edd7a8f50fc660599084fcce1"
+}

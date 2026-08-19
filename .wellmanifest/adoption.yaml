@@ -61,9 +61,9 @@ spec:
     - tests/
   enforcement:
     enabled: false
-    reason: Policy lifecycle remains candidate; a verified map is not a production gate.
+    reason: Policy lifecycle remains candidate; pinned pyqual schema is not enabled enforcement.
     promotionRequired:
-    - native pyqual schema pin and enabled enforcement
-    - policy lifecycle shadow with independent receipts
+    - 30 shadow receipts
+    - enabled pyqual enforcement after those receipts
     - independent validation
     - no false PASS in negative tests

@@ -4,7 +4,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 python3 -m py_compile adapters/*.py
-bash -n hooks/pre-receive scripts/rebuild-generated.sh scripts/reconcile.sh scripts/verify.sh
+bash -n hooks/pre-receive scripts/rebuild-generated.sh scripts/reconcile.sh scripts/verify.sh scripts/record-shadow-receipt.sh
 python3 adapters/standardctl.py validate \
   --policy priority-evolution.dsl.yaml \
   --schema schemas/priority-evolution.schema.json

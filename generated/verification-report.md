@@ -1,11 +1,11 @@
 # Verification report
 
-- Version: `0.3.2`
+- Version: `0.3.3`
 - Generated at: `2026-08-19T10:00:00Z`
 - Policy digest: `sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f`
 - Registry digest: `sha256:bbffea79164bec56bddcb1bee5aeefd09e77c330ca733e01fec59e8f0ad38cca`
-- Report digest: `sha256:43dd3796ba0caa45a43e39f41e5b93f20bef8ef44b70ccf2877758d51af5eb43`
-- Tests: **45/45 passed**
+- Report digest: `sha256:8b8f481ff36c5f7bdf2b83f5aace41464914f33941b01dbfd767140d3116bea7`
+- Tests: **50/50 passed**
 
 ## Output receipts
 
@@ -46,6 +46,11 @@ test_accepts_exact_revision_with_pass_state (test_pre_receive.PreReceiveTests.te
 test_rejects_multiple_new_revisions (test_pre_receive.PreReceiveTests.test_rejects_multiple_new_revisions) ... ok
 test_rejects_policy_block_with_machine_result (test_pre_receive.PreReceiveTests.test_rejects_policy_block_with_machine_result) ... ok
 test_rejects_revision_mismatch (test_pre_receive.PreReceiveTests.test_rejects_revision_mismatch) ... ok
+test_native_parser_rejects_stage_with_run_and_tool (test_pyqual_contract.PyqualContractTests.test_native_parser_rejects_stage_with_run_and_tool) ... ok
+test_pinned_default_yaml_matches_revision_digest (test_pyqual_contract.PyqualContractTests.test_pinned_default_yaml_matches_revision_digest) ... ok
+test_pinned_default_yaml_parses_with_native_pyqual (test_pyqual_contract.PyqualContractTests.test_pinned_default_yaml_parses_with_native_pyqual) ... ok
+test_latest_shadow_receipt_never_applied (test_shadow_receipts.ShadowReceiptTests.test_latest_shadow_receipt_never_applied) ... ok
+test_shadow_log_does_not_authorize_promotion (test_shadow_receipts.ShadowReceiptTests.test_shadow_log_does_not_authorize_promotion) ... ok
 test_active_policy_can_dispatch_bounded_delivery (test_standardctl.StandardCtlTests.test_active_policy_can_dispatch_bounded_delivery) ... ok
 test_complementarity_budget_is_measured (test_standardctl.StandardCtlTests.test_complementarity_budget_is_measured) ... ok
 test_healthy_state_passes_but_candidate_cannot_dispatch (test_standardctl.StandardCtlTests.test_healthy_state_passes_but_candidate_cannot_dispatch) ... ok
@@ -66,7 +71,7 @@ test_parses_modules_and_header (test_toon_index.ToonIndexTests.test_parses_modul
 test_project_roots_are_counted (test_toon_index.ToonIndexTests.test_project_roots_are_counted) ... ok
 
 ----------------------------------------------------------------------
-Ran 45 tests
+Ran 50 tests
 
 OK
 ```

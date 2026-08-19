@@ -1,0 +1,12 @@
+{
+  "schema": "subactor.pyqual-contract-pin/v1",
+  "projectId": "semcod/pyqual",
+  "revision": "git:2fe7e4730a6c1d5b3326faaec4e41d455891e0ef",
+  "observedAt": "2026-07-09T06:18:05Z",
+  "source": "/home/tom/github/semcod/pyqual",
+  "artifact": "PyqualConfig.default_yaml()",
+  "path": "sources/contracts/pyqual/default.yaml",
+  "digest": "sha256:46e1c152a0fe2dc19dbc2fba812f3a32dee10a1aa9d83d511ce4c0f1f50b867d",
+  "enforcementEnabled": false,
+  "note": "Schema pin only. This is not a production gate and does not run the pyqual loop."
+}

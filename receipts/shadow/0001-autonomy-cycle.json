@@ -1,0 +1,45 @@
+{
+  "schema": "subactor.autonomy-cycle/v1",
+  "generatedAt": "2026-08-19T10:00:00Z",
+  "revision": "git:9d8f285fcf12d9fe0fd0b39b4c84bada61ee8a1d",
+  "applyAttempted": false,
+  "applyAllowed": false,
+  "dispatchAllowed": false,
+  "finalOutcome": "BLOCK",
+  "discoveryDigest": "sha256:0c24354fe9cd40f8490bd5eda23b2dbc366b63ef49ff0d287a693df2c652086e",
+  "plannerRequestDigest": "sha256:3e98bc750daa89ba8ad2e2689f5b1b88e468f8e1682e5218b450b3f92b991150",
+  "plannerReceiptDigest": "sha256:1e242a18a922a0c69d10aeba3dd02e650d611505c9dde6859019dd8817ce693b",
+  "decisionDigest": "sha256:a72e1e6a370d7afa5d13722e5cb6dbb61c4adcd8dab5f6283ca5b8451e09d491",
+  "steps": [
+    {
+      "id": "discover",
+      "status": "PASS",
+      "pinnedPlanner": true,
+      "pinnedOffer": true
+    },
+    {
+      "id": "index",
+      "status": "PASS"
+    },
+    {
+      "id": "route",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "id": "planner",
+      "status": "BLOCK",
+      "envelope": "succeeded",
+      "code": null
+    },
+    {
+      "id": "offer",
+      "status": "PASS"
+    },
+    {
+      "id": "evaluate",
+      "status": "BLOCK"
+    }
+  ],
+  "abstentions": [],
+  "cycleDigest": "sha256:c687c246a628a286c813fe3aee9cf7717b39046ff632ce777b3f2e997f6c86a3"
+}

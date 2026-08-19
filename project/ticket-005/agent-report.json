@@ -1,0 +1,31 @@
+{
+  "schema": "wellmanifest.agent/report/v1",
+  "workspaceRoot": "/home/tom/github/autogrammar/priority",
+  "gitToplevel": "/home/tom/github/autogrammar/priority",
+  "pwd": "/home/tom/github/autogrammar/priority",
+  "home": "wellmanifest",
+  "shape": "domain_pack",
+  "adopt": ["wellmanifest/policy-dsl"],
+  "ticketId": "ticket-005",
+  "filesTouched": [
+    ".wellmanifest/adoption.yaml",
+    "CHANGELOG.md",
+    "Makefile",
+    "README.md",
+    "VERSION",
+    "docs/DECISIONS.md",
+    "integration/pyqual-adapter.yaml",
+    "project/ticket-005/README.md",
+    "project/ticket-005/agent-report.json",
+    "receipts/shadow/0001-autonomy-cycle.json",
+    "receipts/shadow/index.json",
+    "scripts/record-shadow-receipt.sh",
+    "scripts/verify.sh",
+    "sources/contracts/pyqual/README.md",
+    "sources/contracts/pyqual/default.yaml",
+    "sources/contracts/pyqual/revision.json",
+    "tests/test_pyqual_contract.py",
+    "tests/test_shadow_receipts.py"
+  ],
+  "outcome": "completed"
+}

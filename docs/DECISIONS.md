@@ -35,3 +35,10 @@ Pinning `wellmanifest/*` and `semcod/pyqual` maps can change evidence from
 `candidate`, does not enable pyqual enforcement, and does not make a
 candidate HOME `executionEligible`. Behavioral offer proof still requires a
 live pin-check receipt bound to a revision.
+
+## ADR-009 — Shadow receipts observe, they do not promote
+
+A shadow receipt is a revision-bound cycle observation stored under
+`receipts/shadow/`. Recording receipts does not change `metadata.lifecycle`.
+Promotion to `shadow` remains a separate governance act after 30 receipts,
+independent validation and no false PASS.

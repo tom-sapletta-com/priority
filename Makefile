@@ -23,7 +23,12 @@ cycle:
 		--out-dir runtime/cycle \
 		--now 2026-08-19T10:00:00Z; \
 	code=$$?; \
-	if [ $$code -eq 0 ] || [ $$code -eq 3 ]; then exit 0; fi; \
+	if [ $$code -eq 0 ] || [ $$code -eq 3 ]; then \
+		if [ "$${SHADOW_RECORD:-0}" = "1" ]; then \
+			./scripts/record-shadow-receipt.sh runtime/cycle; \
+		fi; \
+		exit 0; \
+	fi; \
 	exit $$code
 
 clean:

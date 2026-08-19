@@ -116,7 +116,7 @@ Każdy akceptowany plan musi mieć:
 - komendę lub URI walidacji;
 - spójny `recordCount`.
 
-Pakiet nie uruchamia binarnego `todo2code`, ponieważ załączono indeks kodu, a nie checkout repozytorium ani jego CLI/runtime. Weryfikuje jednak rzeczywiste moduły i symbole planera, przygotowuje jego kontrakt wejściowy i waliduje znormalizowany wynik. Podłączenie wykonania wymaga przypięcia dokładnej wersji CLI.
+Cykl uruchamia binarne `todo2code`, gdy CLI oraz `sources/planner/{intent.graph.json,diagnostics.json}` są przypięte. `succeeded` + 0 planów przy otwartych kryteriach nadal daje `BLOCK / T2C_PLAN_GAP`. Pakiet nie stosuje patcha.
 
 ### 4. Metryki z obserwacji, nie z deklaracji
 
@@ -197,7 +197,7 @@ make verify
 make cycle
 ```
 
-`adapters/autonomyctl.py cycle` zamyka pętlę obserwacja → routing → wywołanie albo abstencja → ewaluacja. Brak CLI `todo2code` daje `not-run / T2C_PLANNER_NOT_PINNED`. CLI bez `T2C_GRAPH` i `T2C_DIAGNOSTICS` daje `T2C_PLANNER_CONTRACT_UNBOUND`. Domyślny pin leży w `sources/planner/`. Pin-check oferty używa sibling `subactor/offer` i fasady `www-sub-actor`, o ile istnieją. Cykl nigdy nie stosuje patcha: `applyAttempted=false`, a `dispatch` zostaje zamknięty przy lifecycle `candidate`.
+`adapters/autonomyctl.py cycle` zamyka pętlę obserwacja → routing → wywołanie albo abstencja → ewaluacja. Brak CLI `todo2code` daje `not-run / T2C_PLANNER_NOT_PINNED`. CLI bez `T2C_GRAPH` i `T2C_DIAGNOSTICS` daje `T2C_PLANNER_CONTRACT_UNBOUND`. Domyślny pin leży w `sources/planner/`. Pin-check oferty używa sibling `subactor/offer` i fasady `www-sub-actor`, o ile istnieją. Cykl nigdy nie stosuje patcha: `applyAttempted=false`, a `dispatch` zostaje zamknięty przy lifecycle `candidate`. `SHADOW_RECORD=1 make cycle` dopisuje obserwację do `receipts/shadow/` bez promocji.
 
 ### Reprodukcja załączonego snapshotu
 
@@ -235,7 +235,7 @@ Pakiet zawiera:
 
 `hooks/pre-receive` wymaga stanu przygotowanego dla dokładnego pushed revision. Nie bada dowolnego worktree serwera i odrzuca push przy niezgodności rewizji.
 
-`integration/pyqual-adapter.yaml` jest świadomie oznaczony jako **adapter contract z wyłączonym enforcementem**. Nie jest natywnym `pyqual.yaml`, dopóki dokładny schemat i rewizja `semcod/pyqual` nie zostaną przypięte.
+`integration/pyqual-adapter.yaml` ma przypięty natywny `PyqualConfig.default_yaml()` z `semcod/pyqual@2fe7e47`, ale **enforcement pozostaje wyłączony**. Nie jest to uruchamiana pętla `pyqual.yaml`.
 
 ## Najważniejsze artefakty
 
@@ -280,7 +280,7 @@ Dla stanu zbudowanego z załączonych indeksów:
 
 Pakiet jest działającą implementacją referencyjną, lecz nie ma jeszcze prawa do enforcementu produkcyjnego. Do przejścia w `shadow` potrzebne są:
 
-1. natywny schemat i włączony enforcement `semcod/pyqual` (adapter nadal wyłączony);
-2. niezależna walidacja patcha i co najmniej 30 shadow receipts;
+1. włączenie enforcementu `semcod/pyqual` dopiero po 30 shadow receipts;
+2. niezależna walidacja dokładnego hasha patcha;
 3. brak false PASS w testach negatywnych;
-4. sprzątnięcie `WORKTREE_OVERLAP` na `www-sub-actor` / `new-project` / `core`, bo żywa fasada oferty stoi na nachodzących worktree.
+4. sprzątnięcie `WORKTREE_OVERLAP` na `www-sub-actor` / `new-project` / `core`.

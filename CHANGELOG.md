@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.3 — 2026-08-19
+
+### Added
+
+- pinned `semcod/pyqual` `PyqualConfig.default_yaml()` from `2fe7e47`;
+- first candidate-lifecycle shadow receipt from a live autonomy cycle;
+- negative parse test: a stage cannot set both `run` and `tool`.
+
+### Changed
+
+- pyqual adapter records the schema pin but keeps `enforcementEnabled=false`.
+
 ## 0.3.2 — 2026-08-19
 
 ### Added

@@ -5,12 +5,14 @@ metadata:
   version: 0.3.0
   lifecycle: candidate
 spec:
-  nativePyqualSchemaPinned: false
+  nativePyqualSchemaPinned: true
   enforcementEnabled: false
+  pinnedRevision: git:2fe7e4730a6c1d5b3326faaec4e41d455891e0ef
+  pinnedDefaultYaml: sources/contracts/pyqual/default.yaml
   reason: >-
-    Załączone źródła potwierdzają rolę semcod/pyqual, lecz nie zawierają dokładnej
-    mapy repozytorium ani przypiętego schematu jego konfiguracji. Ten plik jest
-    kontraktem adaptera, nie deklaracją zgodności z aktualnym natywnym pyqual.yaml.
+    Mapa TOON i `PyqualConfig.default_yaml()` są przypięte z rewizji 2fe7e47.
+    Ten plik nadal nie włącza enforcementu: nie jest natywnym `pyqual.yaml`
+    uruchamianym w pętli jakości.
   gates:
     - id: policy-schema-and-semantics
       command:
@@ -43,6 +45,6 @@ spec:
         - -v
       expectedExitCodes: [0]
   promotionRequirement:
-    - Pin an exact semcod/pyqual revision and configuration schema.
-    - Prove one negative fixture changes the gate outcome.
-    - Run in shadow before enabling enforcement.
+    - Keep enforcement disabled until 30 shadow receipts exist.
+    - Prove one negative fixture changes a native pyqual gate outcome.
+    - Independent validation of the exact patch hash.
