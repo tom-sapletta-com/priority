@@ -8,6 +8,8 @@
   "properties": {
     "status": {"enum": ["succeeded", "failed", "partial", "not-run"]},
     "recordCount": {"type": "integer", "minimum": 0},
+    "sourceDiagnosticCount": {"type": "integer", "minimum": 0},
+    "code": {"type": "string"},
     "plans": {"type": "array", "items": {"type": "object"}},
     "records": {"type": "array", "items": {"type": "object"}},
     "planIds": {"type": "array", "items": {"type": "string"}},

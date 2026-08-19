@@ -83,6 +83,26 @@ class AutonomyCtlTests(unittest.TestCase):
         self.assertIn("T2C_PLANNER_NOT_PINNED", cycle["abstentions"] + [cycle["steps"][3].get("code")])
         self.assertIn("OFFER_PIN_NOT_PINNED", cycle["abstentions"])
 
+    def test_injected_zero_implementation_diagnostics_is_not_plan_gap(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            cycle = run_cycle(
+                ROOT,
+                Path(tmp),
+                ROOT / "examples" / "ticket-context-request.json",
+                now="2026-08-19T10:00:00Z",
+                revision="sha256:example-head-20260819-v030",
+                planner_result=ROOT / "examples" / "todo2code-zero-implementation-diagnostics.json",
+                environ={"AUTONOMY_DISCOVER_SIBLINGS": "0"},
+            )
+            planner = json.loads((Path(tmp) / "receipts" / "planner-validation.json").read_text())
+            state = json.loads((Path(tmp) / "generated" / "current-state.json").read_text())
+        codes = {item["code"] for item in planner["findings"]}
+        self.assertEqual(planner["finalOutcome"], "BLOCK")
+        self.assertIn("T2C_NO_IMPLEMENTATION_DIAGNOSTICS", codes)
+        self.assertNotIn("T2C_PLAN_GAP", codes)
+        self.assertEqual(state["metrics"]["planning.todo2code_plan_gap_count"]["value"], 0)
+        self.assertEqual(cycle["finalOutcome"], "BLOCK")
+
     def test_injected_zero_plan_stays_plan_gap(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             cycle = run_cycle(

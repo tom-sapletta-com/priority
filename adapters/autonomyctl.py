@@ -64,6 +64,7 @@ def discover_tools(root: Path, environ: dict[str, str] | None = None) -> Json:
     search_siblings = env.get("AUTONOMY_DISCOVER_SIBLINGS", "1") != "0"
     if search_siblings:
         cli_candidates.append(root.parent / "todo2code" / "dist" / "src" / "cli.js")
+        cli_candidates.append(root.parent.parent / "autogrammar" / "todo2code" / "dist" / "src" / "cli.js")
     cli = _first_existing(cli_candidates)
     graph = Path(env["T2C_GRAPH"]) if env.get("T2C_GRAPH") else None
     diagnostics = Path(env["T2C_DIAGNOSTICS"]) if env.get("T2C_DIAGNOSTICS") else None
@@ -196,12 +197,18 @@ def invoke_planner(
         }
     payload = load_json(out)
     plans = payload.get("plans") if isinstance(payload.get("plans"), list) else []
-    return {
+    source_count = payload.get("sourceDiagnosticCount")
+    envelope: Json = {
         "status": "succeeded",
         "recordCount": len(plans),
         "plans": plans,
         "invocation": {"mode": "cli", "argv": command, "exitCode": 0, "generatedAt": now},
     }
+    if isinstance(source_count, int) and source_count >= 0:
+        envelope["sourceDiagnosticCount"] = source_count
+        if source_count == 0 and not plans:
+            envelope["code"] = "T2C_NO_IMPLEMENTATION_DIAGNOSTICS"
+    return envelope
 
 
 def invoke_offer_pin(discovery: Json, revision: str, observed_at: str, *, injected: Path | None = None) -> Json | None:

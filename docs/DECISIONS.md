@@ -12,6 +12,10 @@ A project with only documentation evidence may be selected for review or normati
 
 When acceptance criteria remain open, `recordCount=0` is `T2C_PLAN_GAP`. Presence of target files or symbols cannot close behavioral criteria.
 
+## ADR-010 — Empty plans are not one reason
+
+`todo2code` `t2c.code-change-plan-set/v1` already publishes `sourceDiagnosticCount`: the number of `PLANNED_NOT_IMPLEMENTED` and `CHANGELOG_WITHOUT_IMPLEMENTATION` diagnostics, not the total diagnostic count. Zero plans with `sourceDiagnosticCount=0` is `T2C_NO_IMPLEMENTATION_DIAGNOSTICS`. That code does not increment `planning.todo2code_plan_gap_count` and must not be repaired by inventing a plan. A missing count still fails closed as `T2C_PLAN_GAP`. Implementation diagnostics that exist but cannot be materialised remain `T2C_PLAN_GAP`. This does not change policy lifecycle.
+
 ## ADR-004 — Commercial values and offer standard are independent
 
 `subactor/offer` is HOME of prices, catalogues and bindings. `wellmanifest/offer` is HOME of abstract adoption, fail-closed and versioning rules. It does not contain Subactor prices.

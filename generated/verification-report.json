@@ -1,15 +1,15 @@
 {
   "schema": "subactor.evolutionary-priority-verification/v1",
   "generatedAt": "2026-08-19T10:00:00Z",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "policyDigest": "sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f",
   "registryDigest": "sha256:bbffea79164bec56bddcb1bee5aeefd09e77c330ca733e01fec59e8f0ad38cca",
   "tests": {
-    "run": 50,
-    "passed": 50,
+    "run": 53,
+    "passed": 52,
     "failures": 0,
     "errors": 0,
-    "skipped": 0,
+    "skipped": 1,
     "successful": true
   },
   "checks": {
@@ -53,5 +53,5 @@
     }
   },
   "failedTests": [],
-  "reportDigest": "sha256:8b8f481ff36c5f7bdf2b83f5aace41464914f33941b01dbfd767140d3116bea7"
+  "reportDigest": "sha256:26f888ce9d6af2b4140f10d6034202065ebf7bb101af207ad131a4b4f9ca3ecb"
 }

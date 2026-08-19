@@ -105,7 +105,9 @@ Pakiet generuje ustrukturyzowany `todo2code-request.json` z wybranymi repozytori
 
 ```text
 status=succeeded + recordCount=0 + otwarte kryteria
-→ BLOCK / T2C_PLAN_GAP
+  + sourceDiagnosticCount=0  → BLOCK / T2C_NO_IMPLEMENTATION_DIAGNOSTICS
+  + sourceDiagnosticCount>0  → BLOCK / T2C_PLAN_GAP
+  + brak sourceDiagnosticCount → BLOCK / T2C_PLAN_GAP (fail-closed)
 ```
 
 Każdy akceptowany plan musi mieć:
@@ -116,7 +118,7 @@ Każdy akceptowany plan musi mieć:
 - komendę lub URI walidacji;
 - spójny `recordCount`.
 
-Cykl uruchamia binarne `todo2code`, gdy CLI oraz `sources/planner/{intent.graph.json,diagnostics.json}` są przypięte. `succeeded` + 0 planów przy otwartych kryteriach nadal daje `BLOCK / T2C_PLAN_GAP`. Pakiet nie stosuje patcha.
+Cykl uruchamia binarne `todo2code`, gdy CLI oraz `sources/planner/{intent.graph.json,diagnostics.json}` są przypięte. `propose-code-change` buduje plany wyłącznie z `PLANNED_NOT_IMPLEMENTED` i `CHANGELOG_WITHOUT_IMPLEMENTATION`. `succeeded` + 0 planów przy `sourceDiagnosticCount=0` to `T2C_NO_IMPLEMENTATION_DIAGNOSTICS`, nie luka planu do zmyślenia. Brak licznika albo niezerowa liczba diagnostyk implementacyjnych przy pustych planach nadal daje `T2C_PLAN_GAP`. Pakiet nie stosuje patcha.
 
 ### 4. Metryki z obserwacji, nie z deklaracji
 
@@ -250,6 +252,7 @@ schemas/                                   schematy wejść i wyników
 sources/indexes/                            przypięte mapy źródłowe
 sources/reports/                            materiały bazowe
 receipts/todo2code-plan-gap.json           oczekiwany BLOCK
+examples/todo2code-zero-implementation-diagnostics.json  0 diagnostyk implementacyjnych
 receipts/todo2code-plan-valid.json         oczekiwany PASS
 generated/ecosystem-map.json               snapshot mapy
 generated/ticket-context-selection.json    wybór kontekstu
@@ -269,7 +272,7 @@ Dla stanu zbudowanego z załączonych indeksów:
 
 - mapa ekosystemu: `PASS` strukturalnie, bez promocji polityki;
 - routing ticketu: `REVIEW_REQUIRED` (candidate HOME bez execution);
-- wynik planera: żywe `todo2code propose-code-change` zakończone `succeeded` + 0 planów → `BLOCK / T2C_PLAN_GAP`;
+- wynik planera: żywe `todo2code propose-code-change` zakończone `succeeded` + 0 planów przy `sourceDiagnosticCount=0` → `BLOCK / T2C_NO_IMPLEMENTATION_DIAGNOSTICS`;
 - offer digest pin: żywy `pin-check` na `www-sub-actor` → `PASS` (`fixture=false`);
 - końcowa decyzja: `BLOCK`;
 - dispatch: `false`, ponieważ lifecycle polityki to `candidate`.

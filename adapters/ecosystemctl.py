@@ -665,6 +665,7 @@ def create_planner_request(request: Json, route: Json) -> Json:
         },
         "planPolicy": {
             "onZeroPlansWhenOpenCriteria": "T2C_PLAN_GAP",
+            "onZeroImplementationDiagnostics": "T2C_NO_IMPLEMENTATION_DIAGNOSTICS",
             "requireNegativeBehaviorTest": True,
             "requireValidationBoundary": True,
             "requireRollback": True,
@@ -751,6 +752,23 @@ def _plan_validation(plan: Json) -> list[str]:
     return list(dict.fromkeys(values))
 
 
+def classify_empty_plan(result: Json) -> str:
+    """Why a succeeded planner returned zero plans.
+
+    `todo2code` materialises plans only from `PLANNED_NOT_IMPLEMENTED` and
+    `CHANGELOG_WITHOUT_IMPLEMENTATION`. `sourceDiagnosticCount` is that
+    filtered count. A missing count fails closed as `T2C_PLAN_GAP`.
+    """
+    source = result.get("sourceDiagnosticCount")
+    if source == 0:
+        return "T2C_NO_IMPLEMENTATION_DIAGNOSTICS"
+    if isinstance(source, int) and source > 0:
+        return "T2C_PLAN_GAP"
+    if result.get("code") == "T2C_NO_IMPLEMENTATION_DIAGNOSTICS":
+        return "T2C_NO_IMPLEMENTATION_DIAGNOSTICS"
+    return "T2C_PLAN_GAP"
+
+
 def validate_plan_result(request: Json, result: Json, generated_at: str | None = None) -> Json:
     criteria = request.get("acceptanceCriteria", [])
     plans, record_count = _plans_from_result(result)
@@ -777,11 +795,18 @@ def validate_plan_result(request: Json, result: Json, generated_at: str | None =
             "parsedPlans": len(plans),
         })
     if status == "succeeded" and criteria and record_count == 0:
+        code = classify_empty_plan(result)
+        source = result.get("sourceDiagnosticCount")
         findings.append({
-            "code": "T2C_PLAN_GAP",
+            "code": code,
             "severity": "critical",
             "acceptanceCriterionCount": len(criteria),
-            "message": "Planner emitted zero grounded code-change plans while acceptance criteria remain open.",
+            "sourceDiagnosticCount": source if isinstance(source, int) else None,
+            "message": (
+                "Planner found no PLANNED_NOT_IMPLEMENTED or CHANGELOG_WITHOUT_IMPLEMENTATION diagnostics."
+                if code == "T2C_NO_IMPLEMENTATION_DIAGNOSTICS"
+                else "Planner emitted zero grounded code-change plans while acceptance criteria remain open."
+            ),
         })
     normalized_plans: list[Json] = []
     for index, plan in enumerate(plans):

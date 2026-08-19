@@ -1,0 +1,31 @@
+{
+  "schema": "wellmanifest.agent/report/v1",
+  "workspaceRoot": "/home/tom/github/tom-sapletta-com/priority",
+  "gitToplevel": "/home/tom/github/tom-sapletta-com/priority",
+  "pwd": "/home/tom/github/tom-sapletta-com/priority",
+  "home": "wellmanifest",
+  "shape": "domain_pack",
+  "adopt": ["wellmanifest/policy-dsl"],
+  "ticketId": "ticket-006",
+  "filesTouched": [
+    "CHANGELOG.md",
+    "README.md",
+    "VERSION",
+    "adapters/autonomyctl.py",
+    "adapters/ecosystemctl.py",
+    "docs/DECISIONS.md",
+    "examples/todo2code-zero-implementation-diagnostics.json",
+    "generated/verification-report.json",
+    "generated/verification-report.md",
+    "generated/verification-run.json",
+    "project/ticket-006/README.md",
+    "project/ticket-006/agent-report.json",
+    "schemas/planner-result-envelope.schema.json",
+    "scripts/verify.sh",
+    "sources/planner/README.md",
+    "tests/test_autonomyctl.py",
+    "tests/test_ecosystemctl.py",
+    "tests/test_pyqual_contract.py"
+  ],
+  "outcome": "completed"
+}

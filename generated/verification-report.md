@@ -1,11 +1,11 @@
 # Verification report
 
-- Version: `0.3.3`
+- Version: `0.3.4`
 - Generated at: `2026-08-19T10:00:00Z`
 - Policy digest: `sha256:49a8d1fcf2437711aed06f59ae8533f5d508db98237052377cc27deb08cf2a4f`
 - Registry digest: `sha256:bbffea79164bec56bddcb1bee5aeefd09e77c330ca733e01fec59e8f0ad38cca`
-- Report digest: `sha256:8b8f481ff36c5f7bdf2b83f5aace41464914f33941b01dbfd767140d3116bea7`
-- Tests: **50/50 passed**
+- Report digest: `sha256:26f888ce9d6af2b4140f10d6034202065ebf7bb101af207ad131a4b4f9ca3ecb`
+- Tests: **52/53 passed**
 
 ## Output receipts
 
@@ -22,6 +22,7 @@
 test_cli_without_graph_is_contract_unbound (test_autonomyctl.AutonomyCtlTests.test_cli_without_graph_is_contract_unbound) ... ok
 test_cycle_abstains_and_never_applies (test_autonomyctl.AutonomyCtlTests.test_cycle_abstains_and_never_applies) ... ok
 test_injected_offer_fixture_is_not_live_attestation_but_is_measured (test_autonomyctl.AutonomyCtlTests.test_injected_offer_fixture_is_not_live_attestation_but_is_measured) ... ok
+test_injected_zero_implementation_diagnostics_is_not_plan_gap (test_autonomyctl.AutonomyCtlTests.test_injected_zero_implementation_diagnostics_is_not_plan_gap) ... ok
 test_injected_zero_plan_stays_plan_gap (test_autonomyctl.AutonomyCtlTests.test_injected_zero_plan_stays_plan_gap) ... ok
 test_local_planner_sources_pin_when_discovery_enabled (test_autonomyctl.AutonomyCtlTests.test_local_planner_sources_pin_when_discovery_enabled) ... ok
 test_unpinned_planner_is_not_run_not_fake_success (test_autonomyctl.AutonomyCtlTests.test_unpinned_planner_is_not_run_not_fake_success) ... ok
@@ -40,13 +41,15 @@ test_router_selects_real_planner_and_fleet_observer (test_ecosystemctl.Ecosystem
 test_router_tokens_are_not_split_on_polish_stroke (test_ecosystemctl.EcosystemCtlTests.test_router_tokens_are_not_split_on_polish_stroke) ... ok
 test_tokenize_drops_function_words_and_maps_synonyms (test_ecosystemctl.EcosystemCtlTests.test_tokenize_drops_function_words_and_maps_synonyms) ... ok
 test_tokenize_keeps_polish_l_stroke_words_intact (test_ecosystemctl.EcosystemCtlTests.test_tokenize_keeps_polish_l_stroke_words_intact) ... ok
+test_unplannable_implementation_diagnostics_stay_plan_gap (test_ecosystemctl.EcosystemCtlTests.test_unplannable_implementation_diagnostics_stay_plan_gap) ... ok
 test_verified_tools_are_execution_eligible (test_ecosystemctl.EcosystemCtlTests.test_verified_tools_are_execution_eligible) ... ok
+test_zero_implementation_diagnostics_is_not_plan_gap (test_ecosystemctl.EcosystemCtlTests.test_zero_implementation_diagnostics_is_not_plan_gap) ... ok
 test_zero_plan_is_blocked (test_ecosystemctl.EcosystemCtlTests.test_zero_plan_is_blocked) ... ok
 test_accepts_exact_revision_with_pass_state (test_pre_receive.PreReceiveTests.test_accepts_exact_revision_with_pass_state) ... ok
 test_rejects_multiple_new_revisions (test_pre_receive.PreReceiveTests.test_rejects_multiple_new_revisions) ... ok
 test_rejects_policy_block_with_machine_result (test_pre_receive.PreReceiveTests.test_rejects_policy_block_with_machine_result) ... ok
 test_rejects_revision_mismatch (test_pre_receive.PreReceiveTests.test_rejects_revision_mismatch) ... ok
-test_native_parser_rejects_stage_with_run_and_tool (test_pyqual_contract.PyqualContractTests.test_native_parser_rejects_stage_with_run_and_tool) ... ok
+test_native_parser_rejects_stage_with_run_and_tool (test_pyqual_contract.PyqualContractTests.test_native_parser_rejects_stage_with_run_and_tool) ... skipped "semcod/pyqual is not importable: No module named 'nfo'"
 test_pinned_default_yaml_matches_revision_digest (test_pyqual_contract.PyqualContractTests.test_pinned_default_yaml_matches_revision_digest) ... ok
 test_pinned_default_yaml_parses_with_native_pyqual (test_pyqual_contract.PyqualContractTests.test_pinned_default_yaml_parses_with_native_pyqual) ... ok
 test_latest_shadow_receipt_never_applied (test_shadow_receipts.ShadowReceiptTests.test_latest_shadow_receipt_never_applied) ... ok
@@ -71,7 +74,7 @@ test_parses_modules_and_header (test_toon_index.ToonIndexTests.test_parses_modul
 test_project_roots_are_counted (test_toon_index.ToonIndexTests.test_project_roots_are_counted) ... ok
 
 ----------------------------------------------------------------------
-Ran 50 tests
+Ran 53 tests
 
-OK
+OK (skipped=1)
 ```

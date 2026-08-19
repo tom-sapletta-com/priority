@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT / "adapters"))
 
 from ecosystemctl import (  # noqa: E402
     build_ecosystem_map,
+    classify_empty_plan,
     create_planner_request,
     default_index_maps,
     load_json,
@@ -114,12 +115,36 @@ class EcosystemCtlTests(unittest.TestCase):
         planner_request = create_planner_request(self.request, route)
         self.assertEqual(planner_request["planner"]["projectId"], "autogrammar/todo2code")
         self.assertEqual(planner_request["planPolicy"]["onZeroPlansWhenOpenCriteria"], "T2C_PLAN_GAP")
+        self.assertEqual(
+            planner_request["planPolicy"]["onZeroImplementationDiagnostics"],
+            "T2C_NO_IMPLEMENTATION_DIAGNOSTICS",
+        )
         self.assertTrue(planner_request["planPolicy"]["requireNegativeBehaviorTest"])
 
     def test_zero_plan_is_blocked(self) -> None:
         result = load_json(ROOT / "examples" / "todo2code-zero-plan.json")
         receipt = validate_plan_result(self.request, result)
         self.assertEqual(receipt["finalOutcome"], "BLOCK")
+        self.assertIn("T2C_PLAN_GAP", {item["code"] for item in receipt["findings"]})
+
+    def test_zero_implementation_diagnostics_is_not_plan_gap(self) -> None:
+        result = load_json(ROOT / "examples" / "todo2code-zero-implementation-diagnostics.json")
+        self.assertEqual(classify_empty_plan(result), "T2C_NO_IMPLEMENTATION_DIAGNOSTICS")
+        receipt = validate_plan_result(self.request, result)
+        codes = {item["code"] for item in receipt["findings"]}
+        self.assertEqual(receipt["finalOutcome"], "BLOCK")
+        self.assertIn("T2C_NO_IMPLEMENTATION_DIAGNOSTICS", codes)
+        self.assertNotIn("T2C_PLAN_GAP", codes)
+
+    def test_unplannable_implementation_diagnostics_stay_plan_gap(self) -> None:
+        result = {
+            "status": "succeeded",
+            "recordCount": 0,
+            "sourceDiagnosticCount": 3,
+            "plans": [],
+        }
+        self.assertEqual(classify_empty_plan(result), "T2C_PLAN_GAP")
+        receipt = validate_plan_result(self.request, result)
         self.assertIn("T2C_PLAN_GAP", {item["code"] for item in receipt["findings"]})
 
     def test_grounded_plan_is_accepted(self) -> None:

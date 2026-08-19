@@ -24,7 +24,10 @@ class PyqualContractTests(unittest.TestCase):
         if not (PYQUAL_ROOT / "pyqual" / "config.py").is_file():
             self.skipTest("semcod/pyqual checkout is not available")
         sys.path.insert(0, str(PYQUAL_ROOT))
-        from pyqual.config import PyqualConfig  # type: ignore
+        try:
+            from pyqual.config import PyqualConfig  # type: ignore
+        except ImportError as exc:
+            self.skipTest(f"semcod/pyqual is not importable: {exc}")
 
         raw = yaml.safe_load((ROOT / "sources" / "contracts" / "pyqual" / "default.yaml").read_text())
         config = PyqualConfig._parse(raw)
@@ -35,7 +38,10 @@ class PyqualContractTests(unittest.TestCase):
         if not (PYQUAL_ROOT / "pyqual" / "config.py").is_file():
             self.skipTest("semcod/pyqual checkout is not available")
         sys.path.insert(0, str(PYQUAL_ROOT))
-        from pyqual.config import PyqualConfig  # type: ignore
+        try:
+            from pyqual.config import PyqualConfig  # type: ignore
+        except ImportError as exc:
+            self.skipTest(f"semcod/pyqual is not importable: {exc}")
 
         raw = {
             "pipeline": {

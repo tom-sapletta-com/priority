@@ -19,6 +19,7 @@ for document, schema in [
     ('generated/state-from-index.json','schemas/priority-state.schema.json'),
     ('examples/ticket-context-request.json','schemas/ticket-context-request.schema.json'),
     ('examples/todo2code-zero-plan.json','schemas/planner-result-envelope.schema.json'),
+    ('examples/todo2code-zero-implementation-diagnostics.json','schemas/planner-result-envelope.schema.json'),
     ('examples/todo2code-valid-plan.json','schemas/planner-result-envelope.schema.json'),
     ('generated/ecosystem-map.json','schemas/ecosystem-map.schema.json'),
     ('generated/ticket-context-selection.json','schemas/ticket-context-selection.schema.json'),

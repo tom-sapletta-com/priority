@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.3.4 — 2026-08-19
+
+### Added
+
+- `classify_empty_plan` reads todo2code `sourceDiagnosticCount`;
+- `T2C_NO_IMPLEMENTATION_DIAGNOSTICS` when the planner found no
+  `PLANNED_NOT_IMPLEMENTED` or `CHANGELOG_WITHOUT_IMPLEMENTATION` rows;
+- fixture `examples/todo2code-zero-implementation-diagnostics.json`.
+
+### Changed
+
+- live `invoke_planner` forwards `sourceDiagnosticCount` instead of
+  wrapping only `plans`;
+- a missing count still fails closed as `T2C_PLAN_GAP`;
+- `T2C_NO_IMPLEMENTATION_DIAGNOSTICS` does not increment
+  `planning.todo2code_plan_gap_count`.
+
 ## 0.3.3 — 2026-08-19
 
 ### Added

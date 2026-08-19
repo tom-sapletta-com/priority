@@ -1,0 +1,14 @@
+{
+  "status": "succeeded",
+  "recordCount": 0,
+  "sourceDiagnosticCount": 0,
+  "code": "T2C_NO_IMPLEMENTATION_DIAGNOSTICS",
+  "plans": [],
+  "planIds": [],
+  "diagnostics": [
+    {
+      "code": "T2C_NO_IMPLEMENTATION_DIAGNOSTICS",
+      "message": "todo2code found no PLANNED_NOT_IMPLEMENTED or CHANGELOG_WITHOUT_IMPLEMENTATION diagnostics."
+    }
+  ]
+}

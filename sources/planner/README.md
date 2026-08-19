@@ -5,6 +5,11 @@ package (`adapters/`, `tests/`, recent Git, registry config). They are
 not a production workspace graph and are not a claim that planning
 succeeded.
 
+`todo2code` plans only `PLANNED_NOT_IMPLEMENTED` and
+`CHANGELOG_WITHOUT_IMPLEMENTATION`. This pin currently has neither, so
+`sourceDiagnosticCount` is 0 and empty `plans[]` is a correct
+`T2C_NO_IMPLEMENTATION_DIAGNOSTICS`, not a failed CLI.
+
 Regenerate:
 
 ```bash

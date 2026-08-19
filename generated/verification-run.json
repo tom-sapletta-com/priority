@@ -1,12 +1,12 @@
 {
   "successful": true,
   "tests": {
-    "run": 50,
-    "passed": 50,
+    "run": 53,
+    "passed": 52,
     "failures": 0,
     "errors": 0,
-    "skipped": 0,
+    "skipped": 1,
     "successful": true
   },
-  "reportDigest": "sha256:8b8f481ff36c5f7bdf2b83f5aace41464914f33941b01dbfd767140d3116bea7"
+  "reportDigest": "sha256:26f888ce9d6af2b4140f10d6034202065ebf7bb101af207ad131a4b4f9ca3ecb"
 }
