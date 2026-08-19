@@ -1,0 +1,22 @@
+{
+  "schema": "wellmanifest.agent/report/v1",
+  "workspaceRoot": "/home/tom/github/autogrammar/priority",
+  "gitToplevel": "/home/tom/github/autogrammar/priority",
+  "pwd": "/home/tom/github/autogrammar/priority",
+  "home": "wellmanifest",
+  "shape": "domain_pack",
+  "adopt": ["wellmanifest/policy-dsl"],
+  "ticketId": "ticket-001",
+  "filesTouched": [
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    "LICENSE",
+    "Makefile",
+    "README.md",
+    "project/ticket-001/README.md",
+    "project/ticket-001/agent-report.json",
+    "requirements.txt",
+    "tests/__init__.py"
+  ],
+  "outcome": "completed"
+}
